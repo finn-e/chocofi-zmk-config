@@ -1690,10 +1690,10 @@ key-positions = <34 28>;
 
         bougie {
             bindings = <
-  &bt BT_CLR       &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &tog 1         &tog 1       &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR
-  &sk_lshift_lock  &kp E         &kp A         &kp T         &sys_reset     &sys_reset   &kp T         &kp A         &kp E         &sk_lshift_lock
-  &kp RET          &kp I         &kp O         &kp N         &bootloader    &bootloader  &kp I         &kp O         &kp N         &kp RET
-                                 &key_repeat   &kp BSPC      &kp SPACE      &kp SPACE    &kp BSPC      &key_repeat
+  &bt BT_CLR     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &tog 1         &tog 1       &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR
+  &kp BACKSPACE  &as E         &as A         &as T         &sys_reset     &sys_reset   &as T         &as A         &as E         &sk_lshift_lock
+  &kp RET        &as I         &as O         &as N         &bootloader    &bootloader  &as I         &as O         &as N         &kp RET
+                               &key_repeat   &kp BSPC      &kp SPACE      &kp SPACE    &kp BSPC      &key_repeat
             >;
 
             label = "DEF";
