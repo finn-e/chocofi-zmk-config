@@ -1604,7 +1604,6 @@
 
         as_ht: autoshift_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "AUTOSHIFT_HOLD_TAP";
             bindings = <&shift>, <&kp>;
 
             #binding-cells = <2>;
@@ -1613,7 +1612,6 @@
 
         ralt_i_cut: ralt_i_cut {
             compatible = "zmk,behavior-mod-morph";
-            label = "RALT_I_CUT";
             bindings = <&as I>, <&kp LC(X)>;
 
             #binding-cells = <0>;
@@ -1623,7 +1621,6 @@
 
         ralt_o_copy: ralt_o_copy {
             compatible = "zmk,behavior-mod-morph";
-            label = "RALT_O_COPY";
             bindings = <&as O>, <&kp LC(C)>;
 
             #binding-cells = <0>;
@@ -1633,7 +1630,6 @@
 
         ralt_n_paste: ralt_n_paste {
             compatible = "zmk,behavior-mod-morph";
-            label = "RALT_N_PASTE";
             bindings = <&as N>, <&kp LC(V)>;
 
             #binding-cells = <0>;
@@ -1653,8 +1649,6 @@
                 <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_release>,
                 <&kp LSHIFT>;
-
-            label = "SHIFT";
         };
 
         as: as {
@@ -1666,8 +1660,6 @@
                 <&macro_pause_for_release>,
                 <&macro_release>,
                 <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
-
-            label = "AS";
         };
     };
 
@@ -1681,8 +1673,6 @@
   &kp RET        &ralt_i_cut   &ralt_o_copy  &ralt_n_paste  &bootloader    &bootloader  &ralt_n_paste  &ralt_o_copy  &ralt_i_cut   &kp RET
                                &key_repeat   &kp BSPC       &kp SPACE      &kp SPACE    &kp BSPC       &key_repeat
             >;
-
-            label = "DEF";
         };
 
         qwerty {
