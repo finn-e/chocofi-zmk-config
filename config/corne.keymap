@@ -241,559 +241,544 @@ key-positions = <0 10>;
 
     SPtab-home {
         bindings = <&kp HOME>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPesc-left {
         bindings = <&kp LEFT>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPe-pgdn {
         bindings = <&kp PG_DN>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPa-pgup {
         bindings = <&kp PG_UP>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPt-end {
         bindings = <&kp END>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPi-down {
         bindings = <&kp DOWN>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPo-up {
         bindings = <&kp UP>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPn-right {
         bindings = <&kp RIGHT>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPx-left {
         bindings = <&kp LEFT>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPc-down {
         bindings = <&kp DOWN>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPv-right {
         bindings = <&kp RIGHT>;
-        key-positions = <33 0>;
+        key-positions = <32 0>;
     };
 
     SPtabesc-sklalt {
         bindings = <&sk_lalt_lock>;
-        key-positions = <33 0 10>;
+        key-positions = <32 0 10>;
     };
 
     SPio-u {
         bindings = <&kp U>;
-        key-positions = <33 1 2>;
+        key-positions = <32 1 2>;
     };
 
     SPin-c {
         bindings = <&kp C>;
-        key-positions = <33 1 3>;
+        key-positions = <32 1 3>;
     };
 
     SPie-sklalt {
         bindings = <&sk_lmeta_lock>;
-        key-positions = <33 1 11>;
+        key-positions = <32 1 11>;
     };
 
     SPia-y {
         bindings = <&kp Y>;
-        key-positions = <33 1 12>;
+        key-positions = <32 1 12>;
     };
 
     SPit-w {
         bindings = <&kp W>;
-        key-positions = <33 1 13>;
+        key-positions = <32 1 13>;
     };
 
     SPon-l {
         bindings = <&kp L>;
-        key-positions = <33 2 3>;
+        key-positions = <32 2 3>;
     };
 
     SPoe-g {
         bindings = <&kp G>;
-        key-positions = <33 11 2>;
+        key-positions = <32 11 2>;
     };
 
     SPoa-sklctrl {
         bindings = <&sk_lctrl_lock>;
-        key-positions = <33 2 12>;
+        key-positions = <32 2 12>;
     };
 
     SPot-d {
         bindings = <&kp D>;
-        key-positions = <33 2 13>;
+        key-positions = <32 2 13>;
     };
 
     SPne-m {
         bindings = <&kp M>;
-        key-positions = <33 3 11>;
+        key-positions = <32 3 11>;
     };
 
     SPna-f {
         bindings = <&kp F>;
-        key-positions = <33 3 12>;
+        key-positions = <32 3 12>;
     };
 
     SPnt-skshift {
         bindings = <&sk_lshift_lock>;
-        key-positions = <33 13 3>;
+        key-positions = <32 13 3>;
     };
 
     SPea-h {
         bindings = <&kp H>;
-        key-positions = <33 11 12>;
+        key-positions = <32 11 12>;
     };
 
     SPet-s {
         bindings = <&kp S>;
-        key-positions = <33 11 13>;
+        key-positions = <32 11 13>;
     };
 
     SPat-r {
         bindings = <&kp R>;
-        key-positions = <33 12 13>;
+        key-positions = <32 12 13>;
     };
 
     SPieo-apos {
         bindings = <&kp APOS>;
-        key-positions = <33 11 1 2>;
+        key-positions = <32 11 1 2>;
     };
 
     SPien-minus {
         bindings = <&kp MINUS>;
-        key-positions = <33 11 1 3>;
+        key-positions = <32 11 1 3>;
     };
 
     SPiea-comma {
         bindings = <&kp COMMA>;
-        key-positions = <33 1 11 12>;
+        key-positions = <32 1 11 12>;
     };
 
     SPiet-dot {
         bindings = <&kp DOT>;
-        key-positions = <33 11 1 13>;
+        key-positions = <32 11 1 13>;
     };
 
     SPoai-p {
         bindings = <&kp P>;
-        key-positions = <33 2 12 1>;
+        key-positions = <32 2 12 1>;
     };
 
     SPoan-z {
         bindings = <&kp Z>;
-        key-positions = <33 2 12 3>;
+        key-positions = <32 2 12 3>;
     };
 
     SPoae-b {
         bindings = <&kp B>;
-        key-positions = <33 17 7 18>;
+        key-positions = <32 17 7 18>;
     };
 
     SPoat-x {
         bindings = <&kp X>;
-        key-positions = <33 12 2 13>;
+        key-positions = <32 12 2 13>;
     };
 
     SPnti-q {
         bindings = <&kp Q>;
-        key-positions = <33 13 3 1>;
+        key-positions = <32 13 3 1>;
     };
 
     SPnto-v {
         bindings = <&kp V>;
-        key-positions = <33 13 3 2>;
+        key-positions = <32 13 3 2>;
     };
 
     SPnte-j {
         bindings = <&kp J>;
-        key-positions = <33 11 3 13>;
+        key-positions = <32 11 3 13>;
     };
 
     SPnta-k {
         bindings = <&kp K>;
-        key-positions = <33 13 3 12>;
+        key-positions = <32 13 3 12>;
     };
 
     SPieoa-del {
         bindings = <&kp DELETE>;
-        key-positions = <33 11 1 2 12>;
+        key-positions = <32 11 1 2 12>;
     };
 
     SPient-slnav {
         bindings = <&sticky_navlock>;
-        key-positions = <33 11 1 13 3>;
-        layers = <33 0>;
+        key-positions = <32 11 1 13 3>;
+        layers = <32 0>;
     };
 
     SPeitn-nav-tog {
         bindings = <&tog 2>;
-        key-positions = <33 11 1 13 3>;
-        layers = <33 2>;
+        key-positions = <32 11 1 13 3>;
+        layers = <32 2>;
     };
 
     SPoant-bt {
         bindings = <&sl 5>;
-        key-positions = <33 12 2 3 13>;
+        key-positions = <32 12 2 3 13>;
     };
 
     SPoant-num-tog {
         bindings = <&tog 3>;
-        key-positions = <33 12 2 3 13>;
-        layers = <33 3>;
+        key-positions = <32 12 2 3 13>;
+        layers = <32 3>;
     };
 
     SPion-ret {
         bindings = <&kp RET>;
-        key-positions = <33 1 2 3>;
+        key-positions = <32 1 2 3>;
     };
 
     SPiot-paste {
         bindings = <&kp LC(V)>;
-        key-positions = <33 1 2 13>;
+        key-positions = <32 1 2 13>;
     };
 
     SPian-copy {
         bindings = <&kp LC(C)>;
-        key-positions = <33 1 3 12>;
+        key-positions = <32 1 3 12>;
     };
 
     SPeon-cut {
         bindings = <&kp LC(X)>;
-        key-positions = <33 11 2 3>;
+        key-positions = <32 11 2 3>;
     };
 
     SPean-redo {
         bindings = <&kp LC(LS(Z))>;
-        key-positions = <33 11 12 3>;
+        key-positions = <32 11 12 3>;
     };
 
     SPiat-undo {
         bindings = <&kp LC(Z)>;
-        key-positions = <33 13 12 1>;
+        key-positions = <32 13 12 1>;
     };
 
     SPeot-pscrn {
         bindings = <&kp PRINTSCREEN>;
-        key-positions = <33 2 13 11>;
+        key-positions = <32 2 13 11>;
     };
 
     SPeat-esc {
         bindings = <&gresc>;
-        key-positions = <33 11 12 13>;
+        key-positions = <32 11 12 13>;
     };
 
     SPiont-caps_word {
         bindings = <&caps_word>;
-        key-positions = <33 1 2 3 13>;
+        key-positions = <32 1 2 3 13>;
     };
 
     SPntea-caps {
         bindings = <&kp CAPSLOCK>;
-        key-positions = <33 3 13 12 2 11>;
+        key-positions = <32 3 13 12 2 11>;
     };
 
     SPntea-insert {
         bindings = <&kp INSERT>;
-        key-positions = <33 11 12 13 3>;
+        key-positions = <32 11 12 13 3>;
     };
 
     BStab-tab {
         bindings = <&kp TAB>;
-        key-positions = <34 0>;
+        key-positions = <31 0>;
     };
 
     BSesc-del {
         bindings = <&kp DELETE>;
-        key-positions = <34 10>;
+        key-positions = <31 10>;
     };
 
     BSe-7 {
         bindings = <&kp N7>;
-        key-positions = <34 1>;
+        key-positions = <31 1>;
     };
 
     BSa-8 {
         bindings = <&kp N8>;
-        key-positions = <34 2>;
+        key-positions = <31 2>;
     };
 
     BSt-9 {
         bindings = <&kp N9>;
-        key-positions = <34 3>;
+        key-positions = <31 3>;
     };
 
     BSi-4 {
         bindings = <&kp N4>;
-        key-positions = <34 11>;
+        key-positions = <31 11>;
     };
 
     BSo-5 {
         bindings = <&kp N5>;
-        key-positions = <34 12>;
+        key-positions = <31 12>;
     };
 
     BSn-6 {
         bindings = <&kp N6>;
-        key-positions = <34 13>;
+        key-positions = <31 13>;
     };
 
     BSx-1 {
         bindings = <&kp N1>;
-        key-positions = <34 21>;
+        key-positions = <31 21>;
     };
 
     BSc-2 {
         bindings = <&kp N2>;
-        key-positions = <34 22>;
+        key-positions = <31 22>;
     };
 
     BSv-3 {
         bindings = <&kp N1>;
-        key-positions = <34 23>;
+        key-positions = <31 23>;
     };
 
     BStabesc-sklalt {
         bindings = <&sk_lalt_lock>;
-        key-positions = <34 0 10>;
+        key-positions = <31 0 10>;
     };
 
     BSio-u {
         bindings = <&kp U>;
-        key-positions = <34 1 2>;
+        key-positions = <31 1 2>;
     };
 
     BSin-c {
         bindings = <&kp C>;
-        key-positions = <34 1 3>;
+        key-positions = <31 1 3>;
     };
 
     BSie-sklalt {
         bindings = <&sk_lmeta_lock>;
-        key-positions = <34 1 11>;
+        key-positions = <31 1 11>;
     };
 
     BSia-y {
         bindings = <&kp Y>;
-        key-positions = <34 1 12>;
+        key-positions = <31 1 12>;
     };
 
     BSit-w {
         bindings = <&kp W>;
-        key-positions = <34 1 13>;
+        key-positions = <31 1 13>;
     };
 
     BSon-l {
         bindings = <&kp L>;
-        key-positions = <34 2 3>;
+        key-positions = <31 2 3>;
     };
 
     BSoe-g {
         bindings = <&kp G>;
-        key-positions = <34 11 2>;
+        key-positions = <31 11 2>;
     };
 
     BSoa-sklctrl {
         bindings = <&sk_lctrl_lock>;
-        key-positions = <34 2 12>;
+        key-positions = <31 2 12>;
     };
 
     BSot-d {
         bindings = <&kp D>;
-        key-positions = <34 2 13>;
+        key-positions = <31 2 13>;
     };
 
     BSne-m {
         bindings = <&kp M>;
-        key-positions = <34 3 11>;
+        key-positions = <31 3 11>;
     };
 
     BSna-f {
         bindings = <&kp F>;
-        key-positions = <34 3 12>;
+        key-positions = <31 3 12>;
     };
 
     BSnt-skshift {
         bindings = <&sk_lshift_lock>;
-        key-positions = <34 13 3>;
-    };
-
-    SPea-h {
-        bindings = <&kp H>;
-        key-positions = <34 11 12>;
-    };
-
-    SPet-s {
-        bindings = <&kp S>;
-        key-positions = <34 11 13>;
-    };
-
-    SPat-r {
-        bindings = <&kp R>;
-        key-positions = <34 12 13>;
+        key-positions = <31 13 3>;
     };
 
     BSieo-apos {
         bindings = <&kp APOS>;
-        key-positions = <34 11 1 2>;
+        key-positions = <31 11 1 2>;
     };
 
     BSien-minus {
         bindings = <&kp MINUS>;
-        key-positions = <34 11 1 3>;
+        key-positions = <31 11 1 3>;
     };
 
     BSiea-comma {
         bindings = <&kp COMMA>;
-        key-positions = <34 1 11 12>;
+        key-positions = <31 1 11 12>;
     };
 
     BSiet-dot {
         bindings = <&kp DOT>;
-        key-positions = <34 11 1 13>;
+        key-positions = <31 11 1 13>;
     };
 
     BSoai-p {
         bindings = <&kp P>;
-        key-positions = <34 2 12 1>;
+        key-positions = <31 2 12 1>;
     };
 
     BSoan-z {
         bindings = <&kp Z>;
-        key-positions = <34 2 12 3>;
+        key-positions = <31 2 12 3>;
     };
 
     BSoae-b {
         bindings = <&kp B>;
-        key-positions = <34 12 2 11>;
+        key-positions = <31 12 2 11>;
     };
 
     BSoat-x {
         bindings = <&kp X>;
-        key-positions = <34 12 2 13>;
+        key-positions = <31 12 2 13>;
     };
 
     BSnti-q {
         bindings = <&kp Q>;
-        key-positions = <34 13 3 1>;
+        key-positions = <31 13 3 1>;
     };
 
     BSnto-v {
         bindings = <&kp V>;
-        key-positions = <34 13 3 2>;
+        key-positions = <31 13 3 2>;
     };
 
     BSnte-j {
         bindings = <&kp J>;
-        key-positions = <34 11 3 13>;
+        key-positions = <31 11 3 13>;
     };
 
     BSnta-k {
         bindings = <&kp K>;
-        key-positions = <34 13 3 12>;
+        key-positions = <31 13 3 12>;
     };
 
     BSieoa-del {
         bindings = <&kp DELETE>;
-        key-positions = <34 11 1 2 12>;
+        key-positions = <31 11 1 2 12>;
     };
 
     BSient-slnav {
         bindings = <&sticky_navlock>;
-        key-positions = <34 11 1 13 3>;
-        layers = <34 0>;
+        key-positions = <31 11 1 13 3>;
+        layers = <31 0>;
     };
 
     BSeitn-nav-tog {
         bindings = <&tog 2>;
-        key-positions = <34 11 1 13 3>;
-        layers = <34 2>;
+        key-positions = <31 11 1 13 3>;
+        layers = <31 2>;
     };
 
     BSoant-slnum {
         bindings = <&sticky_numlock>;
-        key-positions = <34 12 2 3 13>;
-        layers = <34 0>;
+        key-positions = <31 12 2 3 13>;
+        layers = <31 0>;
     };
 
     BSoant-num-tog {
         bindings = <&tog 3>;
-        key-positions = <34 12 2 3 13>;
-        layers = <34 3>;
+        key-positions = <31 12 2 3 13>;
+        layers = <31 3>;
     };
 
     BSion-ret {
         bindings = <&kp RET>;
-        key-positions = <34 1 2 3>;
+        key-positions = <31 1 2 3>;
     };
 
     BSiot-paste {
         bindings = <&kp LC(V)>;
-        key-positions = <34 1 2 13>;
+        key-positions = <31 1 2 13>;
     };
 
     BSian-copy {
         bindings = <&kp LC(C)>;
-        key-positions = <34 1 3 12>;
+        key-positions = <31 1 3 12>;
     };
 
     BSeon-cut {
         bindings = <&kp LC(X)>;
-        key-positions = <34 11 2 3>;
+        key-positions = <31 11 2 3>;
     };
 
     BSean-redo {
         bindings = <&kp LC(LS(Z))>;
-        key-positions = <34 11 12 3>;
+        key-positions = <31 11 12 3>;
     };
 
     BSiat-undo {
         bindings = <&kp LC(Z)>;
-        key-positions = <34 13 12 1>;
+        key-positions = <31 13 12 1>;
     };
 
     BSeot-pscrn {
         bindings = <&kp PRINTSCREEN>;
-        key-positions = <34 2 13 11>;
+        key-positions = <31 2 13 11>;
     };
 
     BSeat-esc {
         bindings = <&gresc>;
-        key-positions = <34 11 12 13>;
+        key-positions = <31 11 12 13>;
     };
 
     BSiont-caps_word {
         bindings = <&caps_word>;
-        key-positions = <34 1 2 3 13>;
+        key-positions = <31 1 2 3 13>;
     };
 
     BSntea-caps {
         bindings = <&kp CAPSLOCK>;
-        key-positions = <34 3 13 12 2 11>;
+        key-positions = <31 3 13 12 2 11>;
     };
 
     BSntea-insert {
         bindings = <&kp INSERT>;
-        key-positions = <34 11 12 13 3>;
+        key-positions = <31 11 12 13 3>;
     };
 
     // --- Right Hand Combos (Mirrored) ---
@@ -1418,21 +1403,6 @@ key-positions = <0 10>;
     BSnt-skshift_R {
         bindings = <&sk_lshift_lock>;
         key-positions = <34 16 6>;
-    };
-
-    SPea-h_R {
-        bindings = <&kp H>;
-        key-positions = <34 18 17>;
-    };
-
-    SPet-s_R {
-        bindings = <&kp S>;
-        key-positions = <34 18 16>;
-    };
-
-    SPat-r_R {
-        bindings = <&kp R>;
-        key-positions = <34 17 16>;
     };
 
     BSieo-apos_R {
