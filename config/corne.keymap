@@ -220,7 +220,7 @@
         };
 
         ian-pscrn {
-            bindings = <&kp PRINTSCReiN>;
+            bindings = <&kp PRINTSCREEN>;
             key-positions = <12 23 21>;
         };
 
