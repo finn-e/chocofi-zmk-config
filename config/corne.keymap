@@ -225,7 +225,7 @@
         };
 
         ion-esc {
-            bindings = <&gresS>;
+            bindings = <&gresc>;
             key-positions = <21 22 23>;
         };
 
@@ -483,7 +483,7 @@
         };
 
         SPion-esc {
-            bindings = <&gresS>;
+            bindings = <&gresc>;
             key-positions = <32 21 22 23>;
         };
 
@@ -732,7 +732,7 @@
         };
 
         KRion-esc {
-            bindings = <&gresS>;
+            bindings = <&gresc>;
             key-positions = <31 21 22 23>;
         };
 
@@ -958,7 +958,7 @@
         };
 
         ion-esc_R {
-            bindings = <&gresS>;
+            bindings = <&gresc>;
             key-positions = <28 27 26>;
         };
 
@@ -1236,7 +1236,7 @@
         };
 
         SPion-esc_R {
-            bindings = <&gresS>;
+            bindings = <&gresc>;
             key-positions = <33 28 27 26>;
         };
 
@@ -1485,7 +1485,7 @@
         };
 
         KRion-esc_R {
-            bindings = <&gresS>;
+            bindings = <&gresc>;
             key-positions = <34 28 27 26>;
         };
 
