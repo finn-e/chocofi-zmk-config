@@ -15,787 +15,1568 @@
 
     combos {
         compatible = "zmk,combos";
-
-        tabesc-sklalt {
-            bindings = <&sk_lalt_lock>;
-            key-positions = <0 10>;
-        };
-
-        io-u {
-            bindings = <&kp U>;
-            key-positions = <1 2>;
-        };
-
-        in-c {
-            bindings = <&kp C>;
-            key-positions = <1 3>;
-        };
-
-        ie-sklalt {
-            bindings = <&sk_lmeta_lock>;
-            key-positions = <1 11>;
-        };
-
-        ia-y {
-            bindings = <&kp Y>;
-            key-positions = <1 12>;
-        };
-
-        it-w {
-            bindings = <&kp W>;
-            key-positions = <1 13>;
-        };
-
-        on-l {
-            bindings = <&kp L>;
-            key-positions = <2 3>;
-        };
-
-        oe-g {
-            bindings = <&kp G>;
-            key-positions = <11 2>;
-        };
-
-        oa-sklctrl {
-            bindings = <&sk_lctrl_lock>;
-            key-positions = <2 12>;
-        };
-
-        ot-d {
-            bindings = <&kp D>;
-            key-positions = <2 13>;
-        };
-
-        ne-m {
-            bindings = <&kp M>;
-            key-positions = <3 11>;
-        };
-
-        na-f {
-            bindings = <&kp F>;
-            key-positions = <3 12>;
-        };
-
-        nt-skshift {
-            bindings = <&sk_lshift_lock>;
-            key-positions = <13 3>;
-        };
-
-        ea-h {
-            bindings = <&kp H>;
-            key-positions = <11 12>;
-        };
-
-        et-s {
-            bindings = <&kp S>;
-            key-positions = <11 13>;
-        };
-
-        at-r {
-            bindings = <&kp R>;
-            key-positions = <12 13>;
-        };
-
-        ieo-apos {
-            bindings = <&kp APOS>;
-            key-positions = <11 1 2>;
-        };
-
-        ien-minus {
-            bindings = <&kp MINUS>;
-            key-positions = <11 1 3>;
-        };
-
-        iea-comma {
-            bindings = <&kp COMMA>;
-            key-positions = <1 11 12>;
-        };
-
-        iet-dot {
-            bindings = <&kp DOT>;
-            key-positions = <11 1 13>;
-        };
-
-        oai-p {
-            bindings = <&kp P>;
-            key-positions = <2 12 1>;
-        };
-
-        oan-z {
-            bindings = <&kp Z>;
-            key-positions = <2 12 3>;
-        };
-
-        oae-b {
-            bindings = <&kp B>;
-            key-positions = <12 2 11>;
-        };
-
-        oat-x {
-            bindings = <&kp X>;
-            key-positions = <12 2 13>;
-        };
-
-        nti-q {
-            bindings = <&kp Q>;
-            key-positions = <13 3 1>;
-        };
-
-        nto-v {
-            bindings = <&kp V>;
-            key-positions = <13 3 2>;
-        };
-
-        nte-j {
-            bindings = <&kp J>;
-            key-positions = <11 3 13>;
-        };
-
-        nta-k {
-            bindings = <&kp K>;
-            key-positions = <13 3 12>;
-        };
-
-        ieoa-del {
-            bindings = <&kp DELETE>;
-            key-positions = <11 1 2 12>;
-        };
-
-        ient-slnav {
-            bindings = <&sticky_navlock>;
-            key-positions = <11 1 13 3>;
-            layers = <0>;
-        };
-
-        eitn-nav-tog {
-            bindings = <&tog 2>;
-            key-positions = <11 1 13 3>;
-            layers = <2>;
-        };
-
-        oant-slnum {
-            bindings = <&sticky_numlock>;
-            key-positions = <12 2 3 13>;
-            layers = <0>;
-        };
-
-        oant-num-tog {
-            bindings = <&tog 3>;
-            key-positions = <12 2 3 13>;
-            layers = <3>;
-        };
-
-        ion-ret {
-            bindings = <&kp RET>;
-            key-positions = <1 2 3>;
-        };
-
-        iot-paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <1 2 13>;
-        };
-
-        ian-copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <1 3 12>;
-        };
-
-        eon-cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <11 2 3>;
-        };
-
-        ean-redo {
-            bindings = <&kp LC(LS(Z))>;
-            key-positions = <11 12 3>;
-        };
-
-        iat-undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <13 12 1>;
-        };
-
-        eot-pscrn {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <2 13 11>;
-        };
-
-        eat-esc {
-            bindings = <&gresc>;
-            key-positions = <11 12 13>;
-        };
-
-        iont-caps_word {
-            bindings = <&caps_word>;
-            key-positions = <1 2 3 13>;
-        };
-
-        ntea-caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <3 13 12 2 11>;
-        };
-
-        ntea-insert {
-            bindings = <&kp INSERT>;
-            key-positions = <11 12 13 3>;
-        };
-
-        SPtab-home {
-            bindings = <&kp HOME>;
-            key-positions = <32 0>;
-        };
-
-        SPesc-left {
-            bindings = <&kp LEFT>;
-            key-positions = <32 0>;
-        };
-
-        SPe-pgdn {
-            bindings = <&kp PG_DN>;
-            key-positions = <32 0>;
-        };
-
-        SPa-pgup {
-            bindings = <&kp PG_UP>;
-            key-positions = <32 0>;
-        };
-
-        SPt-end {
-            bindings = <&kp END>;
-            key-positions = <32 0>;
-        };
-
-        SPi-down {
-            bindings = <&kp DOWN>;
-            key-positions = <32 0>;
-        };
-
-        SPo-up {
-            bindings = <&kp UP>;
-            key-positions = <32 0>;
-        };
-
-        SPn-right {
-            bindings = <&kp RIGHT>;
-            key-positions = <32 0>;
-        };
-
-        SPx-left {
-            bindings = <&kp LEFT>;
-            key-positions = <32 0>;
-        };
-
-        SPc-down {
-            bindings = <&kp DOWN>;
-            key-positions = <32 0>;
-        };
-
-        SPv-right {
-            bindings = <&kp RIGHT>;
-            key-positions = <32 0>;
-        };
-
-        SPtabesc-sklalt {
-            bindings = <&sk_lalt_lock>;
-            key-positions = <32 0 10>;
-        };
-
-        SPio-u {
-            bindings = <&kp U>;
-            key-positions = <32 1 2>;
-        };
-
-        SPin-c {
-            bindings = <&kp C>;
-            key-positions = <32 1 3>;
-        };
-
-        SPie-sklalt {
-            bindings = <&sk_lmeta_lock>;
-            key-positions = <32 1 11>;
-        };
-
-        SPia-y {
-            bindings = <&kp Y>;
-            key-positions = <32 1 12>;
-        };
-
-        SPit-w {
-            bindings = <&kp W>;
-            key-positions = <32 1 13>;
-        };
-
-        SPon-l {
-            bindings = <&kp L>;
-            key-positions = <32 2 3>;
-        };
-
-        SPoe-g {
-            bindings = <&kp G>;
-            key-positions = <32 11 2>;
-        };
-
-        SPoa-sklctrl {
-            bindings = <&sk_lctrl_lock>;
-            key-positions = <32 2 12>;
-        };
-
-        SPot-d {
-            bindings = <&kp D>;
-            key-positions = <32 2 13>;
-        };
-
-        SPne-m {
-            bindings = <&kp M>;
-            key-positions = <32 3 11>;
-        };
-
-        SPna-f {
-            bindings = <&kp F>;
-            key-positions = <32 3 12>;
-        };
-
-        SPnt-skshift {
-            bindings = <&sk_lshift_lock>;
-            key-positions = <32 13 3>;
-        };
-
-        SPea-h {
-            bindings = <&kp H>;
-            key-positions = <32 11 12>;
-        };
-
-        SPet-s {
-            bindings = <&kp S>;
-            key-positions = <32 11 13>;
-        };
-
-        SPat-r {
-            bindings = <&kp R>;
-            key-positions = <32 12 13>;
-        };
-
-        SPieo-apos {
-            bindings = <&kp APOS>;
-            key-positions = <32 11 1 2>;
-        };
-
-        SPien-minus {
-            bindings = <&kp MINUS>;
-            key-positions = <32 11 1 3>;
-        };
-
-        SPiea-comma {
-            bindings = <&kp COMMA>;
-            key-positions = <32 1 11 12>;
-        };
-
-        SPiet-dot {
-            bindings = <&kp DOT>;
-            key-positions = <32 11 1 13>;
-        };
-
-        SPoai-p {
-            bindings = <&kp P>;
-            key-positions = <32 2 12 1>;
-        };
-
-        SPoan-z {
-            bindings = <&kp Z>;
-            key-positions = <32 2 12 3>;
-        };
-
-        SPoae-b {
-            bindings = <&kp B>;
-            key-positions = <32 12 2 11>;
-        };
-
-        SPoat-x {
-            bindings = <&kp X>;
-            key-positions = <32 12 2 13>;
-        };
-
-        SPnti-q {
-            bindings = <&kp Q>;
-            key-positions = <32 13 3 1>;
-        };
-
-        SPnto-v {
-            bindings = <&kp V>;
-            key-positions = <32 13 3 2>;
-        };
-
-        SPnte-j {
-            bindings = <&kp J>;
-            key-positions = <32 11 3 13>;
-        };
-
-        SPnta-k {
-            bindings = <&kp K>;
-            key-positions = <32 13 3 12>;
-        };
-
-        SPieoa-del {
-            bindings = <&kp DELETE>;
-            key-positions = <32 11 1 2 12>;
-        };
-
-        SPient-slnav {
-            bindings = <&sticky_navlock>;
-            key-positions = <32 11 1 13 3>;
-            layers = <32 0>;
-        };
-
-        SPeitn-nav-tog {
-            bindings = <&tog 2>;
-            key-positions = <32 11 1 13 3>;
-            layers = <32 2>;
-        };
-
-        SPoant-bt {
-            bindings = <&sl 5>;
-            key-positions = <32 12 2 3 13>;
-        };
-
-        SPoant-num-tog {
-            bindings = <&tog 3>;
-            key-positions = <32 12 2 3 13>;
-            layers = <32 3>;
-        };
-
-        SPion-ret {
-            bindings = <&kp RET>;
-            key-positions = <32 1 2 3>;
-        };
-
-        SPiot-paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <32 1 2 13>;
-        };
-
-        SPian-copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <32 1 3 12>;
-        };
-
-        SPeon-cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <32 11 2 3>;
-        };
-
-        SPean-redo {
-            bindings = <&kp LC(LS(Z))>;
-            key-positions = <32 11 12 3>;
-        };
-
-        SPiat-undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <32 13 12 1>;
-        };
-
-        SPeot-pscrn {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <32 2 13 11>;
-        };
-
-        SPeat-esc {
-            bindings = <&gresc>;
-            key-positions = <32 11 12 13>;
-        };
-
-        SPiont-caps_word {
-            bindings = <&caps_word>;
-            key-positions = <32 1 2 3 13>;
-        };
-
-        SPntea-caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <32 3 13 12 2 11>;
-        };
-
-        SPntea-insert {
-            bindings = <&kp INSERT>;
-            key-positions = <32 11 12 13 3>;
-        };
-
-        BStab-tab {
-            bindings = <&kp TAB>;
-            key-positions = <31 0>;
-        };
-
-        BSesc-del {
-            bindings = <&kp DELETE>;
-            key-positions = <31 10>;
-        };
-
-        BSe-7 {
-            bindings = <&kp N7>;
-            key-positions = <31 1>;
-        };
-
-        BSa-8 {
-            bindings = <&kp N8>;
-            key-positions = <31 2>;
-        };
-
-        BSt-9 {
-            bindings = <&kp N9>;
-            key-positions = <31 3>;
-        };
-
-        BSi-4 {
-            bindings = <&kp N4>;
-            key-positions = <31 11>;
-        };
-
-        BSo-5 {
-            bindings = <&kp N5>;
-            key-positions = <31 12>;
-        };
-
-        BSn-6 {
-            bindings = <&kp N6>;
-            key-positions = <31 13>;
-        };
-
-        BSx-1 {
-            bindings = <&kp N1>;
-            key-positions = <31 21>;
-        };
-
-        BSc-2 {
-            bindings = <&kp N2>;
-            key-positions = <31 22>;
-        };
-
-        BSv-3 {
-            bindings = <&kp N1>;
-            key-positions = <31 23>;
-        };
-
-        BStabesc-sklalt {
-            bindings = <&sk_lalt_lock>;
-            key-positions = <31 0 10>;
-        };
-
-        BSio-u {
-            bindings = <&kp U>;
-            key-positions = <31 1 2>;
-        };
-
-        BSin-c {
-            bindings = <&kp C>;
-            key-positions = <31 1 3>;
-        };
-
-        BSie-sklalt {
-            bindings = <&sk_lmeta_lock>;
-            key-positions = <31 1 11>;
-        };
-
-        BSia-y {
-            bindings = <&kp Y>;
-            key-positions = <31 1 12>;
-        };
-
-        BSit-w {
-            bindings = <&kp W>;
-            key-positions = <31 1 13>;
-        };
-
-        BSon-l {
-            bindings = <&kp L>;
-            key-positions = <31 2 3>;
-        };
-
-        BSoe-g {
-            bindings = <&kp G>;
-            key-positions = <31 11 2>;
-        };
-
-        BSoa-sklctrl {
-            bindings = <&sk_lctrl_lock>;
-            key-positions = <31 2 12>;
-        };
-
-        BSot-d {
-            bindings = <&kp D>;
-            key-positions = <31 2 13>;
-        };
-
-        BSne-m {
-            bindings = <&kp M>;
-            key-positions = <31 3 11>;
-        };
-
-        BSna-f {
-            bindings = <&kp F>;
-            key-positions = <31 3 12>;
-        };
-
-        BSnt-skshift {
-            bindings = <&sk_lshift_lock>;
-            key-positions = <31 13 3>;
-        };
-
-        SPea-h {
-            bindings = <&kp H>;
-            key-positions = <31 11 12>;
-        };
-
-        SPet-s {
-            bindings = <&kp S>;
-            key-positions = <31 11 13>;
-        };
-
-        SPat-r {
-            bindings = <&kp R>;
-            key-positions = <31 12 13>;
-        };
-
-        BSieo-apos {
-            bindings = <&kp APOS>;
-            key-positions = <31 11 1 2>;
-        };
-
-        BSien-minus {
-            bindings = <&kp MINUS>;
-            key-positions = <31 11 1 3>;
-        };
-
-        BSiea-comma {
-            bindings = <&kp COMMA>;
-            key-positions = <31 1 11 12>;
-        };
-
-        BSiet-dot {
-            bindings = <&kp DOT>;
-            key-positions = <31 11 1 13>;
-        };
-
-        BSoai-p {
-            bindings = <&kp P>;
-            key-positions = <31 2 12 1>;
-        };
-
-        BSoan-z {
-            bindings = <&kp Z>;
-            key-positions = <31 2 12 3>;
-        };
-
-        BSoae-b {
-            bindings = <&kp B>;
-            key-positions = <31 12 2 11>;
-        };
-
-        BSoat-x {
-            bindings = <&kp X>;
-            key-positions = <31 12 2 13>;
-        };
-
-        BSnti-q {
-            bindings = <&kp Q>;
-            key-positions = <31 13 3 1>;
-        };
-
-        BSnto-v {
-            bindings = <&kp V>;
-            key-positions = <31 13 3 2>;
-        };
-
-        BSnte-j {
-            bindings = <&kp J>;
-            key-positions = <31 11 3 13>;
-        };
-
-        BSnta-k {
-            bindings = <&kp K>;
-            key-positions = <31 13 3 12>;
-        };
-
-        BSieoa-del {
-            bindings = <&kp DELETE>;
-            key-positions = <31 11 1 2 12>;
-        };
-
-        BSient-slnav {
-            bindings = <&sticky_navlock>;
-            key-positions = <31 11 1 13 3>;
-            layers = <31 0>;
-        };
-
-        BSeitn-nav-tog {
-            bindings = <&tog 2>;
-            key-positions = <31 11 1 13 3>;
-            layers = <31 2>;
-        };
-
-        BSoant-slnum {
-            bindings = <&sticky_numlock>;
-            key-positions = <31 12 2 3 13>;
-            layers = <31 0>;
-        };
-
-        BSoant-num-tog {
-            bindings = <&tog 3>;
-            key-positions = <31 12 2 3 13>;
-            layers = <31 3>;
-        };
-
-        BSion-ret {
-            bindings = <&kp RET>;
-            key-positions = <31 1 2 3>;
-        };
-
-        BSiot-paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <31 1 2 13>;
-        };
-
-        BSian-copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <31 1 3 12>;
-        };
-
-        BSeon-cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <31 11 2 3>;
-        };
-
-        BSean-redo {
-            bindings = <&kp LC(LS(Z))>;
-            key-positions = <31 11 12 3>;
-        };
-
-        BSiat-undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <31 13 12 1>;
-        };
-
-        BSeot-pscrn {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <31 2 13 11>;
-        };
-
-        BSeat-esc {
-            bindings = <&gresc>;
-            key-positions = <31 11 12 13>;
-        };
-
-        BSiont-caps_word {
-            bindings = <&caps_word>;
-            key-positions = <31 1 2 3 13>;
-        };
-
-        BSntea-caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <31 3 13 12 2 11>;
-        };
-
-        BSntea-insert {
-            bindings = <&kp INSERT>;
-            key-positions = <31 11 12 13 3>;
-        };
+tabesc-sklalt {
+bindings = <&sk_lalt_lock>;
+key-positions = <0 10>;
+};
+
+    io-u {
+        bindings = <&kp U>;
+        key-positions = <1 2>;
+    };
+
+    in-c {
+        bindings = <&kp C>;
+        key-positions = <1 3>;
+    };
+
+    ie-sklalt {
+        bindings = <&sk_lmeta_lock>;
+        key-positions = <1 11>;
+    };
+
+    ia-y {
+        bindings = <&kp Y>;
+        key-positions = <1 12>;
+    };
+
+    it-w {
+        bindings = <&kp W>;
+        key-positions = <1 13>;
+    };
+
+    on-l {
+        bindings = <&kp L>;
+        key-positions = <2 3>;
+    };
+
+    oe-g {
+        bindings = <&kp G>;
+        key-positions = <11 2>;
+    };
+
+    oa-sklctrl {
+        bindings = <&sk_lctrl_lock>;
+        key-positions = <2 12>;
+    };
+
+    ot-d {
+        bindings = <&kp D>;
+        key-positions = <2 13>;
+    };
+
+    ne-m {
+        bindings = <&kp M>;
+        key-positions = <3 11>;
+    };
+
+    na-f {
+        bindings = <&kp F>;
+        key-positions = <3 12>;
+    };
+
+    nt-skshift {
+        bindings = <&sk_lshift_lock>;
+        key-positions = <13 3>;
+    };
+
+    ea-h {
+        bindings = <&kp H>;
+        key-positions = <11 12>;
+    };
+
+    et-s {
+        bindings = <&kp S>;
+        key-positions = <11 13>;
+    };
+
+    at-r {
+        bindings = <&kp R>;
+        key-positions = <12 13>;
+    };
+
+    ieo-apos {
+        bindings = <&kp APOS>;
+        key-positions = <11 1 2>;
+    };
+
+    ien-minus {
+        bindings = <&kp MINUS>;
+        key-positions = <11 1 3>;
+    };
+
+    iea-comma {
+        bindings = <&kp COMMA>;
+        key-positions = <1 11 12>;
+    };
+
+    iet-dot {
+        bindings = <&kp DOT>;
+        key-positions = <11 1 13>;
+    };
+
+    oai-p {
+        bindings = <&kp P>;
+        key-positions = <2 12 1>;
+    };
+
+    oan-z {
+        bindings = <&kp Z>;
+        key-positions = <2 12 3>;
+    };
+
+    oae-b {
+        bindings = <&kp B>;
+        key-positions = <12 2 11>;
+    };
+
+    oat-x {
+        bindings = <&kp X>;
+        key-positions = <12 2 13>;
+    };
+
+    nti-q {
+        bindings = <&kp Q>;
+        key-positions = <13 3 1>;
+    };
+
+    nto-v {
+        bindings = <&kp V>;
+        key-positions = <13 3 2>;
+    };
+
+    nte-j {
+        bindings = <&kp J>;
+        key-positions = <11 3 13>;
+    };
+
+    nta-k {
+        bindings = <&kp K>;
+        key-positions = <13 3 12>;
+    };
+
+    ieoa-del {
+        bindings = <&kp DELETE>;
+        key-positions = <11 1 2 12>;
+    };
+
+    ient-slnav {
+        bindings = <&sticky_navlock>;
+        key-positions = <11 1 13 3>;
+        layers = <0>;
+    };
+
+    eitn-nav-tog {
+        bindings = <&tog 2>;
+        key-positions = <11 1 13 3>;
+        layers = <2>;
+    };
+
+    oant-slnum {
+        bindings = <&sticky_numlock>;
+        key-positions = <12 2 3 13>;
+        layers = <0>;
+    };
+
+    oant-num-tog {
+        bindings = <&tog 3>;
+        key-positions = <12 2 3 13>;
+        layers = <3>;
+    };
+
+    ion-ret {
+        bindings = <&kp RET>;
+        key-positions = <1 2 3>;
+    };
+
+    iot-paste {
+        bindings = <&kp LC(V)>;
+        key-positions = <1 2 13>;
+    };
+
+    ian-copy {
+        bindings = <&kp LC(C)>;
+        key-positions = <1 3 12>;
+    };
+
+    eon-cut {
+        bindings = <&kp LC(X)>;
+        key-positions = <11 2 3>;
+    };
+
+    ean-redo {
+        bindings = <&kp LC(LS(Z))>;
+        key-positions = <11 12 3>;
+    };
+
+    iat-undo {
+        bindings = <&kp LC(Z)>;
+        key-positions = <13 12 1>;
+    };
+
+    eot-pscrn {
+        bindings = <&kp PRINTSCREEN>;
+        key-positions = <2 13 11>;
+    };
+
+    eat-esc {
+        bindings = <&gresc>;
+        key-positions = <11 12 13>;
+    };
+
+    iont-caps_word {
+        bindings = <&caps_word>;
+        key-positions = <1 2 3 13>;
+    };
+
+    ntea-caps {
+        bindings = <&kp CAPSLOCK>;
+        key-positions = <3 13 12 2 11>;
+    };
+
+    ntea-insert {
+        bindings = <&kp INSERT>;
+        key-positions = <11 12 13 3>;
+    };
+
+    SPtab-home {
+        bindings = <&kp HOME>;
+        key-positions = <33 0>;
+    };
+
+    SPesc-left {
+        bindings = <&kp LEFT>;
+        key-positions = <33 0>;
+    };
+
+    SPe-pgdn {
+        bindings = <&kp PG_DN>;
+        key-positions = <33 0>;
+    };
+
+    SPa-pgup {
+        bindings = <&kp PG_UP>;
+        key-positions = <33 0>;
+    };
+
+    SPt-end {
+        bindings = <&kp END>;
+        key-positions = <33 0>;
+    };
+
+    SPi-down {
+        bindings = <&kp DOWN>;
+        key-positions = <33 0>;
+    };
+
+    SPo-up {
+        bindings = <&kp UP>;
+        key-positions = <33 0>;
+    };
+
+    SPn-right {
+        bindings = <&kp RIGHT>;
+        key-positions = <33 0>;
+    };
+
+    SPx-left {
+        bindings = <&kp LEFT>;
+        key-positions = <33 0>;
+    };
+
+    SPc-down {
+        bindings = <&kp DOWN>;
+        key-positions = <33 0>;
+    };
+
+    SPv-right {
+        bindings = <&kp RIGHT>;
+        key-positions = <33 0>;
+    };
+
+    SPtabesc-sklalt {
+        bindings = <&sk_lalt_lock>;
+        key-positions = <33 0 10>;
+    };
+
+    SPio-u {
+        bindings = <&kp U>;
+        key-positions = <33 1 2>;
+    };
+
+    SPin-c {
+        bindings = <&kp C>;
+        key-positions = <33 1 3>;
+    };
+
+    SPie-sklalt {
+        bindings = <&sk_lmeta_lock>;
+        key-positions = <33 1 11>;
+    };
+
+    SPia-y {
+        bindings = <&kp Y>;
+        key-positions = <33 1 12>;
+    };
+
+    SPit-w {
+        bindings = <&kp W>;
+        key-positions = <33 1 13>;
+    };
+
+    SPon-l {
+        bindings = <&kp L>;
+        key-positions = <33 2 3>;
+    };
+
+    SPoe-g {
+        bindings = <&kp G>;
+        key-positions = <33 11 2>;
+    };
+
+    SPoa-sklctrl {
+        bindings = <&sk_lctrl_lock>;
+        key-positions = <33 2 12>;
+    };
+
+    SPot-d {
+        bindings = <&kp D>;
+        key-positions = <33 2 13>;
+    };
+
+    SPne-m {
+        bindings = <&kp M>;
+        key-positions = <33 3 11>;
+    };
+
+    SPna-f {
+        bindings = <&kp F>;
+        key-positions = <33 3 12>;
+    };
+
+    SPnt-skshift {
+        bindings = <&sk_lshift_lock>;
+        key-positions = <33 13 3>;
+    };
+
+    SPea-h {
+        bindings = <&kp H>;
+        key-positions = <33 11 12>;
+    };
+
+    SPet-s {
+        bindings = <&kp S>;
+        key-positions = <33 11 13>;
+    };
+
+    SPat-r {
+        bindings = <&kp R>;
+        key-positions = <33 12 13>;
+    };
+
+    SPieo-apos {
+        bindings = <&kp APOS>;
+        key-positions = <33 11 1 2>;
+    };
+
+    SPien-minus {
+        bindings = <&kp MINUS>;
+        key-positions = <33 11 1 3>;
+    };
+
+    SPiea-comma {
+        bindings = <&kp COMMA>;
+        key-positions = <33 1 11 12>;
+    };
+
+    SPiet-dot {
+        bindings = <&kp DOT>;
+        key-positions = <33 11 1 13>;
+    };
+
+    SPoai-p {
+        bindings = <&kp P>;
+        key-positions = <33 2 12 1>;
+    };
+
+    SPoan-z {
+        bindings = <&kp Z>;
+        key-positions = <33 2 12 3>;
+    };
+
+    SPoae-b {
+        bindings = <&kp B>;
+        key-positions = <33 17 7 18>;
+    };
+
+    SPoat-x {
+        bindings = <&kp X>;
+        key-positions = <33 12 2 13>;
+    };
+
+    SPnti-q {
+        bindings = <&kp Q>;
+        key-positions = <33 13 3 1>;
+    };
+
+    SPnto-v {
+        bindings = <&kp V>;
+        key-positions = <33 13 3 2>;
+    };
+
+    SPnte-j {
+        bindings = <&kp J>;
+        key-positions = <33 11 3 13>;
+    };
+
+    SPnta-k {
+        bindings = <&kp K>;
+        key-positions = <33 13 3 12>;
+    };
+
+    SPieoa-del {
+        bindings = <&kp DELETE>;
+        key-positions = <33 11 1 2 12>;
+    };
+
+    SPient-slnav {
+        bindings = <&sticky_navlock>;
+        key-positions = <33 11 1 13 3>;
+        layers = <33 0>;
+    };
+
+    SPeitn-nav-tog {
+        bindings = <&tog 2>;
+        key-positions = <33 11 1 13 3>;
+        layers = <33 2>;
+    };
+
+    SPoant-bt {
+        bindings = <&sl 5>;
+        key-positions = <33 12 2 3 13>;
+    };
+
+    SPoant-num-tog {
+        bindings = <&tog 3>;
+        key-positions = <33 12 2 3 13>;
+        layers = <33 3>;
+    };
+
+    SPion-ret {
+        bindings = <&kp RET>;
+        key-positions = <33 1 2 3>;
+    };
+
+    SPiot-paste {
+        bindings = <&kp LC(V)>;
+        key-positions = <33 1 2 13>;
+    };
+
+    SPian-copy {
+        bindings = <&kp LC(C)>;
+        key-positions = <33 1 3 12>;
+    };
+
+    SPeon-cut {
+        bindings = <&kp LC(X)>;
+        key-positions = <33 11 2 3>;
+    };
+
+    SPean-redo {
+        bindings = <&kp LC(LS(Z))>;
+        key-positions = <33 11 12 3>;
+    };
+
+    SPiat-undo {
+        bindings = <&kp LC(Z)>;
+        key-positions = <33 13 12 1>;
+    };
+
+    SPeot-pscrn {
+        bindings = <&kp PRINTSCREEN>;
+        key-positions = <33 2 13 11>;
+    };
+
+    SPeat-esc {
+        bindings = <&gresc>;
+        key-positions = <33 11 12 13>;
+    };
+
+    SPiont-caps_word {
+        bindings = <&caps_word>;
+        key-positions = <33 1 2 3 13>;
+    };
+
+    SPntea-caps {
+        bindings = <&kp CAPSLOCK>;
+        key-positions = <33 3 13 12 2 11>;
+    };
+
+    SPntea-insert {
+        bindings = <&kp INSERT>;
+        key-positions = <33 11 12 13 3>;
+    };
+
+    BStab-tab {
+        bindings = <&kp TAB>;
+        key-positions = <34 0>;
+    };
+
+    BSesc-del {
+        bindings = <&kp DELETE>;
+        key-positions = <34 10>;
+    };
+
+    BSe-7 {
+        bindings = <&kp N7>;
+        key-positions = <34 1>;
+    };
+
+    BSa-8 {
+        bindings = <&kp N8>;
+        key-positions = <34 2>;
+    };
+
+    BSt-9 {
+        bindings = <&kp N9>;
+        key-positions = <34 3>;
+    };
+
+    BSi-4 {
+        bindings = <&kp N4>;
+        key-positions = <34 11>;
+    };
+
+    BSo-5 {
+        bindings = <&kp N5>;
+        key-positions = <34 12>;
+    };
+
+    BSn-6 {
+        bindings = <&kp N6>;
+        key-positions = <34 13>;
+    };
+
+    BSx-1 {
+        bindings = <&kp N1>;
+        key-positions = <34 21>;
+    };
+
+    BSc-2 {
+        bindings = <&kp N2>;
+        key-positions = <34 22>;
+    };
+
+    BSv-3 {
+        bindings = <&kp N1>;
+        key-positions = <34 23>;
+    };
+
+    BStabesc-sklalt {
+        bindings = <&sk_lalt_lock>;
+        key-positions = <34 0 10>;
+    };
+
+    BSio-u {
+        bindings = <&kp U>;
+        key-positions = <34 1 2>;
+    };
+
+    BSin-c {
+        bindings = <&kp C>;
+        key-positions = <34 1 3>;
+    };
+
+    BSie-sklalt {
+        bindings = <&sk_lmeta_lock>;
+        key-positions = <34 1 11>;
+    };
+
+    BSia-y {
+        bindings = <&kp Y>;
+        key-positions = <34 1 12>;
+    };
+
+    BSit-w {
+        bindings = <&kp W>;
+        key-positions = <34 1 13>;
+    };
+
+    BSon-l {
+        bindings = <&kp L>;
+        key-positions = <34 2 3>;
+    };
+
+    BSoe-g {
+        bindings = <&kp G>;
+        key-positions = <34 11 2>;
+    };
+
+    BSoa-sklctrl {
+        bindings = <&sk_lctrl_lock>;
+        key-positions = <34 2 12>;
+    };
+
+    BSot-d {
+        bindings = <&kp D>;
+        key-positions = <34 2 13>;
+    };
+
+    BSne-m {
+        bindings = <&kp M>;
+        key-positions = <34 3 11>;
+    };
+
+    BSna-f {
+        bindings = <&kp F>;
+        key-positions = <34 3 12>;
+    };
+
+    BSnt-skshift {
+        bindings = <&sk_lshift_lock>;
+        key-positions = <34 13 3>;
+    };
+
+    SPea-h {
+        bindings = <&kp H>;
+        key-positions = <34 11 12>;
+    };
+
+    SPet-s {
+        bindings = <&kp S>;
+        key-positions = <34 11 13>;
+    };
+
+    SPat-r {
+        bindings = <&kp R>;
+        key-positions = <34 12 13>;
+    };
+
+    BSieo-apos {
+        bindings = <&kp APOS>;
+        key-positions = <34 11 1 2>;
+    };
+
+    BSien-minus {
+        bindings = <&kp MINUS>;
+        key-positions = <34 11 1 3>;
+    };
+
+    BSiea-comma {
+        bindings = <&kp COMMA>;
+        key-positions = <34 1 11 12>;
+    };
+
+    BSiet-dot {
+        bindings = <&kp DOT>;
+        key-positions = <34 11 1 13>;
+    };
+
+    BSoai-p {
+        bindings = <&kp P>;
+        key-positions = <34 2 12 1>;
+    };
+
+    BSoan-z {
+        bindings = <&kp Z>;
+        key-positions = <34 2 12 3>;
+    };
+
+    BSoae-b {
+        bindings = <&kp B>;
+        key-positions = <34 12 2 11>;
+    };
+
+    BSoat-x {
+        bindings = <&kp X>;
+        key-positions = <34 12 2 13>;
+    };
+
+    BSnti-q {
+        bindings = <&kp Q>;
+        key-positions = <34 13 3 1>;
+    };
+
+    BSnto-v {
+        bindings = <&kp V>;
+        key-positions = <34 13 3 2>;
+    };
+
+    BSnte-j {
+        bindings = <&kp J>;
+        key-positions = <34 11 3 13>;
+    };
+
+    BSnta-k {
+        bindings = <&kp K>;
+        key-positions = <34 13 3 12>;
+    };
+
+    BSieoa-del {
+        bindings = <&kp DELETE>;
+        key-positions = <34 11 1 2 12>;
+    };
+
+    BSient-slnav {
+        bindings = <&sticky_navlock>;
+        key-positions = <34 11 1 13 3>;
+        layers = <34 0>;
+    };
+
+    BSeitn-nav-tog {
+        bindings = <&tog 2>;
+        key-positions = <34 11 1 13 3>;
+        layers = <34 2>;
+    };
+
+    BSoant-slnum {
+        bindings = <&sticky_numlock>;
+        key-positions = <34 12 2 3 13>;
+        layers = <34 0>;
+    };
+
+    BSoant-num-tog {
+        bindings = <&tog 3>;
+        key-positions = <34 12 2 3 13>;
+        layers = <34 3>;
+    };
+
+    BSion-ret {
+        bindings = <&kp RET>;
+        key-positions = <34 1 2 3>;
+    };
+
+    BSiot-paste {
+        bindings = <&kp LC(V)>;
+        key-positions = <34 1 2 13>;
+    };
+
+    BSian-copy {
+        bindings = <&kp LC(C)>;
+        key-positions = <34 1 3 12>;
+    };
+
+    BSeon-cut {
+        bindings = <&kp LC(X)>;
+        key-positions = <34 11 2 3>;
+    };
+
+    BSean-redo {
+        bindings = <&kp LC(LS(Z))>;
+        key-positions = <34 11 12 3>;
+    };
+
+    BSiat-undo {
+        bindings = <&kp LC(Z)>;
+        key-positions = <34 13 12 1>;
+    };
+
+    BSeot-pscrn {
+        bindings = <&kp PRINTSCREEN>;
+        key-positions = <34 2 13 11>;
+    };
+
+    BSeat-esc {
+        bindings = <&gresc>;
+        key-positions = <34 11 12 13>;
+    };
+
+    BSiont-caps_word {
+        bindings = <&caps_word>;
+        key-positions = <34 1 2 3 13>;
+    };
+
+    BSntea-caps {
+        bindings = <&kp CAPSLOCK>;
+        key-positions = <34 3 13 12 2 11>;
+    };
+
+    BSntea-insert {
+        bindings = <&kp INSERT>;
+        key-positions = <34 11 12 13 3>;
+    };
+
+    // --- Right Hand Combos (Mirrored) ---
+
+    tabesc-sklalt_R {
+        bindings = <&sk_lalt_lock>;
+        key-positions = <9 19>;
+    };
+
+    io-u_R {
+        bindings = <&kp U>;
+        key-positions = <8 7>;
+    };
+
+    in-c_R {
+        bindings = <&kp C>;
+        key-positions = <8 6>;
+    };
+
+    ie-sklalt_R {
+        bindings = <&sk_lmeta_lock>;
+        key-positions = <8 18>;
+    };
+
+    ia-y_R {
+        bindings = <&kp Y>;
+        key-positions = <8 17>;
+    };
+
+    it-w_R {
+        bindings = <&kp W>;
+        key-positions = <8 16>;
+    };
+
+    on-l_R {
+        bindings = <&kp L>;
+        key-positions = <7 6>;
+    };
+
+    oe-g_R {
+        bindings = <&kp G>;
+        key-positions = <18 7>;
+    };
+
+    oa-sklctrl_R {
+        bindings = <&sk_lctrl_lock>;
+        key-positions = <7 17>;
+    };
+
+    ot-d_R {
+        bindings = <&kp D>;
+        key-positions = <7 16>;
+    };
+
+    ne-m_R {
+        bindings = <&kp M>;
+        key-positions = <6 18>;
+    };
+
+    na-f_R {
+        bindings = <&kp F>;
+        key-positions = <6 17>;
+    };
+
+    nt-skshift_R {
+        bindings = <&sk_lshift_lock>;
+        key-positions = <16 6>;
+    };
+
+    ea-h_R {
+        bindings = <&kp H>;
+        key-positions = <18 17>;
+    };
+
+    et-s_R {
+        bindings = <&kp S>;
+        key-positions = <18 16>;
+    };
+
+    at-r_R {
+        bindings = <&kp R>;
+        key-positions = <17 16>;
+    };
+
+    ieo-apos_R {
+        bindings = <&kp APOS>;
+        key-positions = <18 8 7>;
+    };
+
+    ien-minus_R {
+        bindings = <&kp MINUS>;
+        key-positions = <18 8 6>;
+    };
+
+    iea-comma_R {
+        bindings = <&kp COMMA>;
+        key-positions = <8 18 17>;
+    };
+
+    iet-dot_R {
+        bindings = <&kp DOT>;
+        key-positions = <18 8 16>;
+    };
+
+    oai-p_R {
+        bindings = <&kp P>;
+        key-positions = <7 17 8>;
+    };
+
+    oan-z_R {
+        bindings = <&kp Z>;
+        key-positions = <7 17 6>;
+    };
+
+    oae-b_R {
+        bindings = <&kp B>;
+        key-positions = <17 7 18>;
+    };
+
+    oat-x_R {
+        bindings = <&kp X>;
+        key-positions = <17 7 16>;
+    };
+
+    nti-q_R {
+        bindings = <&kp Q>;
+        key-positions = <16 6 8>;
+    };
+
+    nto-v_R {
+        bindings = <&kp V>;
+        key-positions = <16 6 7>;
+    };
+
+    nte-j_R {
+        bindings = <&kp J>;
+        key-positions = <18 6 16>;
+    };
+
+    nta-k_R {
+        bindings = <&kp K>;
+        key-positions = <16 6 17>;
+    };
+
+    ieoa-del_R {
+        bindings = <&kp DELETE>;
+        key-positions = <18 8 7 17>;
+    };
+
+    ient-slnav_R {
+        bindings = <&sticky_navlock>;
+        key-positions = <18 8 16 6>;
+        layers = <0>;
+    };
+
+    eitn-nav-tog_R {
+        bindings = <&tog 2>;
+        key-positions = <18 8 16 6>;
+        layers = <2>;
+    };
+
+    oant-slnum_R {
+        bindings = <&sticky_numlock>;
+        key-positions = <17 7 6 16>;
+        layers = <0>;
+    };
+
+    oant-num-tog_R {
+        bindings = <&tog 3>;
+        key-positions = <17 7 6 16>;
+        layers = <3>;
+    };
+
+    ion-ret_R {
+        bindings = <&kp RET>;
+        key-positions = <8 7 6>;
+    };
+
+    iot-paste_R {
+        bindings = <&kp LC(V)>;
+        key-positions = <8 7 16>;
+    };
+
+    ian-copy_R {
+        bindings = <&kp LC(C)>;
+        key-positions = <8 6 17>;
+    };
+
+    eon-cut_R {
+        bindings = <&kp LC(X)>;
+        key-positions = <18 7 6>;
+    };
+
+    ean-redo_R {
+        bindings = <&kp LC(LS(Z))>;
+        key-positions = <18 17 6>;
+    };
+
+    iat-undo_R {
+        bindings = <&kp LC(Z)>;
+        key-positions = <16 17 8>;
+    };
+
+    eot-pscrn_R {
+        bindings = <&kp PRINTSCREEN>;
+        key-positions = <7 16 18>;
+    };
+
+    eat-esc_R {
+        bindings = <&gresc>;
+        key-positions = <18 17 16>;
+    };
+
+    iont-caps_word_R {
+        bindings = <&caps_word>;
+        key-positions = <8 7 6 16>;
+    };
+
+    ntea-caps_R {
+        bindings = <&kp CAPSLOCK>;
+        key-positions = <6 16 17 7 18>;
+    };
+
+    ntea-insert_R {
+        bindings = <&kp INSERT>;
+        key-positions = <18 17 16 6>;
+    };
+
+    SPtab-home_R {
+        bindings = <&kp HOME>;
+        key-positions = <33 9>;
+    };
+
+    SPesc-left_R {
+        bindings = <&kp LEFT>;
+        key-positions = <33 9>;
+    };
+
+    SPe-pgdn_R {
+        bindings = <&kp PG_DN>;
+        key-positions = <33 9>;
+    };
+
+    SPa-pgup_R {
+        bindings = <&kp PG_UP>;
+        key-positions = <33 9>;
+    };
+
+    SPt-end_R {
+        bindings = <&kp END>;
+        key-positions = <33 9>;
+    };
+
+    SPi-down_R {
+        bindings = <&kp DOWN>;
+        key-positions = <33 9>;
+    };
+
+SPo-up_R {
+bindings = <&kp UP>;
+key-positions = <33 9>;
+};
+
+    SPn-right_R {
+        bindings = <&kp RIGHT>;
+        key-positions = <33 9>;
+    };
+
+    SPx-left_R {
+        bindings = <&kp LEFT>;
+        key-positions = <33 9>;
+    };
+
+    SPc-down_R {
+        bindings = <&kp DOWN>;
+        key-positions = <33 9>;
+    };
+
+    SPv-right_R {
+        bindings = <&kp RIGHT>;
+        key-positions = <33 9>;
+    };
+
+    SPtabesc-sklalt_R {
+        bindings = <&sk_lalt_lock>;
+        key-positions = <33 9 19>;
+    };
+
+    SPio-u_R {
+        bindings = <&kp U>;
+        key-positions = <33 8 7>;
+    };
+
+    SPin-c_R {
+        bindings = <&kp C>;
+        key-positions = <33 8 6>;
+    };
+
+    SPie-sklalt_R {
+        bindings = <&sk_lmeta_lock>;
+        key-positions = <33 8 18>;
+    };
+
+    SPia-y_R {
+        bindings = <&kp Y>;
+        key-positions = <33 8 17>;
+    };
+
+    SPit-w_R {
+        bindings = <&kp W>;
+        key-positions = <33 8 16>;
+    };
+
+    SPon-l_R {
+        bindings = <&kp L>;
+        key-positions = <33 7 6>;
+    };
+
+    SPoe-g_R {
+        bindings = <&kp G>;
+        key-positions = <33 18 7>;
+    };
+
+    SPoa-sklctrl_R {
+        bindings = <&sk_lctrl_lock>;
+        key-positions = <33 7 17>;
+    };
+
+    SPot-d_R {
+        bindings = <&kp D>;
+        key-positions = <33 7 16>;
+    };
+
+    SPne-m_R {
+        bindings = <&kp M>;
+        key-positions = <33 6 18>;
+    };
+
+    SPna-f_R {
+        bindings = <&kp F>;
+        key-positions = <33 6 17>;
+    };
+
+    SPnt-skshift_R {
+        bindings = <&sk_lshift_lock>;
+        key-positions = <33 16 6>;
+    };
+
+    SPea-h_R {
+        bindings = <&kp H>;
+        key-positions = <33 18 17>;
+    };
+
+    SPet-s_R {
+        bindings = <&kp S>;
+        key-positions = <33 18 16>;
+    };
+
+    SPat-r_R {
+        bindings = <&kp R>;
+        key-positions = <33 17 16>;
+    };
+
+    SPieo-apos_R {
+        bindings = <&kp APOS>;
+        key-positions = <33 18 8 7>;
+    };
+
+    SPien-minus_R {
+        bindings = <&kp MINUS>;
+        key-positions = <33 18 8 6>;
+    };
+
+    SPiea-comma_R {
+        bindings = <&kp COMMA>;
+        key-positions = <33 8 18 17>;
+    };
+
+    SPiet-dot_R {
+        bindings = <&kp DOT>;
+        key-positions = <33 18 8 16>;
+    };
+
+    SPoai-p_R {
+        bindings = <&kp P>;
+        key-positions = <33 7 17 8>;
+    };
+
+    SPoan-z_R {
+        bindings = <&kp Z>;
+        key-positions = <33 7 17 6>;
+    };
+
+    SPoae-b_R {
+        bindings = <&kp B>;
+        key-positions = <33 17 7 18>;
+    };
+
+    SPoat-x_R {
+        bindings = <&kp X>;
+        key-positions = <33 17 7 16>;
+    };
+
+    SPnti-q_R {
+        bindings = <&kp Q>;
+        key-positions = <33 16 6 8>;
+    };
+
+    SPnto-v_R {
+        bindings = <&kp V>;
+        key-positions = <33 16 6 7>;
+    };
+
+    SPnte-j_R {
+        bindings = <&kp J>;
+        key-positions = <33 18 6 16>;
+    };
+
+    SPnta-k_R {
+        bindings = <&kp K>;
+        key-positions = <33 16 6 17>;
+    };
+
+    SPieoa-del_R {
+        bindings = <&kp DELETE>;
+        key-positions = <33 18 8 7 17>;
+    };
+
+    SPient-slnav_R {
+        bindings = <&sticky_navlock>;
+        key-positions = <33 18 8 16 6>;
+        layers = <33 0>;
+    };
+
+    SPeitn-nav-tog_R {
+        bindings = <&tog 2>;
+        key-positions = <33 18 8 16 6>;
+        layers = <33 2>;
+    };
+
+    SPoant-bt_R {
+        bindings = <&sl 5>;
+        key-positions = <33 17 7 6 16>;
+    };
+
+    SPoant-num-tog_R {
+        bindings = <&tog 3>;
+        key-positions = <33 17 7 6 16>;
+        layers = <33 3>;
+    };
+
+    SPion-ret_R {
+        bindings = <&kp RET>;
+        key-positions = <33 8 7 6>;
+    };
+
+    SPiot-paste_R {
+        bindings = <&kp LC(V)>;
+        key-positions = <33 8 7 16>;
+    };
+
+    SPian-copy_R {
+        bindings = <&kp LC(C)>;
+        key-positions = <33 8 6 17>;
+    };
+
+    SPeon-cut_R {
+        bindings = <&kp LC(X)>;
+        key-positions = <33 18 7 6>;
+    };
+
+    SPean-redo_R {
+        bindings = <&kp LC(LS(Z))>;
+        key-positions = <33 18 17 6>;
+    };
+
+    SPiat-undo_R {
+        bindings = <&kp LC(Z)>;
+        key-positions = <33 16 17 8>;
+    };
+
+    SPeot-pscrn_R {
+        bindings = <&kp PRINTSCREEN>;
+        key-positions = <33 7 16 18>;
+    };
+
+    SPeat-esc_R {
+        bindings = <&gresc>;
+        key-positions = <33 18 17 16>;
+    };
+
+    SPiont-caps_word_R {
+        bindings = <&caps_word>;
+        key-positions = <33 8 7 6 16>;
+    };
+
+    SPntea-caps_R {
+        bindings = <&kp CAPSLOCK>;
+        key-positions = <33 6 16 17 7 18>;
+    };
+
+    SPntea-insert_R {
+        bindings = <&kp INSERT>;
+        key-positions = <33 18 17 16 6>;
+    };
+
+    BStab-tab_R {
+        bindings = <&kp TAB>;
+        key-positions = <34 9>;
+    };
+
+    BSesc-del_R {
+        bindings = <&kp DELETE>;
+        key-positions = <34 19>;
+    };
+
+    BSe-7_R {
+        bindings = <&kp N7>;
+        key-positions = <34 8>;
+    };
+
+    BSa-8_R {
+        bindings = <&kp N8>;
+        key-positions = <34 7>;
+    };
+
+    BSt-9_R {
+        bindings = <&kp N9>;
+        key-positions = <34 6>;
+    };
+
+    BSi-4_R {
+        bindings = <&kp N4>;
+        key-positions = <34 18>;
+    };
+
+    BSo-5_R {
+        bindings = <&kp N5>;
+        key-positions = <34 17>;
+    };
+
+    BSn-6_R {
+        bindings = <&kp N6>;
+        key-positions = <34 16>;
+    };
+
+    BSx-1_R {
+        bindings = <&kp N1>;
+        key-positions = <34 28>;
+    };
+
+    BSc-2_R {
+        bindings = <&kp N2>;
+        key-positions = <34 27>;
+    };
+
+    BSv-3_R {
+        bindings = <&kp N1>;
+        key-positions = <34 26>;
+    };
+
+    BStabesc-sklalt_R {
+        bindings = <&sk_lalt_lock>;
+        key-positions = <34 9 19>;
+    };
+
+    BSio-u_R {
+        bindings = <&kp U>;
+        key-positions = <34 8 7>;
+    };
+
+    BSin-c_R {
+        bindings = <&kp C>;
+        key-positions = <34 8 6>;
+    };
+
+    BSie-sklalt_R {
+        bindings = <&sk_lmeta_lock>;
+        key-positions = <34 8 18>;
+    };
+
+    BSia-y_R {
+        bindings = <&kp Y>;
+        key-positions = <34 8 17>;
+    };
+
+    BSit-w_R {
+        bindings = <&kp W>;
+        key-positions = <34 8 16>;
+    };
+
+    BSon-l_R {
+        bindings = <&kp L>;
+        key-positions = <34 7 6>;
+    };
+
+    BSoe-g_R {
+        bindings = <&kp G>;
+        key-positions = <34 18 7>;
+    };
+
+    BSoa-sklctrl_R {
+        bindings = <&sk_lctrl_lock>;
+        key-positions = <34 7 17>;
+    };
+
+    BSot-d_R {
+        bindings = <&kp D>;
+        key-positions = <34 7 16>;
+    };
+
+    BSne-m_R {
+        bindings = <&kp M>;
+        key-positions = <34 6 18>;
+    };
+
+    BSna-f_R {
+        bindings = <&kp F>;
+        key-positions = <34 6 17>;
+    };
+
+    BSnt-skshift_R {
+        bindings = <&sk_lshift_lock>;
+        key-positions = <34 16 6>;
+    };
+
+    SPea-h_R {
+        bindings = <&kp H>;
+        key-positions = <34 18 17>;
+    };
+
+    SPet-s_R {
+        bindings = <&kp S>;
+        key-positions = <34 18 16>;
+    };
+
+    SPat-r_R {
+        bindings = <&kp R>;
+        key-positions = <34 17 16>;
+    };
+
+    BSieo-apos_R {
+        bindings = <&kp APOS>;
+        key-positions = <34 18 8 7>;
+    };
+
+    BSien-minus_R {
+        bindings = <&kp MINUS>;
+        key-positions = <34 18 8 6>;
+    };
+
+    BSiea-comma_R {
+        bindings = <&kp COMMA>;
+        key-positions = <34 8 18 17>;
+    };
+
+    BSiet-dot_R {
+        bindings = <&kp DOT>;
+        key-positions = <34 18 8 16>;
+    };
+
+    BSoai-p_R {
+        bindings = <&kp P>;
+        key-positions = <34 7 17 8>;
+    };
+
+    BSoan-z_R {
+        bindings = <&kp Z>;
+        key-positions = <34 7 17 6>;
+    };
+
+    BSoae-b_R {
+        bindings = <&kp B>;
+        key-positions = <34 17 7 18>;
+    };
+
+    BSoat-x_R {
+        bindings = <&kp X>;
+        key-positions = <34 17 7 16>;
+    };
+
+    BSnti-q_R {
+        bindings = <&kp Q>;
+        key-positions = <34 16 6 8>;
+    };
+
+    BSnto-v_R {
+        bindings = <&kp V>;
+        key-positions = <34 16 6 7>;
+    };
+
+    BSnte-j_R {
+        bindings = <&kp J>;
+        key-positions = <34 18 6 16>;
+    };
+
+    BSnta-k_R {
+        bindings = <&kp K>;
+        key-positions = <34 16 6 17>;
+    };
+
+    BSieoa-del_R {
+        bindings = <&kp DELETE>;
+        key-positions = <34 18 8 7 17>;
+    };
+
+    BSient-slnav_R {
+        bindings = <&sticky_navlock>;
+        key-positions = <34 18 8 16 6>;
+        layers = <34 0>;
+    };
+
+    BSeitn-nav-tog_R {
+        bindings = <&tog 2>;
+        key-positions = <34 18 8 16 6>;
+        layers = <34 2>;
+    };
+
+    BSoant-slnum_R {
+        bindings = <&sticky_numlock>;
+        key-positions = <34 17 7 6 16>;
+        layers = <34 0>;
+    };
+
+    BSoant-num-tog_R {
+        bindings = <&tog 3>;
+        key-positions = <34 17 7 6 16>;
+        layers = <34 3>;
+    };
+
+    BSion-ret_R {
+        bindings = <&kp RET>;
+        key-positions = <34 8 7 6>;
+    };
+
+    BSiot-paste_R {
+        bindings = <&kp LC(V)>;
+        key-positions = <34 8 7 16>;
+    };
+
+    BSian-copy_R {
+        bindings = <&kp LC(C)>;
+        key-positions = <34 8 6 17>;
+    };
+
+    BSeon-cut_R {
+        bindings = <&kp LC(X)>;
+        key-positions = <34 18 7 6>;
+    };
+
+    BSean-redo_R {
+        bindings = <&kp LC(LS(Z))>;
+        key-positions = <34 18 17 6>;
+    };
+
+    BSiat-undo_R {
+        bindings = <&kp LC(Z)>;
+        key-positions = <34 16 17 8>;
+    };
+
+    BSeot-pscrn_R {
+        bindings = <&kp PRINTSCREEN>;
+        key-positions = <34 7 16 18>;
+    };
+
+    BSeat-esc_R {
+        bindings = <&gresc>;
+        key-positions = <34 18 17 16>;
+    };
+
+    BSiont-caps_word_R {
+        bindings = <&caps_word>;
+        key-positions = <34 8 7 6 16>;
+    };
+
+    BSntea-caps_R {
+        bindings = <&kp CAPSLOCK>;
+        key-positions = <34 6 16 17 7 18>;
+    };
+
+    BSntea-insert_R {
+        bindings = <&kp INSERT>;
+        key-positions = <34 18 17 16 6>;
     };
 
     behaviors {
