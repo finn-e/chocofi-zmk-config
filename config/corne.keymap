@@ -26,12 +26,12 @@
         };
 
         io-u {
-            bindings = <&kp U>;
+            bindings = <&as U>;
             key-positions = <11 12>;
         };
 
         in-c {
-            bindings = <&kp C>;
+            bindings = <&as C>;
             key-positions = <11 13>;
         };
 
@@ -41,22 +41,22 @@
         };
 
         ia-y {
-            bindings = <&kp Y>;
+            bindings = <&as Y>;
             key-positions = <11 22>;
         };
 
         it-w {
-            bindings = <&kp W>;
+            bindings = <&as W>;
             key-positions = <11 23>;
         };
 
         on-l {
-            bindings = <&kp L>;
+            bindings = <&as L>;
             key-positions = <12 13>;
         };
 
         oe-g {
-            bindings = <&kp G>;
+            bindings = <&as G>;
             key-positions = <21 12>;
         };
 
@@ -66,17 +66,17 @@
         };
 
         ot-d {
-            bindings = <&kp D>;
+            bindings = <&as D>;
             key-positions = <12 23>;
         };
 
         ne-m {
-            bindings = <&kp M>;
+            bindings = <&as M>;
             key-positions = <13 21>;
         };
 
         na-f {
-            bindings = <&kp F>;
+            bindings = <&as F>;
             key-positions = <13 22>;
         };
 
@@ -86,17 +86,17 @@
         };
 
         ea-h {
-            bindings = <&kp H>;
+            bindings = <&as H>;
             key-positions = <21 22>;
         };
 
         et-s {
-            bindings = <&kp S>;
+            bindings = <&as S>;
             key-positions = <21 23>;
         };
 
         at-r {
-            bindings = <&kp R>;
+            bindings = <&as R>;
             key-positions = <22 23>;
         };
 
@@ -121,42 +121,42 @@
         };
 
         oai-p {
-            bindings = <&kp P>;
+            bindings = <&as P>;
             key-positions = <12 22 11>;
         };
 
         oan-z {
-            bindings = <&kp Z>;
+            bindings = <&as Z>;
             key-positions = <12 22 13>;
         };
 
         oae-b {
-            bindings = <&kp B>;
+            bindings = <&as B>;
             key-positions = <22 12 21>;
         };
 
         oat-x {
-            bindings = <&kp X>;
+            bindings = <&as X>;
             key-positions = <22 12 23>;
         };
 
         nti-q {
-            bindings = <&kp Q>;
+            bindings = <&as Q>;
             key-positions = <23 13 11>;
         };
 
         nto-v {
-            bindings = <&kp V>;
+            bindings = <&as V>;
             key-positions = <23 13 12>;
         };
 
         nte-j {
-            bindings = <&kp J>;
+            bindings = <&as J>;
             key-positions = <21 13 23>;
         };
 
         nta-k {
-            bindings = <&kp K>;
+            bindings = <&as K>;
             key-positions = <23 13 22>;
         };
 
@@ -305,12 +305,12 @@
         };
 
         SPio-u {
-            bindings = <&kp U>;
+            bindings = <&as U>;
             key-positions = <32 11 12>;
         };
 
         SPin-c {
-            bindings = <&kp C>;
+            bindings = <&as C>;
             key-positions = <32 11 13>;
         };
 
@@ -320,22 +320,22 @@
         };
 
         SPia-y {
-            bindings = <&kp Y>;
+            bindings = <&as Y>;
             key-positions = <32 11 22>;
         };
 
         SPit-w {
-            bindings = <&kp W>;
+            bindings = <&as W>;
             key-positions = <32 11 23>;
         };
 
         SPon-l {
-            bindings = <&kp L>;
+            bindings = <&as L>;
             key-positions = <32 12 13>;
         };
 
         SPoe-g {
-            bindings = <&kp G>;
+            bindings = <&as G>;
             key-positions = <32 21 12>;
         };
 
@@ -345,17 +345,17 @@
         };
 
         SPot-d {
-            bindings = <&kp D>;
+            bindings = <&as D>;
             key-positions = <32 12 23>;
         };
 
         SPne-m {
-            bindings = <&kp M>;
+            bindings = <&as M>;
             key-positions = <32 13 21>;
         };
 
         SPna-f {
-            bindings = <&kp F>;
+            bindings = <&as F>;
             key-positions = <32 13 22>;
         };
 
@@ -365,12 +365,12 @@
         };
 
         SPea-h {
-            bindings = <&kp H>;
+            bindings = <&as H>;
             key-positions = <32 21 22>;
         };
 
         SPet-s {
-            bindings = <&kp S>;
+            bindings = <&as S>;
             key-positions = <32 21 23>;
         };
 
@@ -400,37 +400,37 @@
         };
 
         SPoai-p {
-            bindings = <&kp P>;
+            bindings = <&as P>;
             key-positions = <32 12 22 11>;
         };
 
         SPoan-z {
-            bindings = <&kp Z>;
+            bindings = <&as Z>;
             key-positions = <32 12 22 13>;
         };
 
         SPoae-b {
-            bindings = <&kp B>;
+            bindings = <&as B>;
             key-positions = <32 22 12 21>;
         };
 
         SPoat-x {
-            bindings = <&kp X>;
+            bindings = <&as X>;
             key-positions = <32 22 12 23>;
         };
 
         SPnti-q {
-            bindings = <&kp Q>;
+            bindings = <&as Q>;
             key-positions = <32 23 13 11>;
         };
 
         SPnto-v {
-            bindings = <&kp V>;
+            bindings = <&as V>;
             key-positions = <32 23 13 12>;
         };
 
         SPnte-j {
-            bindings = <&kp J>;
+            bindings = <&as J>;
             key-positions = <32 21 13 23>;
         };
 
@@ -587,12 +587,12 @@ key-positions = <31 21>;
         };
 
         BSio-u {
-            bindings = <&kp U>;
+            bindings = <&as U>;
             key-positions = <31 11 12>;
         };
 
         BSin-c {
-            bindings = <&kp C>;
+            bindings = <&as C>;
             key-positions = <31 11 13>;
         };
 
@@ -602,22 +602,22 @@ key-positions = <31 21>;
         };
 
         BSia-y {
-            bindings = <&kp Y>;
+            bindings = <&as Y>;
             key-positions = <31 11 22>;
         };
 
         BSit-w {
-            bindings = <&kp W>;
+            bindings = <&as W>;
             key-positions = <31 11 23>;
         };
 
         BSon-l {
-            bindings = <&kp L>;
+            bindings = <&as L>;
             key-positions = <31 12 13>;
         };
 
         BSoe-g {
-            bindings = <&kp G>;
+            bindings = <&as G>;
             key-positions = <31 21 12>;
         };
 
@@ -627,17 +627,17 @@ key-positions = <31 21>;
         };
 
         BSot-d {
-            bindings = <&kp D>;
+            bindings = <&as D>;
             key-positions = <31 12 23>;
         };
 
         BSne-m {
-            bindings = <&kp M>;
+            bindings = <&as M>;
             key-positions = <31 13 21>;
         };
 
         BSna-f {
-            bindings = <&kp F>;
+            bindings = <&as F>;
             key-positions = <31 13 22>;
         };
 
@@ -667,42 +667,42 @@ key-positions = <31 21>;
         };
 
         BSoai-p {
-            bindings = <&kp P>;
+            bindings = <&as P>;
             key-positions = <31 12 22 11>;
         };
 
         BSoan-z {
-            bindings = <&kp Z>;
+            bindings = <&as Z>;
             key-positions = <31 12 22 13>;
         };
 
         BSoae-b {
-            bindings = <&kp B>;
+            bindings = <&as B>;
             key-positions = <31 22 12 21>;
         };
 
         BSoat-x {
-            bindings = <&kp X>;
+            bindings = <&as X>;
             key-positions = <31 22 12 23>;
         };
 
         BSnti-q {
-            bindings = <&kp Q>;
+            bindings = <&as Q>;
             key-positions = <31 23 13 11>;
         };
 
         BSnto-v {
-            bindings = <&kp V>;
+            bindings = <&as V>;
             key-positions = <31 23 13 12>;
         };
 
         BSnte-j {
-            bindings = <&kp J>;
+            bindings = <&as J>;
             key-positions = <31 21 13 23>;
         };
 
         BSnta-k {
-            bindings = <&kp K>;
+            bindings = <&as K>;
             key-positions = <31 23 13 22>;
         };
 
@@ -798,12 +798,12 @@ key-positions = <31 21>;
         };
 
         io-u_R {
-            bindings = <&kp U>;
+            bindings = <&as U>;
             key-positions = <18 17>;
         };
 
         in-c_R {
-            bindings = <&kp C>;
+            bindings = <&as C>;
             key-positions = <18 16>;
         };
 
@@ -813,22 +813,22 @@ key-positions = <31 21>;
         };
 
         ia-y_R {
-            bindings = <&kp Y>;
+            bindings = <&as Y>;
             key-positions = <18 27>;
         };
 
         it-w_R {
-            bindings = <&kp W>;
+            bindings = <&as W>;
             key-positions = <18 26>;
         };
 
         on-l_R {
-            bindings = <&kp L>;
+            bindings = <&as L>;
             key-positions = <17 16>;
         };
 
         oe-g_R {
-            bindings = <&kp G>;
+            bindings = <&as G>;
             key-positions = <28 17>;
         };
 
@@ -838,17 +838,17 @@ key-positions = <31 21>;
         };
 
         ot-d_R {
-            bindings = <&kp D>;
+            bindings = <&as D>;
             key-positions = <17 26>;
         };
 
         ne-m_R {
-            bindings = <&kp M>;
+            bindings = <&as M>;
             key-positions = <16 28>;
         };
 
         na-f_R {
-            bindings = <&kp F>;
+            bindings = <&as F>;
             key-positions = <16 27>;
         };
 
@@ -858,17 +858,17 @@ key-positions = <31 21>;
         };
 
         ea-h_R {
-            bindings = <&kp H>;
+            bindings = <&as H>;
             key-positions = <28 27>;
         };
 
         et-s_R {
-            bindings = <&kp S>;
+            bindings = <&as S>;
             key-positions = <28 26>;
         };
 
         at-r_R {
-            bindings = <&kp R>;
+            bindings = <&as R>;
             key-positions = <27 26>;
         };
 
@@ -893,42 +893,42 @@ key-positions = <31 21>;
         };
 
         oai-p_R {
-            bindings = <&kp P>;
+            bindings = <&as P>;
             key-positions = <17 27 18>;
         };
 
         oan-z_R {
-            bindings = <&kp Z>;
+            bindings = <&as Z>;
             key-positions = <17 27 16>;
         };
 
         oae-b_R {
-            bindings = <&kp B>;
+            bindings = <&as B>;
             key-positions = <27 17 28>;
         };
 
         oat-x_R {
-            bindings = <&kp X>;
+            bindings = <&as X>;
             key-positions = <27 17 26>;
         };
 
         nti-q_R {
-            bindings = <&kp Q>;
+            bindings = <&as Q>;
             key-positions = <26 16 18>;
         };
 
         nto-v_R {
-            bindings = <&kp V>;
+            bindings = <&as V>;
             key-positions = <26 16 17>;
         };
 
         nte-j_R {
-            bindings = <&kp J>;
+            bindings = <&as J>;
             key-positions = <28 16 26>;
         };
 
         nta-k_R {
-            bindings = <&kp K>;
+            bindings = <&as K>;
             key-positions = <26 16 27>;
         };
 
@@ -1077,12 +1077,12 @@ key-positions = <31 21>;
         };
 
         SPio-u_R {
-            bindings = <&kp U>;
+            bindings = <&as U>;
             key-positions = <33 18 17>;
         };
 
         SPin-c_R {
-            bindings = <&kp C>;
+            bindings = <&as C>;
             key-positions = <33 18 16>;
         };
 
@@ -1092,22 +1092,22 @@ key-positions = <31 21>;
         };
 
         SPia-y_R {
-            bindings = <&kp Y>;
+            bindings = <&as Y>;
             key-positions = <33 18 27>;
         };
 
         SPit-w_R {
-            bindings = <&kp W>;
+            bindings = <&as W>;
             key-positions = <33 18 26>;
         };
 
         SPon-l_R {
-            bindings = <&kp L>;
+            bindings = <&as L>;
             key-positions = <33 17 16>;
         };
 
         SPoe-g_R {
-            bindings = <&kp G>;
+            bindings = <&as G>;
             key-positions = <33 28 17>;
         };
 
@@ -1117,17 +1117,17 @@ key-positions = <31 21>;
         };
 
         SPot-d_R {
-            bindings = <&kp D>;
+            bindings = <&as D>;
             key-positions = <33 17 26>;
         };
 
         SPne-m_R {
-            bindings = <&kp M>;
+            bindings = <&as M>;
             key-positions = <33 16 28>;
         };
 
         SPna-f_R {
-            bindings = <&kp F>;
+            bindings = <&as F>;
             key-positions = <33 16 27>;
         };
 
@@ -1137,17 +1137,17 @@ key-positions = <31 21>;
         };
 
         SPea-h_R {
-            bindings = <&kp H>;
+            bindings = <&as H>;
             key-positions = <33 28 27>;
         };
 
         SPet-s_R {
-            bindings = <&kp S>;
+            bindings = <&as S>;
             key-positions = <33 28 26>;
         };
 
         SPat-r_R {
-            bindings = <&kp R>;
+            bindings = <&as R>;
             key-positions = <33 27 26>;
         };
 
@@ -1172,42 +1172,42 @@ key-positions = <31 21>;
         };
 
         SPoai-p_R {
-            bindings = <&kp P>;
+            bindings = <&as P>;
             key-positions = <33 17 27 18>;
         };
 
         SPoan-z_R {
-            bindings = <&kp Z>;
+            bindings = <&as Z>;
             key-positions = <33 17 27 16>;
         };
 
         SPoae-b_R {
-            bindings = <&kp B>;
+            bindings = <&as B>;
             key-positions = <33 27 17 28>;
         };
 
         SPoat-x_R {
-            bindings = <&kp X>;
+            bindings = <&as X>;
             key-positions = <33 27 17 26>;
         };
 
         SPnti-q_R {
-            bindings = <&kp Q>;
+            bindings = <&as Q>;
             key-positions = <33 26 16 18>;
         };
 
         SPnto-v_R {
-            bindings = <&kp V>;
+            bindings = <&as V>;
             key-positions = <33 26 16 17>;
         };
 
         SPnte-j_R {
-            bindings = <&kp J>;
+            bindings = <&as J>;
             key-positions = <33 28 16 26>;
         };
 
         SPnta-k_R {
-            bindings = <&kp K>;
+            bindings = <&as K>;
             key-positions = <33 26 16 27>;
         };
 
@@ -1359,12 +1359,12 @@ key-positions = <34 28>;
         };
 
         BSio-u_R {
-            bindings = <&kp U>;
+            bindings = <&as U>;
             key-positions = <34 18 17>;
         };
 
         BSin-c_R {
-            bindings = <&kp C>;
+            bindings = <&as C>;
             key-positions = <34 18 16>;
         };
 
@@ -1374,22 +1374,22 @@ key-positions = <34 28>;
         };
 
         BSia-y_R {
-            bindings = <&kp Y>;
+            bindings = <&as Y>;
             key-positions = <34 18 27>;
         };
 
         BSit-w_R {
-            bindings = <&kp W>;
+            bindings = <&as W>;
             key-positions = <34 18 26>;
         };
 
         BSon-l_R {
-            bindings = <&kp L>;
+            bindings = <&as L>;
             key-positions = <34 17 16>;
         };
 
         BSoe-g_R {
-            bindings = <&kp G>;
+            bindings = <&as G>;
             key-positions = <34 28 17>;
         };
 
@@ -1399,17 +1399,17 @@ key-positions = <34 28>;
         };
 
         BSot-d_R {
-            bindings = <&kp D>;
+            bindings = <&as D>;
             key-positions = <34 17 26>;
         };
 
         BSne-m_R {
-            bindings = <&kp M>;
+            bindings = <&as M>;
             key-positions = <34 16 28>;
         };
 
         BSna-f_R {
-            bindings = <&kp F>;
+            bindings = <&as F>;
             key-positions = <34 16 27>;
         };
 
@@ -1439,42 +1439,42 @@ key-positions = <34 28>;
         };
 
         BSoai-p_R {
-            bindings = <&kp P>;
+            bindings = <&as P>;
             key-positions = <34 17 27 18>;
         };
 
         BSoan-z_R {
-            bindings = <&kp Z>;
+            bindings = <&as Z>;
             key-positions = <34 17 27 16>;
         };
 
         BSoae-b_R {
-            bindings = <&kp B>;
+            bindings = <&as B>;
             key-positions = <34 27 17 28>;
         };
 
         BSoat-x_R {
-            bindings = <&kp X>;
+            bindings = <&as X>;
             key-positions = <34 27 17 26>;
         };
 
         BSnti-q_R {
-            bindings = <&kp Q>;
+            bindings = <&as Q>;
             key-positions = <34 26 16 18>;
         };
 
         BSnto-v_R {
-            bindings = <&kp V>;
+            bindings = <&as V>;
             key-positions = <34 26 16 17>;
         };
 
         BSnte-j_R {
-            bindings = <&kp J>;
+            bindings = <&as J>;
             key-positions = <34 28 16 26>;
         };
 
         BSnta-k_R {
-            bindings = <&kp K>;
+            bindings = <&as K>;
             key-positions = <34 26 16 27>;
         };
 
