@@ -101,12 +101,12 @@
         };
 
         eia-apos {
-            bindings = <&kp APOC>;
+            bindings = <&kp APOS>;
             key-positions = <21 11 12>;
         };
 
         eit-minus {
-            bindings = <&kp MINUC>;
+            bindings = <&kp MINUS>;
             key-positions = <21 11 13>;
         };
 
@@ -360,12 +360,12 @@
         };
 
         SPeia-apos {
-            bindings = <&kp APOC>;
+            bindings = <&kp APOS>;
             key-positions = <32 21 11 12>;
         };
 
         SPeit-minus {
-            bindings = <&kp MINUC>;
+            bindings = <&kp MINUS>;
             key-positions = <32 21 11 13>;
         };
 
@@ -608,12 +608,12 @@
         };
 
         KReia-apos {
-            bindings = <&kp APOC>;
+            bindings = <&kp APOS>;
             key-positions = <31 21 11 12>;
         };
 
         KReit-minus {
-            bindings = <&kp MINUC>;
+            bindings = <&kp MINUS>;
             key-positions = <31 21 11 13>;
         };
 
@@ -834,12 +834,12 @@
         };
 
         eia-apos_R {
-            bindings = <&kp APOC>;
+            bindings = <&kp APOS>;
             key-positions = <28 18 17>;
         };
 
         eit-minus_R {
-            bindings = <&kp MINUC>;
+            bindings = <&kp MINUS>;
             key-positions = <28 18 16>;
         };
 
@@ -1113,12 +1113,12 @@
         };
 
         SPeia-apos_R {
-            bindings = <&kp APOC>;
+            bindings = <&kp APOS>;
             key-positions = <33 28 18 17>;
         };
 
         SPeit-minus_R {
-            bindings = <&kp MINUC>;
+            bindings = <&kp MINUS>;
             key-positions = <33 28 18 16>;
         };
 
@@ -1361,12 +1361,12 @@
         };
 
         KReia-apos_R {
-            bindings = <&kp APOC>;
+            bindings = <&kp APOS>;
             key-positions = <34 28 18 17>;
         };
 
         KReit-minus_R {
-            bindings = <&kp MINUC>;
+            bindings = <&kp MINUS>;
             key-positions = <34 28 18 16>;
         };
 
