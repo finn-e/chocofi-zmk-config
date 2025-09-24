@@ -1616,7 +1616,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            keip-mods = <(MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL)>;
         };
 
         ralt_o_copy: ralt_o_copy {
@@ -1625,7 +1625,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            keip-mods = <(MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL)>;
         };
 
         ralt_n_paste: ralt_n_paste {
@@ -1634,7 +1634,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_RALT)>;
-            keip-mods = <(MOD_LCTL)>;
+            keep-mods = <(MOD_LCTL)>;
         };
     };
 
