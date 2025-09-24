@@ -756,56 +756,48 @@
     behaviors {
         sticky_numlock: sticky_numlock {
             compatible = "zmk,behavior-tap-dance";
-            label = "STICKY_NUMLOCK";
             #binding-cells = <0>;
             bindings = <&sl 3>, <&tog 3>;
         };
 
         sticky_navlock: sticky_navlock {
             compatible = "zmk,behavior-tap-dance";
-            label = "STICKY_NAVLOCK";
             #binding-cells = <0>;
             bindings = <&sl 2>, <&tog 2>;
         };
 
         sticky_lshift: sticky_lshift {
             compatible = "zmk,behavior-tap-dance";
-            label = "STICKY_LSHIFT";
             #binding-cells = <0>;
             bindings = <&sk LSHIFT>, <&kt LSHIFT>;
         };
 
         sticky_lctrl: sticky_lctrl {
             compatible = "zmk,behavior-tap-dance";
-            label = "STICKY_LCTRL";
             #binding-cells = <0>;
             bindings = <&sk LCTRL>, <&kt LCTRL>;
         };
 
         sticky_lmeta: sticky_lmeta {
             compatible = "zmk,behavior-tap-dance";
-            label = "STICKY_LMETA";
             #binding-cells = <0>;
             bindings = <&sk LMETA>, <&kt LMETA>;
         };
 
         sticky_lalt: sticky_lalt {
             compatible = "zmk,behavior-tap-dance";
-            label = "STICKY_LALT";
             #binding-cells = <0>;
             bindings = <&sk LEFT_ALT>, <&kt LEFT_ALT>;
         };
 
         sticky_ralt: sticky_ralt {
             compatible = "zmk,behavior-tap-dance";
-            label = "STICKY_RALT";
             #binding-cells = <0>;
             bindings = <&sk RIGHT_ALT>, <&kt RIGHT_ALT>;
         };
 
         sk_ralt_lock: sk_ralt_lock {
             compatible = "zmk,behavior-mod-morph";
-            label = "SK_RALT_LOCK";
             bindings = <&sticky_ralt>, <&kt RIGHT_ALT>;
 
             #binding-cells = <0>;
@@ -814,7 +806,6 @@
 
         sk_lalt_lock: sk_lalt_lock {
             compatible = "zmk,behavior-mod-morph";
-            label = "SK_LALT_LOCK";
             bindings = <&sticky_lalt>, <&kt LEFT_ALT>;
 
             #binding-cells = <0>;
@@ -823,7 +814,6 @@
 
         sk_lmeta_lock: sk_lmeta_lock {
             compatible = "zmk,behavior-mod-morph";
-            label = "SK_LMETA_LOCK";
             bindings = <&sticky_lmeta>, <&kt LMETA>;
 
             #binding-cells = <0>;
@@ -832,7 +822,6 @@
 
         sk_lctrl_lock: sk_lctrl_lock {
             compatible = "zmk,behavior-mod-morph";
-            label = "SK_LCTRL_LOCK";
             bindings = <&sticky_lctrl>, <&kt LCTRL>;
 
             #binding-cells = <0>;
@@ -841,7 +830,6 @@
 
         sk_lshift_lock: sk_lshift_lock {
             compatible = "zmk,behavior-mod-morph";
-            label = "SK_LSHIFT_LOCK";
             bindings = <&sticky_lshift>, <&kt LSHIFT>;
 
             #binding-cells = <0>;
@@ -853,7 +841,6 @@
         compatible = "zmk,keymap";
 
         bougie {
-            label = "DEF";
             bindings = <
   &kp RET          &kp I      &kp O        &kp N      &tog 1         &tog 1       &kp N      &kp O        &kp I      &kp RET
   &sk_lshift_lock  &kp E      &kp A        &kp T      &sys_reset     &sys_reset   &kp T      &kp A        &kp E      &sk_lshift_lock
