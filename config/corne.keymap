@@ -478,7 +478,7 @@
         };
 
         SPian-pscrn {
-            bindings = <&kp PRINTSCReiN>;
+            bindings = <&kp PRINTSCREEN>;
             key-positions = <32 12 23 21>;
         };
 
@@ -727,7 +727,7 @@
         };
 
         KRian-pscrn {
-            bindings = <&kp PRINTSCReiN>;
+            bindings = <&kp PRINTSCREEN>;
             key-positions = <31 12 23 21>;
         };
 
@@ -953,7 +953,7 @@
         };
 
         ian-pscrn_R {
-            bindings = <&kp PRINTSCReiN>;
+            bindings = <&kp PRINTSCREEN>;
             key-positions = <17 26 28>;
         };
 
@@ -1231,7 +1231,7 @@
         };
 
         SPian-pscrn_R {
-            bindings = <&kp PRINTSCReiN>;
+            bindings = <&kp PRINTSCREEN>;
             key-positions = <33 17 26 28>;
         };
 
@@ -1480,7 +1480,7 @@
         };
 
         KRian-pscrn_R {
-            bindings = <&kp PRINTSCReiN>;
+            bindings = <&kp PRINTSCREEN>;
             key-positions = <34 17 26 28>;
         };
 
