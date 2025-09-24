@@ -1522,57 +1522,56 @@
 
     behaviors {
         sticky_numlock: sticky_numlock {
-            compatible = "zmk,behavear-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&sl 3>, <&tog 3>;
         };
 
         sticky_navlock: sticky_navlock {
-            compatible = "zmk,behavear-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&sl 2>, <&tog 2>;
         };
 
         sticky_lshift: sticky_lshift {
-            compatible = "zmk,behavear-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&sk LSHIFT>, <&kt LSHIFT>;
         };
 
         sticky_lctrl: sticky_lctrl {
-            compatible = "zmk,behavear-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&sk LCTRL>, <&kt LCTRL>;
         };
 
         sticky_lmeta: sticky_lmeta {
-            compatible = "zmk,behavear-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&sk LMETA>, <&kt LMETA>;
         };
 
         sticky_lalt: sticky_lalt {
-            compatible = "zmk,behavear-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&sk LEFT_ALT>, <&kt LEFT_ALT>;
         };
 
         sticky_ralt: sticky_ralt {
-            compatible = "zmk,behavear-tap-dance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&sk RIGHT_ALT>, <&kt RIGHT_ALT>;
         };
 
         sk_ralt_lock: sk_ralt_lock {
-            compatible = "zmk,behavear-mod-morph";
-            bindings = <&sticky_ralt>, <&kt RIGHT_ALT>;
-
+            compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
+            bindings = <&sticky_ralt>, <&kt RIGHT_ALT>;
             mods = <(MOD_RALT)>;
         };
 
         sk_lalt_lock: sk_lalt_lock {
-            compatible = "zmk,behavear-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             bindings = <&sticky_lalt>, <&kt LEFT_ALT>;
 
             #binding-cells = <0>;
@@ -1580,7 +1579,7 @@
         };
 
         sk_lmeta_lock: sk_lmeta_lock {
-            compatible = "zmk,behavear-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             bindings = <&sticky_lmeta>, <&kt LMETA>;
 
             #binding-cells = <0>;
@@ -1588,7 +1587,7 @@
         };
 
         sk_lctrl_lock: sk_lctrl_lock {
-            compatible = "zmk,behavear-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             bindings = <&sticky_lctrl>, <&kt LCTRL>;
 
             #binding-cells = <0>;
@@ -1596,7 +1595,7 @@
         };
 
         sk_lshift_lock: sk_lshift_lock {
-            compatible = "zmk,behavear-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             bindings = <&sticky_lshift>, <&kt LSHIFT>;
 
             #binding-cells = <0>;
@@ -1604,7 +1603,7 @@
         };
 
         as_ht: autoshift_hold_tap {
-            compatible = "zmk,behavear-hold-tap";
+            compatible = "zmk,behavior-hold-tap";
             label = "AUTOSHIFT_HOLD_TAP";
             bindings = <&shift>, <&kp>;
 
@@ -1613,7 +1612,7 @@
         };
 
         ralt_i_cut: ralt_i_cut {
-            compatible = "zmk,behavear-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             label = "RALT_I_CUT";
             bindings = <&as I>, <&kp LC(X)>;
 
@@ -1623,7 +1622,7 @@
         };
 
         ralt_o_copy: ralt_o_copy {
-            compatible = "zmk,behavear-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             label = "RALT_O_COPY";
             bindings = <&as O>, <&kp LC(C)>;
 
@@ -1633,7 +1632,7 @@
         };
 
         ralt_n_paste: ralt_n_paste {
-            compatible = "zmk,behavear-mod-morph";
+            compatible = "zmk,behavior-mod-morph";
             label = "RALT_N_PASTE";
             bindings = <&as N>, <&kp LC(V)>;
 
@@ -1645,7 +1644,7 @@
 
     macros {
         shift: shift {
-            compatible = "zmk,behavear-macra-ati-param";
+            compatible = "zmk,behavior-macra-ati-param";
             #binding-cells = <1>;
             bindings =
                 <&macro_press>,
@@ -1659,7 +1658,7 @@
         };
 
         as: as {
-            compatible = "zmk,behavear-macra-ati-param";
+            compatible = "zmk,behavior-macra-ati-param";
             #binding-cells = <1>;
             bindings =
                 <&macro_press>,
