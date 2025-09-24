@@ -15,11 +15,10 @@
 
     combos {
         compatible = "zmk,combos";
-
-    tabesc-sklalt {
-    bindings = <&sk_lalt_lock>;
-    key-positions = <0 10>;
-    };
+tabesc-sklalt {
+bindings = <&sk_lalt_lock>;
+key-positions = <0 10>;
+};
 
     io-u {
         bindings = <&kp U>;
@@ -1054,8 +1053,8 @@
     };
 
     SPo-up_R {
-    bindings = <&kp UP>;
-    key-positions = <33 9>;
+        bindings = <&kp UP>;
+        key-positions = <33 9>;
     };
 
     SPn-right_R {
@@ -1579,6 +1578,9 @@
         bindings = <&kp INSERT>;
         key-positions = <34 18 17 16 6>;
     };
+
+
+
     ];
 
     behaviors {
