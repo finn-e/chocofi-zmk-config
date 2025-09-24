@@ -20,8 +20,8 @@
     combos {
         compatible = "zmk,combos";
 
-        tabesc-sklalt {
-            bindings = <&sk_lalt_lock>;
+        tabesc-skralt {
+            bindings = <&sk_ralt_lock>;
             key-positions = <10 20>;
         };
 
@@ -36,7 +36,7 @@
         };
 
         ie-sklalt {
-            bindings = <&sk_lmeta_lock>;
+            bindings = <&sk_lalt_lock>;
             key-positions = <11 21>;
         };
 
@@ -80,8 +80,8 @@
             key-positions = <13 22>;
         };
 
-        nt-skshift {
-            bindings = <&sk_lshift_lock>;
+        nt-skmeta {
+            bindings = <&sk_lmeta_lock>;
             key-positions = <23 13>;
         };
 
@@ -792,8 +792,8 @@ key-positions = <31 21>;
 
         // --- Right Hand Combos (Mirrored) ---
 
-        tabesc-sklalt_R {
-            bindings = <&sk_lalt_lock>;
+        tabesc-skralt_R {
+            bindings = <&sk_ralt_lock>;
             key-positions = <19 29>;
         };
 
@@ -808,7 +808,7 @@ key-positions = <31 21>;
         };
 
         ie-sklalt_R {
-            bindings = <&sk_lmeta_lock>;
+            bindings = <&sk_lalt_lock>;
             key-positions = <18 28>;
         };
 
@@ -852,8 +852,8 @@ key-positions = <31 21>;
             key-positions = <16 27>;
         };
 
-        nt-skshift_R {
-            bindings = <&sk_lshift_lock>;
+        nt-skmeta_R {
+            bindings = <&sk_lmeta_lock>;
             key-positions = <26 16>;
         };
 
@@ -1691,7 +1691,7 @@ key-positions = <34 28>;
         bougie {
             bindings = <
   &bt BT_CLR     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &tog 1         &tog 1       &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR
-  &kp BACKSPACE  &as E         &as A         &as T         &sys_reset     &sys_reset   &as T         &as A         &as E         &sk_lshift_lock
+  &kp BACKSPACE  &as E         &as A         &as T         &sys_reset     &sys_reset   &as T         &as A         &as E         &kp BACKSPACE
   &kp RET        &as I         &as O         &as N         &bootloader    &bootloader  &as I         &as O         &as N         &kp RET
                                &key_repeat   &kp BSPC      &kp SPACE      &kp SPACE    &kp BSPC      &key_repeat
             >;
