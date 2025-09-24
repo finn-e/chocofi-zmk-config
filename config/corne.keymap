@@ -522,270 +522,251 @@
             key-positions = <32 21 22 23 13>;
         };
 
-        BStab-tab {
+        KRtab-tab {
             bindings = <&kp TAB>;
             key-positions = <31 10>;
         };
 
-        BSesc-del {
+        KResc-del {
             bindings = <&kp DELETE>;
             key-positions = <31 20>;
         };
 
-        BSe-7 {
+        KRe-7 {
             bindings = <&kp N7>;
             key-positions = <31 11>;
         };
 
-        BSa-8 {
+        KRa-8 {
             bindings = <&kp N8>;
             key-positions = <31 12>;
         };
 
-        BSt-9 {
+        KRt-9 {
             bindings = <&kp N9>;
             key-positions = <31 13>;
         };
 
-        BSi-4 {
+        KRi-4 {
             bindings = <&kp N4>;
             key-positions = <31 21>;
         };
 
-        BSo-5 {
+        KRo-5 {
             bindings = <&kp N5>;
             key-positions = <31 22>;
         };
 
-        BSn-6 {
+        KRn-6 {
             bindings = <&kp N6>;
             key-positions = <31 23>;
         };
 
-        /*
-// Combos with key positions 20-29 have been commented out as requested.
-BSx-1 {
-bindings = <&kp N1>;
-key-positions = <31 21>;
-};
-
-    BSc-2 {
-        bindings = <&kp N2>;
-        key-positions = <31 22>;
-    };
-
-    BSv-3 {
-        bindings = <&kp N1>;
-        key-positions = <31 23>;
-    };
-
-*/
-
-        BStabesc-sklalt {
+        KRtabesc-sklalt {
             bindings = <&sk_lalt_lock>;
             key-positions = <31 10 20>;
         };
 
-        BSio-u {
+        KRio-u {
             bindings = <&as U>;
             key-positions = <31 11 12>;
         };
 
-        BSin-c {
+        KRin-c {
             bindings = <&as C>;
             key-positions = <31 11 13>;
         };
 
-        BSie-sklalt {
+        KRie-sklalt {
             bindings = <&sk_lmeta_lock>;
             key-positions = <31 11 21>;
         };
 
-        BSia-y {
+        KRia-y {
             bindings = <&as Y>;
             key-positions = <31 11 22>;
         };
 
-        BSit-w {
+        KRit-w {
             bindings = <&as W>;
             key-positions = <31 11 23>;
         };
 
-        BSon-l {
+        KRon-l {
             bindings = <&as L>;
             key-positions = <31 12 13>;
         };
 
-        BSoe-g {
+        KRoe-g {
             bindings = <&as G>;
             key-positions = <31 21 12>;
         };
 
-        BSoa-sklctrl {
+        KRoa-sklctrl {
             bindings = <&sk_lctrl_lock>;
             key-positions = <31 12 22>;
         };
 
-        BSot-d {
+        KRot-d {
             bindings = <&as D>;
             key-positions = <31 12 23>;
         };
 
-        BSne-m {
+        KRne-m {
             bindings = <&as M>;
             key-positions = <31 13 21>;
         };
 
-        BSna-f {
+        KRna-f {
             bindings = <&as F>;
             key-positions = <31 13 22>;
         };
 
-        BSnt-skshift {
+        KRnt-skshift {
             bindings = <&sk_lshift_lock>;
             key-positions = <31 23 13>;
         };
 
-        BSieo-apos {
+        KRieo-apos {
             bindings = <&kp APOS>;
             key-positions = <31 21 11 12>;
         };
 
-        BSien-minus {
+        KRien-minus {
             bindings = <&kp MINUS>;
             key-positions = <31 21 11 13>;
         };
 
-        BSiea-comma {
+        KRiea-comma {
             bindings = <&kp COMMA>;
             key-positions = <31 11 21 22>;
         };
 
-        BSiet-dot {
+        KRiet-dot {
             bindings = <&kp DOT>;
             key-positions = <31 21 11 23>;
         };
 
-        BSoai-p {
+        KRoai-p {
             bindings = <&as P>;
             key-positions = <31 12 22 11>;
         };
 
-        BSoan-z {
+        KRoan-z {
             bindings = <&as Z>;
             key-positions = <31 12 22 13>;
         };
 
-        BSoae-b {
+        KRoae-b {
             bindings = <&as B>;
             key-positions = <31 22 12 21>;
         };
 
-        BSoat-x {
+        KRoat-x {
             bindings = <&as X>;
             key-positions = <31 22 12 23>;
         };
 
-        BSnti-q {
+        KRnti-q {
             bindings = <&as Q>;
             key-positions = <31 23 13 11>;
         };
 
-        BSnto-v {
+        KRnto-v {
             bindings = <&as V>;
             key-positions = <31 23 13 12>;
         };
 
-        BSnte-j {
+        KRnte-j {
             bindings = <&as J>;
             key-positions = <31 21 13 23>;
         };
 
-        BSnta-k {
+        KRnta-k {
             bindings = <&as K>;
             key-positions = <31 23 13 22>;
         };
 
-        BSieoa-del {
+        KRieoa-del {
             bindings = <&kp DELETE>;
             key-positions = <31 21 11 12 22>;
         };
 
-        BSient-slnav {
+        KRient-slnav {
             bindings = <&sticky_navlock>;
             key-positions = <31 21 11 23 13>;
             layers = <31 0>;
         };
 
-        BSeitn-nav-tog {
+        KReitn-nav-tog {
             bindings = <&tog 2>;
             key-positions = <31 21 11 23 13>;
             layers = <31 2>;
         };
 
-        BSoant-slnum {
+        KRoant-slnum {
             bindings = <&sticky_numlock>;
             key-positions = <31 22 12 13 23>;
             layers = <31 0>;
         };
 
-        BSoant-num-tog {
+        KRoant-num-tog {
             bindings = <&tog 3>;
             key-positions = <31 22 12 13 23>;
             layers = <31 3>;
         };
 
-        BSion-ret {
+        KRion-ret {
             bindings = <&kp RET>;
             key-positions = <31 11 12 13>;
         };
 
-        BSiot-paste {
+        KRiot-paste {
             bindings = <&kp LC(V)>;
             key-positions = <31 11 12 23>;
         };
 
-        BSian-copy {
+        KRian-copy {
             bindings = <&kp LC(C)>;
             key-positions = <31 11 13 22>;
         };
 
-        BSeon-cut {
+        KReon-cut {
             bindings = <&kp LC(X)>;
             key-positions = <31 21 12 13>;
         };
 
-        BSean-redo {
+        KRean-redo {
             bindings = <&kp LC(LS(Z))>;
             key-positions = <31 21 22 13>;
         };
 
-        BSiat-undo {
+        KRiat-undo {
             bindings = <&kp LC(Z)>;
             key-positions = <31 23 22 11>;
         };
 
-        BSeot-pscrn {
+        KReot-pscrn {
             bindings = <&kp PRINTSCREEN>;
             key-positions = <31 12 23 21>;
         };
 
-        BSeat-esc {
+        KReat-esc {
             bindings = <&gresc>;
             key-positions = <31 21 22 23>;
         };
 
-        BSiont-caps_word {
+        KRiont-caps_word {
             bindings = <&caps_word>;
             key-positions = <31 11 12 13 23>;
         };
 
-        BSntea-caps {
+        KRntea-caps {
             bindings = <&kp CAPSLOCK>;
             key-positions = <31 13 23 22 12 21>;
         };
 
-        BSntea-insert {
+        KRntea-insert {
             bindings = <&kp INSERT>;
             key-positions = <31 21 22 23 13>;
         };
@@ -1294,285 +1275,285 @@ key-positions = <31 21>;
             key-positions = <33 28 27 26 16>;
         };
 
-        BStab-tab_R {
+        KRtab-tab_R {
             bindings = <&kp TAB>;
             key-positions = <34 19>;
         };
 
-        BSesc-del_R {
+        KResc-del_R {
             bindings = <&kp DELETE>;
             key-positions = <34 29>;
         };
 
-        BSe-7_R {
+        KRe-7_R {
             bindings = <&kp N7>;
             key-positions = <34 18>;
         };
 
-        BSa-8_R {
+        KRa-8_R {
             bindings = <&kp N8>;
             key-positions = <34 17>;
         };
 
-        BSt-9_R {
+        KRt-9_R {
             bindings = <&kp N9>;
             key-positions = <34 16>;
         };
 
-        BSi-4_R {
+        KRi-4_R {
             bindings = <&kp N4>;
             key-positions = <34 28>;
         };
 
-        BSo-5_R {
+        KRo-5_R {
             bindings = <&kp N5>;
             key-positions = <34 27>;
         };
 
-        BSn-6_R {
+        KRn-6_R {
             bindings = <&kp N6>;
             key-positions = <34 26>;
         };
 
         /*
 // Combos with key positions 20-29 have been commented out as requested.
-BSx-1_R {
+KRx-1_R {
 bindings = <&kp N1>;
 key-positions = <34 28>;
 };
 
-    BSc-2_R {
+    KRc-2_R {
         bindings = <&kp N2>;
         key-positions = <34 27>;
     };
 
-    BSv-3_R {
+    KRv-3_R {
         bindings = <&kp N1>;
         key-positions = <34 26>;
     };
 
 */
 
-        BStabesc-sklalt_R {
+        KRtabesc-sklalt_R {
             bindings = <&sk_lalt_lock>;
             key-positions = <34 19 29>;
         };
 
-        BSio-u_R {
+        KRio-u_R {
             bindings = <&as U>;
             key-positions = <34 18 17>;
         };
 
-        BSin-c_R {
+        KRin-c_R {
             bindings = <&as C>;
             key-positions = <34 18 16>;
         };
 
-        BSie-sklalt_R {
+        KRie-sklalt_R {
             bindings = <&sk_lmeta_lock>;
             key-positions = <34 18 28>;
         };
 
-        BSia-y_R {
+        KRia-y_R {
             bindings = <&as Y>;
             key-positions = <34 18 27>;
         };
 
-        BSit-w_R {
+        KRit-w_R {
             bindings = <&as W>;
             key-positions = <34 18 26>;
         };
 
-        BSon-l_R {
+        KRon-l_R {
             bindings = <&as L>;
             key-positions = <34 17 16>;
         };
 
-        BSoe-g_R {
+        KRoe-g_R {
             bindings = <&as G>;
             key-positions = <34 28 17>;
         };
 
-        BSoa-sklctrl_R {
+        KRoa-sklctrl_R {
             bindings = <&sk_lctrl_lock>;
             key-positions = <34 17 27>;
         };
 
-        BSot-d_R {
+        KRot-d_R {
             bindings = <&as D>;
             key-positions = <34 17 26>;
         };
 
-        BSne-m_R {
+        KRne-m_R {
             bindings = <&as M>;
             key-positions = <34 16 28>;
         };
 
-        BSna-f_R {
+        KRna-f_R {
             bindings = <&as F>;
             key-positions = <34 16 27>;
         };
 
-        BSnt-skshift_R {
+        KRnt-skshift_R {
             bindings = <&sk_lshift_lock>;
             key-positions = <34 26 16>;
         };
 
-        BSieo-apos_R {
+        KRieo-apos_R {
             bindings = <&kp APOS>;
             key-positions = <34 28 18 17>;
         };
 
-        BSien-minus_R {
+        KRien-minus_R {
             bindings = <&kp MINUS>;
             key-positions = <34 28 18 16>;
         };
 
-        BSiea-comma_R {
+        KRiea-comma_R {
             bindings = <&kp COMMA>;
             key-positions = <34 18 28 27>;
         };
 
-        BSiet-dot_R {
+        KRiet-dot_R {
             bindings = <&kp DOT>;
             key-positions = <34 28 18 26>;
         };
 
-        BSoai-p_R {
+        KRoai-p_R {
             bindings = <&as P>;
             key-positions = <34 17 27 18>;
         };
 
-        BSoan-z_R {
+        KRoan-z_R {
             bindings = <&as Z>;
             key-positions = <34 17 27 16>;
         };
 
-        BSoae-b_R {
+        KRoae-b_R {
             bindings = <&as B>;
             key-positions = <34 27 17 28>;
         };
 
-        BSoat-x_R {
+        KRoat-x_R {
             bindings = <&as X>;
             key-positions = <34 27 17 26>;
         };
 
-        BSnti-q_R {
+        KRnti-q_R {
             bindings = <&as Q>;
             key-positions = <34 26 16 18>;
         };
 
-        BSnto-v_R {
+        KRnto-v_R {
             bindings = <&as V>;
             key-positions = <34 26 16 17>;
         };
 
-        BSnte-j_R {
+        KRnte-j_R {
             bindings = <&as J>;
             key-positions = <34 28 16 26>;
         };
 
-        BSnta-k_R {
+        KRnta-k_R {
             bindings = <&as K>;
             key-positions = <34 26 16 27>;
         };
 
-        BSieoa-del_R {
+        KRieoa-del_R {
             bindings = <&kp DELETE>;
             key-positions = <34 28 18 17 27>;
         };
 
-        BSient-slnav_R {
+        KRient-slnav_R {
             bindings = <&sticky_navlock>;
             key-positions = <34 28 18 26 16>;
             layers = <34 0>;
         };
 
-        BSeitn-nav-tog_R {
+        KReitn-nav-tog_R {
             bindings = <&tog 2>;
             key-positions = <34 28 18 26 16>;
             layers = <34 2>;
         };
 
-        BSoant-slnum_R {
+        KRoant-slnum_R {
             bindings = <&sticky_numlock>;
             key-positions = <34 27 17 16 26>;
             layers = <34 0>;
         };
 
-        BSoant-num-tog_R {
+        KRoant-num-tog_R {
             bindings = <&tog 3>;
             key-positions = <34 27 17 16 26>;
             layers = <34 3>;
         };
 
-        BSion-ret_R {
+        KRion-ret_R {
             bindings = <&kp RET>;
             key-positions = <34 18 17 16>;
         };
 
-        BSiot-paste_R {
+        KRiot-paste_R {
             bindings = <&kp LC(V)>;
             key-positions = <34 18 17 26>;
         };
 
-        BSian-copy_R {
+        KRian-copy_R {
             bindings = <&kp LC(C)>;
             key-positions = <34 18 16 27>;
         };
 
-        BSeon-cut_R {
+        KReon-cut_R {
             bindings = <&kp LC(X)>;
             key-positions = <34 28 17 16>;
         };
 
-        BSean-redo_R {
+        KRean-redo_R {
             bindings = <&kp LC(LS(Z))>;
             key-positions = <34 28 27 16>;
         };
 
-        BSiat-undo_R {
+        KRiat-undo_R {
             bindings = <&kp LC(Z)>;
             key-positions = <34 26 27 18>;
         };
 
-        BSeot-pscrn_R {
+        KReot-pscrn_R {
             bindings = <&kp PRINTSCREEN>;
             key-positions = <34 17 26 28>;
         };
 
-        BSeat-esc_R {
+        KReat-esc_R {
             bindings = <&gresc>;
             key-positions = <34 28 27 26>;
         };
 
-        BSiont-caps_word_R {
+        KRiont-caps_word_R {
             bindings = <&caps_word>;
             key-positions = <34 18 17 16 26>;
         };
 
-        BSntea-caps_R {
+        KRntea-caps_R {
             bindings = <&kp CAPSLOCK>;
             key-positions = <34 16 26 27 17 28>;
         };
 
-        BSntea-insert_R {
+        KRntea-insert_R {
             bindings = <&kp INSERT>;
             key-positions = <34 28 27 26 16>;
         };
 
-        BSi-cut {
+        bi-cut {
             bindings = <&kp LC(X)>;
             key-positions = <10 21>;
         };
 
-        BSo-copy {
+        bo-copy {
             bindings = <&kp LC(C)>;
             key-positions = <10 22>;
         };
 
-        BSn-paste {
+        bn-paste {
             bindings = <&kp LC(V)>;
             key-positions = <10 23>;
         };
@@ -1749,7 +1730,7 @@ key-positions = <34 28>;
   &kp Q         &kp W  &kp E   &kp R     &kp T        &kp Y    &kp U       &kp I            &kp O    &kp P
   &kp A         &kp S  &kp D   &kp F     &kp G        &kp H    &kp J       &kp K            &kp L    &kp SEMI
   &mt Z LSHIFT  &kp X  &kp C   &kp V     &kp B        &kp N    &kp M       &kp COMMA        &kp DOT  &mt FSLH RSHIFT
-                       &tog 1  &kp BSPC  &kp SPACE    &kp RET  &kp DELETE  &sticky_numlock
+                       &tog 1  &kp BSPC  &kp SPACE    &kp RET  &kp DELETE  &mo 7
             >;
         };
 
@@ -1797,5 +1778,15 @@ key-positions = <34 28>;
                   &to 0   &trans  &trans    &trans  &trans  &to 0
             >;
         };
+
+        qwenum {
+            bindings = <
+  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
+  &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp N0
+  &kp N9  &kp N7  &kp N5  &kp N3  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp N0
+                  &to 0   &kp N1  &kp N0    &kp N0  &kp N1  &to 0
+            >;
+        };
+
     };
 };
