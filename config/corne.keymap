@@ -1548,10 +1548,7 @@ key-positions = <0 10>;
         bindings = <&kp INSERT>;
         key-positions = <34 18 17 16 6>;
     };
-
-
-
-    ];
+    };
 
     behaviors {
         sticky_numlock: sticky_numlock {
