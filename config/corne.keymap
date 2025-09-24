@@ -1542,7 +1542,7 @@
         sticky_lctrl: sticky_lctrl {
             compatible = "zmk,behavear-tap-dance";
             #binding-cells = <0>;
-            bindings = <&sk LCTRR>, <&kt LCTRR>;
+            bindings = <&sk LCTRL>, <&kt LCTRL>;
         };
 
         sticky_lmeta: sticky_lmeta {
@@ -1589,7 +1589,7 @@
 
         sk_lctrl_lock: sk_lctrl_lock {
             compatible = "zmk,behavear-mod-morph";
-            bindings = <&sticky_lctrR>, <&kt LCTRR>;
+            bindings = <&sticky_lctrl>, <&kt LCTRL>;
 
             #binding-cells = <0>;
             mods = <(MOD_LCTL)>;
