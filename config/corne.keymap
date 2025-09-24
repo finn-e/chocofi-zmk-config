@@ -1561,6 +1561,21 @@ key-positions = <34 28>;
             bindings = <&kp INSERT>;
             key-positions = <34 28 27 26 16>;
         };
+
+        BSi-cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <10 21>;
+        };
+
+        BSo-copy {
+            bindings = <&kp LC(C)>;
+            key-positions = <10 22>;
+        };
+
+        BSn-paste {
+            bindings = <&kp LC(V)>;
+            key-positions = <10 23>;
+        };
     };
 
     behaviors {
@@ -1654,6 +1669,36 @@ key-positions = <34 28>;
             #binding-cells = <2>;
             tapping-term-ms = <190>;
         };
+
+        ralt_i_cut: ralt_i_cut {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RALT_I_CUT";
+            bindings = <&as I>, <&kp LC(X)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            keep-mods = <(MOD_LCTL)>;
+        };
+
+        ralt_o_copy: ralt_o_copy {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RALT_O_COPY";
+            bindings = <&as O>, <&kp LC(C)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            keep-mods = <(MOD_LCTL)>;
+        };
+
+        ralt_n_paste: ralt_n_paste {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RALT_N_PASTE";
+            bindings = <&as N>, <&kp LC(V)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+            keep-mods = <(MOD_LCTL)>;
+        };
     };
 
     macros {
@@ -1690,10 +1735,10 @@ key-positions = <34 28>;
 
         bougie {
             bindings = <
-  &bt BT_CLR     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &tog 1         &tog 1       &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR
-  &kp BACKSPACE  &as E         &as A         &as T         &sys_reset     &sys_reset   &as T         &as A         &as E         &kp BACKSPACE
-  &kp RET        &as I         &as O         &as N         &bootloader    &bootloader  &as I         &as O         &as N         &kp RET
-                               &key_repeat   &kp BSPC      &kp SPACE      &kp SPACE    &kp BSPC      &key_repeat
+  &bt BT_CLR     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &tog 1         &tog 1       &bt BT_SEL 3   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR
+  &kp BACKSPACE  &as E         &as A         &as T          &sys_reset     &sys_reset   &as T          &as A         &as E         &kp BACKSPACE
+  &kp RET        &ralt_i_cut   &ralt_o_copy  &ralt_n_paste  &bootloader    &bootloader  &ralt_n_paste  &ralt_o_copy  &ralt_i_cut   &kp RET
+                               &key_repeat   &kp BSPC       &kp SPACE      &kp SPACE    &kp BSPC       &key_repeat
             >;
 
             label = "DEF";
