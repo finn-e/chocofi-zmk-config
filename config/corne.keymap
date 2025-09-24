@@ -1640,7 +1640,7 @@
 
     macros {
         shift: shift {
-            compatible = "zmk,behavior-macra-ati-param";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
                 <&macro_press>,
@@ -1652,7 +1652,7 @@
         };
 
         as: as {
-            compatible = "zmk,behavior-macra-ati-param";
+            compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
                 <&macro_press>,
