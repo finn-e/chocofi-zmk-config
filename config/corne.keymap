@@ -81,6 +81,21 @@
             key-positions = <13 3>;
         };
 
+        ea-h {
+            bindings = <&kp H>;
+            key-positions = <11 12>;
+        };
+
+        et-s {
+            bindings = <&kp S>;
+            key-positions = <11 13>;
+        };
+
+        at-r {
+            bindings = <&kp R>;
+            key-positions = <12 13>;
+        };
+
         ieo-apos {
             bindings = <&kp APOS>;
             key-positions = <11 1 2>;
@@ -345,6 +360,21 @@
             key-positions = <32 13 3>;
         };
 
+        SPea-h {
+            bindings = <&kp H>;
+            key-positions = <32 11 12>;
+        };
+
+        SPet-s {
+            bindings = <&kp S>;
+            key-positions = <32 11 13>;
+        };
+
+        SPat-r {
+            bindings = <&kp R>;
+            key-positions = <32 12 13>;
+        };
+
         SPieo-apos {
             bindings = <&kp APOS>;
             key-positions = <32 11 1 2>;
@@ -606,6 +636,21 @@
         BSnt-skshift {
             bindings = <&sk_lshift_lock>;
             key-positions = <31 13 3>;
+        };
+
+        SPea-h {
+            bindings = <&kp H>;
+            key-positions = <31 11 12>;
+        };
+
+        SPet-s {
+            bindings = <&kp S>;
+            key-positions = <31 11 13>;
+        };
+
+        SPat-r {
+            bindings = <&kp R>;
+            key-positions = <31 12 13>;
         };
 
         BSieo-apos {
