@@ -11,6 +11,9 @@
 
 #define DEFAULT_L 0
 
+&sk {
+};
+
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
 
@@ -1641,6 +1644,44 @@ key-positions = <34 28>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
+        };
+
+        as_ht: autoshift_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTOSHIFT_HOLD_TAP";
+            bindings = <&shift>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <190>;
+        };
+    };
+
+    macros {
+        shift: shift {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHIFT>,
+                <&macro_tap>,
+                <&macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp LSHIFT>;
+
+            label = "SHIFT";
+        };
+
+        as: as {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>;
+
+            label = "AS";
         };
     };
 
