@@ -220,6 +220,11 @@
             bindings = <&none>;
             key-positions = <31 0>;
         };
+
+        SPoant-bt {
+            bindings = <&sl 5>;
+            key-positions = <12 2 3 13>;
+        };
     };
 
     keymap {
