@@ -98,7 +98,7 @@ TCOMBO(TAB,     &kp TAB,         &kp LEFT,           &as N2,             &kp C_N
 TCOMBO(I,       &as I,           &kp DOWN,           &as N4,             &kp C_VOL_UP,      BLR,             BRR)
 TCOMBO(O,       &as O,           &kp UP,             &as N6,             &kp C_VOL_DN,      BLM,             BRM)
 TCOMBO(N,       &as N,           &kp RIGHT,          &as N8,             &kp C_PREV,        BLI,             BRI)
-TCOMBO(RALT,    &sk_ralt_lock,   &kp MORE,           &kp LESS,           &bt BT_SEL 0,      TLP BLP,         TRP BRP)
+TCOMBO(RALT,    &sk_ralt_lock,   &kp GT,             &kp LT,             &bt BT_SEL 0,      TLP BLP,         TRP BRP)
 TCOMBO(LALT,    &sk_lalt_lock,   &kp RBRC,           &kp LBRC,           &bt BT_SEL 1,      TLR BLR,         TRR BRR)
 TCOMBO(LCTRL,   &sk_lctrl_lock,  &kp RBRKT,          &kp LBRKT,          &bt BT_SEL 2,      TLM BLM,         TRM BRM)
 TCOMBO(LMETA,   &sk_lmeta_lock,  &kp RPAR,           &kp LPAR,           &bt BT_SEL 3,      TLI BLI,         TRI BRI)
