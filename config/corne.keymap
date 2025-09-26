@@ -3,6 +3,7 @@
     Copyright (c) 2020 The ZMK Contributors
 
     SPDX-License-Identifier: MIT
+    TODO: soft_off wake behavior
     */
 
 #include <behaviors.dtsi>
@@ -200,8 +201,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <HOLD_TAP_TIMEOUT>;
         };
-
-
     };
 
     macros {
