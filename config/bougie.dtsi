@@ -78,14 +78,14 @@ combo_r_kr { \
 
 combo_l_both { \
     timeout-ms = <COMBO_TIMEOUT>; \
-    bindings = <&ltWINshift WIN>; \
+    bindings = <&ltWINshift WIN WIN>; \
     key-positions = <LIT LOT>; \
     layers = <COMBO_LAYERS>; \
 };
 
 combo_r_both { \
     timeout-ms = <COMBO_TIMEOUT>; \
-    bindings = <&ltWINshift WIN>; \
+    bindings = <&ltWINshift WIN WIN>; \
     key-positions = <RIT ROT>; \
     layers = <COMBO_LAYERS>; \
 };
