@@ -39,6 +39,16 @@
 #define ROT 33
 #define RIT 34
 
+// LAYERS
+#define DEF  0
+#define QWE  1
+#define QNUM 2
+#define NAV  3
+#define WIN  4
+#define NUM  5
+#define SYM  6
+#define BT   7
+
 // BEHAVIOR REDEFINITIONS
 
 &sk {
@@ -61,13 +71,13 @@
         sticky_numlock: sticky_numlock {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&sl 3>, <&tog 3>;
+            bindings = <&sl NUM>, <&tog NUM>;
         };
 
         sticky_navlock: sticky_navlock {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&sl 2>, <&tog 2>;
+            bindings = <&sl NAV>, <&tog NAV>;
         };
 
         sticky_lshift: sticky_lshift {
@@ -243,12 +253,22 @@
 
         qwerty {
             bindings = <
-  &kp Q         &kp W  &kp E   &kp R     &kp T        &kp Y    &kp U       &kp I      &kp O    &kp P
-  &kp A         &kp S  &kp D   &kp F     &kp G        &kp H    &kp J       &kp K      &kp L    &kp SEMI
-  &mt Z LSHIFT  &kp X  &kp C   &kp V     &kp B        &kp N    &kp M       &kp COMMA  &kp DOT  &mt FSLH RSHIFT
-                       &tog 1  &kp BSPC  &kp SPACE    &kp RET  &kp DELETE  &sl 7
+  &kp Q         &kp W  &kp E    &kp R     &kp T        &kp Y    &kp U       &kp I      &kp O    &kp P
+  &kp A         &kp S  &kp D    &kp F     &kp G        &kp H    &kp J       &kp K      &kp L    &kp SEMI
+  &mt Z LSHIFT  &kp X  &kp C    &kp V     &kp B        &kp N    &kp M       &kp COMMA  &kp DOT  &mt FSLH RSHIFT
+                       &tog QWE &kp BSPC  &kp SPACE    &kp RET  &kp DELETE  &sl QNUM
             >;
         };
+
+        qwenum {
+            bindings = <
+  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
+  &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp N0
+  &kp N9  &kp N7  &kp N5  &kp N3  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp N0
+                  &none   &kp N1  &kp N0    &kp N0  &kp N1  &none
+            >;
+        };
+    };
 
         nav {
             bindings = <
@@ -294,23 +314,4 @@
                                 &none         &trans        &trans    &trans  &trans        &none
             >;
         };
-
-        misc {
-            bindings = <
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                  &none   &trans  &trans    &trans  &trans  &none
-            >;
-        };
-
-        qwenum {
-            bindings = <
-  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
-  &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp N0
-  &kp N9  &kp N7  &kp N5  &kp N3  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp N0
-                  &none   &kp N1  &kp N0    &kp N0  &kp N1  &none
-            >;
-        };
-    };
 };
