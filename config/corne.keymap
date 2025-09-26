@@ -12,6 +12,9 @@
 #define DEFAULT_L 0
 
 &sk {
+    quick-release;
+
+    /delete-property/ ignore-modifiers;
 };
 
 / {
@@ -1567,6 +1570,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&sticky_ralt>, <&kt RIGHT_ALT>;
+
             mods = <(MOD_RALT)>;
         };
 
@@ -1670,16 +1674,16 @@
             bindings = <
   &bt BT_CLR     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &tog 1         &tog 1       &bt BT_SEL 3   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR
   &kp BACKSPACE  &as E         &as A         &as T          &sys_reset     &sys_reset   &as T          &as A         &as E         &kp BACKSPACE
-  &kp RET        &ralt_i_cut   &ralt_o_copy  &ralt_n_paste  &bootloader    &bootloader  &ralt_n_paste  &ralt_o_copy  &ralt_i_cut   &kp RET
+  &kp TAB        &ralt_i_cut   &ralt_o_copy  &ralt_n_paste  &bootloader    &bootloader  &ralt_n_paste  &ralt_o_copy  &ralt_i_cut   &kp TAB
                                &key_repeat   &kp BSPC       &kp SPACE      &kp SPACE    &kp BSPC       &key_repeat
             >;
         };
 
         qwerty {
             bindings = <
-  &kp Q         &kp W  &kp E   &kp R     &kp T        &kp Y    &kp U       &kp I            &kp O    &kp P
-  &kp A         &kp S  &kp D   &kp F     &kp G        &kp H    &kp J       &kp K            &kp L    &kp SEMI
-  &mt Z LSHIFT  &kp X  &kp C   &kp V     &kp B        &kp N    &kp M       &kp COMMA        &kp DOT  &mt FSLH RSHIFT
+  &kp Q         &kp W  &kp E   &kp R     &kp T        &kp Y    &kp U       &kp I      &kp O    &kp P
+  &kp A         &kp S  &kp D   &kp F     &kp G        &kp H    &kp J       &kp K      &kp L    &kp SEMI
+  &mt Z LSHIFT  &kp X  &kp C   &kp V     &kp B        &kp N    &kp M       &kp COMMA  &kp DOT  &mt FSLH RSHIFT
                        &tog 1  &kp BSPC  &kp SPACE    &kp RET  &kp DELETE  &mo 7
             >;
         };
@@ -1737,6 +1741,5 @@
                   &to 0   &kp N1  &kp N0    &kp N0  &kp N1  &to 0
             >;
         };
-
     };
 };
