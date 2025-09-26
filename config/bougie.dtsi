@@ -123,7 +123,7 @@ combo_lb_BSPC { \
 
 combo_l_T { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp T>; \
+	bindings = <&as T>; \
 	key-positions = <TLI>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -179,7 +179,7 @@ combo_lb_TAB { \
 
 combo_l_N { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp N>; \
+	bindings = <&as N>; \
 	key-positions = <BLI>; \
 	layers = <COMBO_LAYERS>; \
 };
