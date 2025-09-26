@@ -177,17 +177,17 @@
         
         lt4kr: lt4kr {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&mo 4>, <&key_repeat>;
+            bindings = <&mo>, <&key_repeat>;
         
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             tapping-term-ms = <HOLD_TAP_TIMEOUT>;
         };
 
         lt3shift: lt3shift {
             compatible = "zmk,behavior-hold-tap";
-            bindings = <&mo 3>, <&sk_lshift_lock>;
+            bindings = <&mo>, <&sk_lshift_lock>;
         
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             tapping-term-ms = <HOLD_TAP_TIMEOUT>;
         };
 
@@ -197,7 +197,7 @@
     macros {
         tqt: tqt {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
+            #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
                 <&kp APOS>,

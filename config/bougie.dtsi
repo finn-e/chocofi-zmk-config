@@ -64,28 +64,28 @@ combo_r_space { \
 
 combo_l_kr { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&lt4kr>; \
+	bindings = <&lt4kr 4>; \
 	key-positions = <LIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_r_kr { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&lt4kr>; \
+	bindings = <&lt4kr 4>; \
 	key-positions = <RIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_l_both { \
     timeout-ms = <COMBO_TIMEOUT>; \
-    bindings = <&lt3shift>; \
+    bindings = <&lt3shift 3>; \
     key-positions = <LIT LOT>; \
     layers = <COMBO_LAYERS>; \
 };
 
 combo_r_both { \
     timeout-ms = <COMBO_TIMEOUT>; \
-    bindings = <&lt3shift>; \
+    bindings = <&lt3shift 3>; \
     key-positions = <RIT ROT>; \
     layers = <COMBO_LAYERS>; \
 };
