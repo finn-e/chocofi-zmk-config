@@ -149,7 +149,7 @@ combo_lb_T { \
 
 combo_l_TAB { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp TAB>; \
+	bindings = <&tabdance>; \
 	key-positions = <BLP>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -367,5 +367,4 @@ TCOMBO(UNDO,       &kp LC(Z),          &kp LS(LC(Z)),         &none,            
 TCOMBO(SAVE,       &kp LC(S),          &kp LG(G),             &kp LG(W),             &kp LS(LC(S)),          BLR TLM BLI,                       BRR TRM BRI)
 TCOMBO(REDO,       &kp LS(LC(Z)),      &kp LC(Z),             &none,                 &none,                  BLR BLM TLI,                       BRR BRM TLI)
 TCOMBO(ESC,        &kp ESC,            &none,                 &none,                 &none,                  BLR BLM BLI,                       BRR BRM BRI)
-TCOMBO(RESET,      &sys_reset,         &none,                 &none,                 &none,                  TLR BLR TLM BLM TLI BLI,           TRR BRR TRM BRM TRI BRI)
-TCOMBO(BOOTLOADER, &bootloader,        &none,                 &none,                 &none,                  TLP BLP TLR BLR TLM BLM TLI BLI,   TRP BRP TRR BRR TRM BRM TRI BRI)
+TCOMBO(MISC,       &sl MISC,           &none,                 &none,                 &none,                  TLR BLR TLM BLM TLI BLI,           TRR BRR TRM BRM TRI BRI)

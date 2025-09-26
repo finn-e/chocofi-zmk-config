@@ -50,6 +50,7 @@
 #define NUM  5
 #define SYM  6
 #define BT   7
+#define MISC 8
 
 // BEHAVIOR REDEFINITIONS
 
@@ -202,6 +203,13 @@
             #binding-cells = <2>;
             tapping-term-ms = <HOLD_TAP_TIMEOUT>;
         };
+
+        tabdance: tabdance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp TAB>, <&kp TAB>, <&sys_reset>, <&kp TAB>, <&bootloader>;
+        };
+
     };
 
     macros {
@@ -311,6 +319,15 @@
   &none           &none         &none         &none         &trans    &trans  &none         &none         &none         &none
   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans    &trans  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
   &bt BT_CLR_ALL  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR    &trans    &trans  &bt BT_CLR    &bt BT_NXT    &bt BT_PRV    &bt BT_CLR_ALL
+                                &none         &trans        &trans    &trans  &trans        &none
+            >;
+        };
+
+        misc {
+            bindings = <
+  &none           &none         &none         &none         &trans    &trans  &none         &none         &none         &none
+  &none           &none         &none         &sys_reset    &trans    &trans  &sys_reset    &none         &none         &none
+  &none           &none         &none         &bootloader   &trans    &trans  &bootloader   &none         &none         &none
                                 &none         &trans        &trans    &trans  &trans        &none
             >;
         };
