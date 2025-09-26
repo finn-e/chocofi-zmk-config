@@ -185,7 +185,7 @@
             keep-mods = <(MOD_LCTL)>;
         };
         
-        lt4kr: lt4kr {
+        ltNUMkr: ltNUMkr {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo>, <&key_repeat>;
         
@@ -193,7 +193,7 @@
             tapping-term-ms = <HOLD_TAP_TIMEOUT>;
         };
 
-        lt3shift: lt3shift {
+        ltWINshift: ltWINshift {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo>, <&sk_lshift_lock>;
         
