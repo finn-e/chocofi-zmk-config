@@ -13,6 +13,7 @@
 #define COMBO_TIMEOUT 70
 #define COMBO_LAYERS 0
 #define STICKY_TIMEOUT 1000
+#define HOLD_TAP_TIMEOUT 190
 
 // LEFT SIDE
 #define TLP 10
@@ -144,7 +145,7 @@
             bindings = <&shift>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <190>;
+            tapping-term-ms = <HOLD_TAP_TIMEOUT>;
         };
 
         ralt_i_cut: ralt_i_cut {
@@ -173,9 +174,37 @@
             mods = <(MOD_RALT)>;
             keep-mods = <(MOD_LCTL)>;
         };
+        
+        lt4kr: lt4kr {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&mo 4>, <&key_repeat>;
+        
+            #binding-cells = <0>;
+            tapping-term-ms = <HOLD_TAP_TIMEOUT>;
+        };
+
+        lt3shift: lt3shift {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&mo 3>, <&sk_lshift_lock>;
+        
+            #binding-cells = <0>;
+            tapping-term-ms = <HOLD_TAP_TIMEOUT>;
+        };
+
+
     };
 
     macros {
+        tqt: tqt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_tap>,
+                <&kp APOS>,
+                <&kp APOS>,
+                <&kp APOS>,
+        };
+
         shift: shift {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -206,9 +235,9 @@
         bougie {
             bindings = <
   &bt BT_CLR     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &tog 1         &tog 1       &bt BT_SEL 3   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR
-  &kp BACKSPACE  &as E         &as A         &as T          &sys_reset     &sys_reset   &as T          &as A         &as E         &kp BACKSPACE
-  &kp TAB        &ralt_i_cut   &ralt_o_copy  &ralt_n_paste  &bootloader    &bootloader  &ralt_n_paste  &ralt_o_copy  &ralt_i_cut   &kp TAB
-                               &key_repeat   &kp BSPC       &kp SPACE      &kp SPACE    &kp BSPC       &key_repeat
+  &none          &none         &none         &none          &sys_reset     &sys_reset   &none          &none         &none         &none
+  &none          &none         &none         &none          &bootloader    &bootloader  &none          &none         &none         &none
+                               &key_repeat   &none          &none          &none        &none          &key_repeat
             >;
         };
 
@@ -225,8 +254,17 @@
             bindings = <
   &kp HOME  &kp PG_DN          &kp PG_UP  &kp END    &trans    &trans  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END
   &kp LEFT  &kp DOWN           &kp UP     &kp RIGHT  &trans    &trans  &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT
-  &kp HOME  &kp RS(PAGE_DOWN)  &kp PG_UP  &kp END    &trans    &trans  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END
-                               &to 0      &trans     &trans    &trans  &trans    &to 0
+  &kp HOME  &kp PAGE_DOWN      &kp PG_UP  &kp END    &trans    &trans  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END
+                               &none      &trans     &trans    &trans  &trans    &none
+            >;
+        };
+
+        windows {
+            bindings = <
+  &none                &none                 &none                &none                  &trans    &trans  &none                  &none                &none                 &none
+  &kp LC(LG(LEFT))     &kp LC(LG(DOWN))      &kp LC(LG(UP))       &kp LC(LG(RIGHT))      &trans    &trans  &kp LC(LG(LEFT))       &kp LC(LG(UP))       &kp LC(LG(DOWN))      &kp LC(LG(RIGHT))
+  &kp LS(LS(LG(LEFT))) &kp LS(LS(LG(DOWN)))  &kp LS(LS(LG(UP)))   &kp LS(LS(LG(RIGHT)))  &trans    &trans  &kp LS(LS(LG(LEFT)))   &kp LS(LS(LG(UP)))   &kp LS(LS(LG(DOWN)))  &kp LS(LS(LG(RIGHT)))
+                                             &none                &trans                 &trans    &trans  &trans                 &none
             >;
         };
 
@@ -235,7 +273,7 @@
   &none   &none   &none   &none   &trans    &trans  &none   &none   &none   &none
   &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N2  &kp N4  &kp N6  &kp N8
   &kp N9  &kp N7  &kp N5  &kp N3  &trans    &trans  &kp N3  &kp N5  &kp N7  &kp N9
-                  &to 0   &kp N1  &kp N0    &kp N0  &kp N1  &to 0
+                  &none   &kp N1  &kp N0    &kp N0  &kp N1  &none
             >;
         };
 
@@ -244,7 +282,7 @@
   &none       &none       &none       &none       &trans        &trans      &none       &none       &none       &none
   &kp LS(N8)  &kp LS(N6)  &kp LS(N4)  &kp LS(N2)  &trans        &trans      &kp RS(N2)  &kp RS(N4)  &kp RS(N6)  &kp RS(N8)
   &kp LS(N9)  &kp LS(N7)  &kp LS(N5)  &kp LS(N3)  &trans        &trans      &kp RS(N3)  &kp RS(N5)  &kp LS(N7)  &kp RS(N9)
-                          &to 0       &kp LS(N1)  &kp LS(N0)    &kp RS(N0)  &kp RS(N1)  &to 0
+                          &none       &kp LS(N1)  &kp LS(N0)    &kp RS(N0)  &kp RS(N1)  &none
             >;
         };
 
@@ -253,7 +291,7 @@
   &none           &none         &none         &none         &trans    &trans  &none         &none         &none         &none
   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans    &trans  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
   &bt BT_CLR_ALL  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR    &trans    &trans  &bt BT_CLR    &bt BT_NXT    &bt BT_PRV    &bt BT_CLR_ALL
-                                &to 0         &trans        &trans    &trans  &trans        &to 0
+                                &none         &trans        &trans    &trans  &trans        &none
             >;
         };
 
@@ -262,7 +300,7 @@
   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                  &to 0   &trans  &trans    &trans  &trans  &to 0
+                  &none   &trans  &trans    &trans  &trans  &none
             >;
         };
 
@@ -271,7 +309,7 @@
   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
   &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp N0
   &kp N9  &kp N7  &kp N5  &kp N3  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp N0
-                  &to 0   &kp N1  &kp N0    &kp N0  &kp N1  &to 0
+                  &none   &kp N1  &kp N0    &kp N0  &kp N1  &none
             >;
         };
     };
