@@ -48,6 +48,8 @@ combo_rb_##NAME { \
 	layers = <COMBO_LAYERS>; \
 };
 
+// Thumb Only Combos
+
 combo_l_space { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&lt NAV SPACE>; \
@@ -62,30 +64,30 @@ combo_r_space { \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_l_kr { \
+combo_l_shift { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&ltNUMkr NUM NUM>; \
+	bindings = <&ltshift DESK DESK>; \
 	key-positions = <LIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_r_kr { \
+combo_r_shift { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&ltNUMkr NUM NUM>; \
+	bindings = <&ltshift DESK DESK>; \
 	key-positions = <RIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_l_both { \
     timeout-ms = <COMBO_TIMEOUT>; \
-    bindings = <&ltWINshift WIN WIN>; \
+    bindings = <&sl WIN>; \
     key-positions = <LIT LOT>; \
     layers = <COMBO_LAYERS>; \
 };
 
 combo_r_both { \
     timeout-ms = <COMBO_TIMEOUT>; \
-    bindings = <&ltWINshift WIN WIN>; \
+    bindings = <&sl WIN>; \
     key-positions = <RIT ROT>; \
     layers = <COMBO_LAYERS>; \
 };
@@ -356,9 +358,9 @@ TCOMBO(Q,          &as Q,              &none,                 &none,            
 TCOMBO(J,          &as J,              &kp C_NEXT,            &kp C_PREV,            &kp C_PP,               TLI BLI BLR,                       TRI BRI BRR)
 TCOMBO(V,          &as V,              &kp LC(LA(T)),         &none,                 &as F23,                TLI BLI TLM,                       TRI BRI TRM)
 TCOMBO(K,          &as K,              &kp LA(SPACE),         &kp LGUI,              &as F24,                TLI BLI BLM,                       TRI BRI BRM)
-TCOMBO(BT,         &sl BT,             &none,                 &none,                 &none,                  TLR BLR TLM BLM,                   TRR BRR TRM BRM)
+TCOMBO(BT,         &sl BT,             &bt BT_CLR,            &bt BT_CLR,            &bt BT_CLR_ALL,         TLR BLR TLM BLM,                   TRR BRR TRM BRM)
 TCOMBO(NAVLOCK,    &sticky_navlock,    &none,                 &none,                 &none,                  TLR BLR TLI BLI,                   TRR BRR TRI BRI)
-TCOMBO(NUMLOCK,    &sticky_numlock,    &sk_lshift_lock,       &none,                 &bt BT_CLR,             TLM BLM TLI BLI,                   TRM BRM TRI BRI)
+TCOMBO(NUMLOCK,    &sticky_numlock,    &sk_lshift_lock,       &none,                 &none,                  TLM BLM TLI BLI,                   TRM BRM TRI BRI)
 TCOMBO(RET,        &kp RET,            &kp LS(RET),           &kp LS(RET),           &kp LS(RET),            TLR TLM TLI,                       TRR TRM TRI)
 TCOMBO(PASTE,      &kp LC(V),          &kp LS(LC(V)),         &none,                 &none,                  TLR TLM BLI,                       TRR TRM BRI)
 TCOMBO(COPY,       &kp LC(C),          &kp LS(LC(C)),         &none,                 &none,                  TLR BLM TLI,                       TRR BRM TRI)
