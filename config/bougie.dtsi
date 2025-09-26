@@ -64,14 +64,14 @@ combo_r_space { \
 
 combo_l_kr { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&ltNUMkr NUM>; \
+	bindings = <&ltNUMkr NUM NUM>; \
 	key-positions = <LIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_r_kr { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&ltNUMkr NUM>; \
+	bindings = <&ltNUMkr NUM NUM>; \
 	key-positions = <RIT>; \
 	layers = <COMBO_LAYERS>; \
 };
