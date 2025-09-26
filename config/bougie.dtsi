@@ -133,7 +133,7 @@ combo_lo_T { \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_lo_T { \
+combo_li_T { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as N7>; \
 	key-positions = <TLI LIT>; \
@@ -245,7 +245,7 @@ combo_ro_T { \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_ro_T { \
+combo_ri_T { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as N7>; \
 	key-positions = <TRI LIT>; \
