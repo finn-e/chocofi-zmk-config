@@ -93,28 +93,28 @@ combo_r_both { \
 };
 
 // Combos that aren't mirrored (home/end and left/right)
-combo_l_BSPC { \
+combo_l_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp BSPC>; \
+	bindings = <&sk_lshift_lock>; \
 	key-positions = <TLP>; \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_lo_BSPC { \
+combo_lo_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp HOME>; \
 	key-positions = <TLP LOT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_li_BSPC { \
+combo_li_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as N1>; \
 	key-positions = <TLP LIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_lb_BSPC { \
+combo_lb_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as F1>; \
 	key-positions = <TLP LIT LOT>; \
