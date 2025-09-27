@@ -293,7 +293,7 @@
             bindings = <
   &none                &none                 &none                &none                  &trans    &trans  &none                  &none                &none                 &none
   &kp LC(LG(LEFT))     &kp LC(LG(DOWN))      &kp LC(LG(UP))       &kp LC(LG(RIGHT))      &trans    &trans  &kp LC(LG(LEFT))       &kp LC(LG(UP))       &kp LC(LG(DOWN))      &kp LC(LG(RIGHT))
-  &kp LS(LC(LG(LEFT))) &kp LS(LC(LG(DOWN)))  &kp LS(LC(LG(UP)))   &kp LS(LC(LG(RIGHT)))  &trans    &trans  &kp LS(LC(LG(LEFT)))   &kp LS(LC(LG(UP)))   &kp LS(LC(LG(DOWN)))  &kp LS(LG(RIGHT)))
+  &kp LS(LC(LG(LEFT))) &kp LS(LC(LG(DOWN)))  &kp LS(LC(LG(UP)))   &kp LS(LC(LG(RIGHT)))  &trans    &trans  &kp LS(LC(LG(LEFT)))   &kp LS(LC(LG(UP)))   &kp LS(LC(LG(DOWN)))  &kp LS(LC(LG(RIGHT)))
                                              &none                &trans                 &trans    &trans  &trans                 &none
             >;
         };
