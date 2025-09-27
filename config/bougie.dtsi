@@ -64,16 +64,16 @@ combo_r_space { \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_l_shift { \
+combo_l_bs { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&ltshift DESK DESK>; \
+	bindings = <&lt DESK BSPC>; \
 	key-positions = <LIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_r_shift { \
+combo_r_bs { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&ltshift DESK DESK>; \
+	bindings = <&lt DESK BSPC>; \
 	key-positions = <RIT>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -205,28 +205,28 @@ combo_lb_N { \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_r_BSPC { \
+combo_r_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp BSPC>; \
+	bindings = <&sk_lshift_lock>; \
 	key-positions = <TRP>; \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_ro_BSPC { \
+combo_ro_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp END>; \
 	key-positions = <TRP LOT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_ri_BSPC { \
+combo_ri_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as N1>; \
 	key-positions = <TRP LIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_rb_BSPC { \
+combo_rb_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as F1>; \
 	key-positions = <TRP LIT LOT>; \
