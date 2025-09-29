@@ -64,13 +64,6 @@ combo_lbt_clearall { \
 	layers = <COMBO_LAYERS>; \
 };
 
-combo_lc_undo { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp C-z>; \
-	key-positions = <LCX LCC>; \
-	layers = <COMBO_LAYERS>; \
-};
-
 combo_lc_redo { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp C-S-Z; \
