@@ -321,8 +321,8 @@ combo_rb_N { \
 //     NAME        Action              Action w/ Outer Thumb  Action w/ Inner Thumb  Action w/ Both Thumbs   Fingers (Left)						Finger (Right) //
 TCOMBO(BTCLR,      &bt BT_CLR,         &bt BT_CLR,			  &bt BT_CLR,            &bt BT_CLR,			 LB0 LB1,                           RB0 RB1)
 TCOMBO(BTCLRALL,   &bt BT_CLR_ALL,     &bt BT_CLR_ALL,		  &bt BT_CLR_ALL,        &bt BT_CLR_ALL,		 LB0 LB1 LB2 LB3,                   RB0 RB1 RB2 RB3)
-TCOMBO(CUNDO,      &kp C-Z,            &kp C-Z,				  &kp C-Z,	             &kp C-Z,				 LCX LCC,                           RCX RCC)
-TCOMBO(CREDO,      &kp C-S-Z,          &kp C-S-Z,			  &kp C-S-Z,             &kp C-S-Z,				 LCC LCV,                           RCC RCV)
+TCOMBO(CUNDO,      &kp LC(Z),          &kp LC(Z),		      &kp LC(Z),             &kp LC(Z),				 LCX LCC,                           RCX RCC)
+TCOMBO(CREDO,      &kp LC(LS(Z)),      &kp LC(LS(Z)),		  &kp LC(LS(Z)),         &kp LC(LS(Z)),			 LCC LCV,                           RCC RCV)
 //TCOMBO(BSPC,       &kp BSPC,           &kp HOME,              &as N1,                &as F1,                 TLP,                               TRP)
 TCOMBO(E,          &as E,              &kp PG_DN,             &as N3,                &as F3,                 TLR,                               TRR)
 TCOMBO(A,          &as A,              &kp PG_UP,             &as N5,                &as F5,                 TLM,                               TRM)
