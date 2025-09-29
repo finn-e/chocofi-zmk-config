@@ -48,6 +48,34 @@ combo_rb_##NAME { \
 	layers = <COMBO_LAYERS>; \
 };
 
+// Non-Bougie Combos
+
+combo_lbt_clr { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&bt BT_CLR>; \
+	key-positions = <LB0 LB1>; \
+	layers = <COMBO_LAYERS>; \
+};
+
+combo_lbt_clrall { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&bt BT_CLR_ALL>; \
+	key-positions = <LB0 LB1 LB2 LB3>; \
+	layers = <COMBO_LAYERS>; \
+};
+combo_lc_undo { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&kp LC(Z)>; \
+	key-positions = <LCX LCC>; \
+	layers = <COMBO_LAYERS>; \
+};
+combo_lbt_redo { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&kp LS(LC(Z))>; \
+	key-positions = <LCC LCV>; \
+	layers = <COMBO_LAYERS>; \
+};
+
 // Thumb Only Combos
 
 combo_l_space { \
@@ -319,10 +347,6 @@ combo_rb_N { \
 
 //** COMBOS **//
 //     NAME        Action              Action w/ Outer Thumb  Action w/ Inner Thumb  Action w/ Both Thumbs   Fingers (Left)						Finger (Right) //
-TCOMBO(BTCLR,      &bt BT_CLR,         &bt BT_CLR,			  &bt BT_CLR,            &bt BT_CLR,			 LB0 LB1,                           RB0 RB1)
-TCOMBO(BTCLRALL,   &bt BT_CLR_ALL,     &bt BT_CLR_ALL,		  &bt BT_CLR_ALL,        &bt BT_CLR_ALL,		 LB0 LB1 LB2 LB3,                   RB0 RB1 RB2 RB3)
-TCOMBO(CUNDO,      &kp LC(Z),          &kp LC(Z),		      &kp LC(Z),             &kp LC(Z),				 LCX LCC,                           RCX RCC)
-TCOMBO(CREDO,      &kp LC(LS(Z)),      &kp LC(LS(Z)),		  &kp LC(LS(Z)),         &kp LC(LS(Z)),			 LCC LCV,                           RCC RCV)
 //TCOMBO(BSPC,       &kp BSPC,           &kp HOME,              &as N1,                &as F1,                 TLP,                               TRP)
 TCOMBO(E,          &as E,              &kp PG_DN,             &as N3,                &as F3,                 TLR,                               TRR)
 TCOMBO(A,          &as A,              &kp PG_UP,             &as N5,                &as F5,                 TLM,                               TRM)
@@ -372,5 +396,5 @@ TCOMBO(CUT,        &kp LC(X),          &kp LS(LC(X)),         &none,            
 TCOMBO(UNDO,       &kp LC(Z),          &kp LS(LC(Z)),         &none,                 &none,                  TLR BLM BLI,                       TRR BRM BRI)
 TCOMBO(SAVE,       &kp LC(S),          &kp LG(G),             &kp LG(W),             &kp LS(LC(S)),          BLR TLM BLI,                       BRR TRM BRI)
 TCOMBO(REDO,       &kp LS(LC(Z)),      &kp LC(Z),             &none,                 &none,                  BLR BLM TLI,                       BRR BRM TLI)
-TCOMBO(ESC,        &kp ESC,            &none,                 &none,                 &kp LG(L),                  BLR BLM BLI,                       BRR BRM BRI)
+TCOMBO(ESC,        &kp ESC,            &none,                 &none,                 &kp LG(L),              BLR BLM BLI,                       BRR BRM BRI)
 TCOMBO(MISC,       &sl MISC,           &none,                 &none,                 &none,                  TLR BLR TLM BLM TLI BLI,           TRR BRR TRM BRM TRI BRI)
