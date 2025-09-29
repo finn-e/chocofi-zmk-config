@@ -48,6 +48,36 @@ combo_rb_##NAME { \
 	layers = <COMBO_LAYERS>; \
 };
 
+// Non-Bougie Combos
+
+combo_lbt_clear { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&bt BT_CLR>; \
+	key-positions = <LB0 LB1>; \
+	layers = <COMBO_LAYERS>; \
+};
+
+combo_lbt_clearall { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&bt BT_CLR_ALL>; \
+	key-positions = <LB0 LB1 LB2 LB3>; \
+	layers = <COMBO_LAYERS>; \
+};
+
+combo_lc_undo { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&kp C-z>; \
+	key-positions = <LCX LCC>; \
+	layers = <COMBO_LAYERS>; \
+};
+
+combo_lc_redo { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&kp C-S-Z; \
+	key-positions = <LCC LCV>; \
+	layers = <COMBO_LAYERS>; \
+};
+
 // Thumb Only Combos
 
 combo_l_space { \
