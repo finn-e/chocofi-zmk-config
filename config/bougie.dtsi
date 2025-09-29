@@ -48,64 +48,6 @@ combo_rb_##NAME { \
 	layers = <COMBO_LAYERS>; \
 };
 
-// Non-Bougie Combos
-
-combo_lbt_clear { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&bt BT_CLR>; \
-	key-positions = <LB0 LB1>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_lbt_clearall { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&bt BT_CLR_ALL>; \
-	key-positions = <0 1 2 3>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_lc_undo { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp C-z>; \
-	key-positions = <LCX LCC>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_lc_redo { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp C-S-Z; \
-	key-positions = <LCC LCV>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_rbt_clear { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&bt BT_CLR>; \
-	key-positions = <RB0 RB1>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_rbt_clearall { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&bt BT_CLR_ALL>; \
-	key-positions = <RB0 RB1 RB2 RB3>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_rc_undo { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp C-z>; \
-	key-positions = <RCX RCC>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_rc_redo { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp C-S-Z; \
-	key-positions = <RCC RCV>; \
-	layers = <COMBO_LAYERS>; \
-};
-
 // Thumb Only Combos
 
 combo_l_space { \
@@ -377,6 +319,10 @@ combo_rb_N { \
 
 //** COMBOS **//
 //     NAME        Action              Action w/ Outer Thumb  Action w/ Inner Thumb  Action w/ Both Thumbs   Fingers (Left)						Finger (Right) //
+TCOMBO(BTCLR,      &bt BT_CLR,         &bt BT_CLR,			  &bt BT_CLR,            &bt BT_CLR,			 LB0 LB1,                           RB0 RB1)
+TCOMBO(BTCLRALL,   &bt BT_CLR_ALL,     &bt BT_CLR_ALL,		  &bt BT_CLR_ALL,        &bt BT_CLR_ALL,		 LB0 LB1 LB2 LB3,                   RB0 RB1 RB2 RB3)
+TCOMBO(CUNDO,      &kp C-Z,            &kp C-Z,				  &kp C-Z,	             &kp C-Z,				 LCX LCC,                           RCX RCC)
+TCOMBO(CREDO,      &kp C-S-Z,          &kp C-S-Z,			  &kp C-S-Z,             &kp C-S-Z,				 LCC LCV,                           RCC RCV)
 //TCOMBO(BSPC,       &kp BSPC,           &kp HOME,              &as N1,                &as F1,                 TLP,                               TRP)
 TCOMBO(E,          &as E,              &kp PG_DN,             &as N3,                &as F3,                 TLR,                               TRR)
 TCOMBO(A,          &as A,              &kp PG_UP,             &as N5,                &as F5,                 TLM,                               TRM)
