@@ -78,6 +78,34 @@ combo_lc_redo { \
 	layers = <COMBO_LAYERS>; \
 };
 
+combo_rbt_clear { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&bt BT_CLR>; \
+	key-positions = <RB0 RB1>; \
+	layers = <COMBO_LAYERS>; \
+};
+
+combo_rbt_clearall { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&bt BT_CLR_ALL>; \
+	key-positions = <RB0 RB1 RB2 RB3>; \
+	layers = <COMBO_LAYERS>; \
+};
+
+combo_rc_undo { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&kp C-z>; \
+	key-positions = <RCX RCC>; \
+	layers = <COMBO_LAYERS>; \
+};
+
+combo_rc_redo { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&kp C-S-Z; \
+	key-positions = <RCC RCV>; \
+	layers = <COMBO_LAYERS>; \
+};
+
 // Thumb Only Combos
 
 combo_l_space { \
