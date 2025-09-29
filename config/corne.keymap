@@ -11,6 +11,25 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+// NOT BOUGIE KEYS
+// LEFT SIDE
+#define LB0 0
+#define LB1 1
+#define LB2 2
+#define LB3 3
+#define LCX 4
+#define LCC 14
+#define LCV 24
+// RIGHT SIDE
+#define LB0 9
+#define LB1 8
+#define LB2 7
+#define LB3 6
+#define LCX 5
+#define LCC 15
+#define LCV 25
+
+// BOUGIE KEYS
 // LEFT SIDE
 #define TLP 10
 #define TLR 11
