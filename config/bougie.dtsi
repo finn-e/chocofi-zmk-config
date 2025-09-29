@@ -60,7 +60,14 @@ combo_lbt_clear { \
 combo_lbt_clearall { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&bt BT_CLR_ALL>; \
-	key-positions = <LB0 LB1 LB2 LB3>; \
+	key-positions = <0 1 2 3>; \
+	layers = <COMBO_LAYERS>; \
+};
+
+combo_lc_undo { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <&kp C-z>; \
+	key-positions = <LCX LCC>; \
 	layers = <COMBO_LAYERS>; \
 };
 
