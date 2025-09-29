@@ -21,13 +21,13 @@
 #define LCC 14
 #define LCV 24
 // RIGHT SIDE
-#define LB0 9
-#define LB1 8
-#define LB2 7
-#define LB3 6
-#define LCX 5
-#define LCC 15
-#define LCV 25
+#define RB0 9
+#define RB1 8
+#define RB2 7
+#define RB3 6
+#define RCX 5
+#define RCC 15
+#define RCV 25
 
 // BOUGIE KEYS
 // LEFT SIDE
