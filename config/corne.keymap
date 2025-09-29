@@ -203,6 +203,12 @@
             bindings = <&kp TAB>, <&kp TAB>, <&kp TAB>, <&sys_reset>, <&kp TAB>, <&bootloader>;
         };
 
+        qwereset: qwereset {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&tog QWE>, <&none>, <&none>, <&sys_reset>, <&none>, <&bootloader>;
+        };
+
     };
 
     macros {
@@ -245,19 +251,19 @@
 
         bougie {
             bindings = <
-  &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &tog 1         &tog 1       &bt BT_SEL 3   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR
-  &none          &none         &none         &none          &sys_reset     &sys_reset   &none          &none         &none         &none
-  &none          &none         &none         &none          &bootloader    &bootloader  &none          &none         &none         &none
-                               &key_repeat   &none          &none          &none        &none          &key_repeat
+  &none          &none         &none         &none          &none          &none        &none          &none         &none         &none
+  &none          &none         &none         &none          &none          &none        &none          &none         &none         &none
+  &none          &none         &none         &none          &none          &none        &none          &none         &none         &none
+                               &qwereset     &none          &none          &none        &none          &qwereset
             >;
         };
 
         qwerty {
             bindings = <
-  &kp Q         &kp W  &kp E    &kp R     &kp T        &kp Y    &kp U       &kp I      &kp O    &kp P
-  &kp A         &kp S  &kp D    &kp F     &kp G        &kp H    &kp J       &kp K      &kp L    &kp SEMI
-  &mt Z LSHIFT  &kp X  &kp C    &kp V     &kp B        &kp N    &kp M       &kp COMMA  &kp DOT  &mt FSLH RSHIFT
-                       &tog QWE &kp BSPC  &kp SPACE    &kp RET  &kp DELETE  &sl QNUM
+  &kp Q         &kp W  &kp E     &kp R     &kp T            &kp Y    &kp U       &kp I      &kp O    &kp P
+  &kp A         &kp S  &kp D     &kp F     &kp G            &kp H    &kp J       &kp K      &kp L    &kp SEMI
+  &mt Z LSHIFT  &kp X  &kp C     &kp V     &kp B            &kp N    &kp M       &kp COMMA  &kp DOT  &mt FSLH RSHIFT
+                       &qwereset &kp BSPC  &kp SPACE        &kp RET  &kp DELETE  &sl QNUM
             >;
         };
 
@@ -266,7 +272,7 @@
   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
   &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp N0
   &kp N9  &kp N7  &kp N5  &kp N3  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp N0
-                  &none   &kp N1  &kp N0    &kp N0  &kp N1  &none
+                  &trans  &kp N1  &kp N0    &kp N0  &kp N1  &trans
             >;
         };
     };
