@@ -358,4 +358,14 @@
                                  &none         &trans        &trans    &trans  &trans        &none
             >;
         };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        WIN {
+            if-layers = <NAV DESK>;
+            then-layer = <WIN>;
+        };
+
+
+    };
 };
