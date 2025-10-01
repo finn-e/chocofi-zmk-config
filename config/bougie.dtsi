@@ -100,7 +100,7 @@ combo_l_TP { \
 
 combo_lo_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp HOME>; \
+	bindings = <&kp LEFT>; \
 	key-positions = <TLP LOT>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -128,7 +128,7 @@ combo_l_T { \
 
 combo_lo_T { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp END>; \
+	bindings = <&kp RIGHT>; \
 	key-positions = <TLI LOT>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -156,7 +156,7 @@ combo_l_TAB { \
 
 combo_lo_TAB { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp LEFT>; \
+	bindings = <&kp HOME>; \
 	key-positions = <BLP LOT>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -184,7 +184,7 @@ combo_l_N { \
 
 combo_lo_N { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp RIGHT>; \
+	bindings = <END>; \
 	key-positions = <BLI LOT>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -212,7 +212,7 @@ combo_r_TP { \
 
 combo_ro_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp END>; \
+	bindings = <&kp RIGHT>; \
 	key-positions = <TRP ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -240,7 +240,7 @@ combo_r_T { \
 
 combo_ro_T { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp HOME>; \
+	bindings = <&kp LEFT>; \
 	key-positions = <TRI ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -268,7 +268,7 @@ combo_r_TAB { \
 
 combo_ro_TAB { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp RIGHT>; \
+	bindings = <&kp END>; \
 	key-positions = <BRP ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -296,7 +296,7 @@ combo_r_N { \
 
 combo_ro_N { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp LEFT>; \
+	bindings = <&kp HOME>; \
 	key-positions = <BRI ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
@@ -317,14 +317,14 @@ combo_rb_N { \
 
 //** COMBOS **//
 //     NAME        Action              Action w/ Outer Thumb  Action w/ Inner Thumb  Action w/ Both Thumbs   Fingers (Left)						Finger (Right) //
-//TCOMBO(BSPC,       &kp BSPC,           &kp HOME,              &as N8,                &as F1,                 TLP,                               TRP)
-TCOMBO(E,          &as E,              &kp PG_DN,             &as N6,                &as F3,                 TLR,                               TRR)
-TCOMBO(A,          &as A,              &kp PG_UP,             &as N4,                &as F5,                 TLM,                               TRM)
-//TCOMBO(T,          &as T,              &kp END,               &as N2,                &as F7,                 TLI,                               TRI)
-//TCOMBO(TAB,        &kp TAB,            &kp LEFT,              &as N9,                &as F2,                 BLP,                               BRP)
-TCOMBO(I,          &as I,              &kp DOWN,              &as N7,                &as F4,                 BLR,                               BRR)
-TCOMBO(O,          &as O,              &kp UP,                &as N5,                &as F6,                 BLM,                               BRM)
-//TCOMBO(N,          &as N,              &kp RIGHT,             &as N3,                &as F8,                 BLI,                               BRI)
+//TCOMBO(BSPC,       &kp BSPC,           &kp LEFT,              &as N8,                &as F1,                 TLP,                               TRP)
+TCOMBO(E,          &as E,              &kp DOWN,             &as N6,                &as F3,                 TLR,                               TRR)
+TCOMBO(A,          &as A,              &kp UP,             &as N4,                &as F5,                 TLM,                               TRM)
+//TCOMBO(T,          &as T,              &kp RIGHT,               &as N2,                &as F7,                 TLI,                               TRI)
+//TCOMBO(TAB,        &kp TAB,            &kp HOME,              &as N9,                &as F2,                 BLP,                               BRP)
+TCOMBO(I,          &as I,              &kp PG_DN,              &as N7,                &as F4,                 BLR,                               BRR)
+TCOMBO(O,          &as O,              &kp PG_UP,                &as N5,                &as F6,                 BLM,                               BRM)
+//TCOMBO(N,          &as N,              &kp END,             &as N3,                &as F8,                 BLI,                               BRI)
 TCOMBO(RALT,       &sk_ralt_lock,      &kp GT,                &kp LT,                &bt BT_SEL 0,           TLP BLP,                           TRP BRP)
 TCOMBO(LALT,       &sk_lalt_lock,      &kp RBRC,              &kp LBRC,              &bt BT_SEL 1,           TLR BLR,                           TRR BRR)
 TCOMBO(LCTRL,      &sk_lctrl_lock,     &kp RBKT,              &kp LBKT,              &bt BT_SEL 2,           TLM BLM,                           TRM BRM)
