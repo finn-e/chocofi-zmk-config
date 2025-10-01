@@ -298,10 +298,10 @@
 
         nav {
             bindings = <
-  &kp HOME  &kp PG_DN          &kp PG_UP  &kp END    &trans    &trans  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END
-  &kp LEFT  &kp DOWN           &kp UP     &kp RIGHT  &trans    &trans  &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT
-  &kp HOME  &kp PAGE_DOWN      &kp PG_UP  &kp END    &trans    &trans  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END
-                               &none      &trans     &trans    &trans  &trans    &none
+  &none     &none     &none      &none      &trans    &trans  &none     &none      &none      &none
+  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans    &trans  &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT
+  &kp HOME  &kp PG_DN &kp PG_UP  &kp END    &trans    &trans  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END
+                      &none      &trans     &trans    &trans  &trans    &none
             >;
         };
 
@@ -323,7 +323,7 @@
             >;
         };
 
-        num {
+        numbers {
             bindings = <
   &none   &none   &none   &none   &trans    &trans  &none   &none   &none   &none
   &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N2  &kp N4  &kp N6  &kp N8
@@ -332,7 +332,7 @@
             >;
         };
 
-        sym {
+        symbols {
             bindings = <
   &none       &none       &none       &none       &trans        &trans      &none       &none       &none       &none
   &kp LS(N8)  &kp LS(N6)  &kp LS(N4)  &kp LS(N2)  &trans        &trans      &kp RS(N2)  &kp RS(N4)  &kp RS(N6)  &kp RS(N8)
