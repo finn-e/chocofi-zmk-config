@@ -47,48 +47,6 @@ combo_rb_##NAME { \
 	key-positions = <RIGHT_KEYPOS RIT ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
-// thumb combos
-combo_l_space { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&lt NAV SPACE>; \
-	key-positions = <LOT>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_r_space { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&lt NAV SPACE>; \
-	key-positions = <ROT>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_l_bs { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&lt DESK BSPC>; \
-	key-positions = <LIT>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_r_bs { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&lt DESK BSPC>; \
-	key-positions = <RIT>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_l_both { \
-    timeout-ms = <COMBO_TIMEOUT>; \
-    bindings = <&sl WIN>; \
-    key-positions = <LIT LOT>; \
-    layers = <COMBO_LAYERS>; \
-};
-
-combo_r_both { \
-    timeout-ms = <COMBO_TIMEOUT>; \
-    bindings = <&sl WIN>; \
-    key-positions = <RIT ROT>; \
-    layers = <COMBO_LAYERS>; \
-};
 
 // Combos that aren't mirrored (home/end and left/right)
 combo_l_TP { \
