@@ -97,6 +97,28 @@
             bindings = <&sl NUM>, <&tog NUM>;
         };
 
+        lt_desk: lt_desk {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+            tapping-term-ms = <HOLD_TAP_TIMEOUT>;
+            hold-on-other-key-press;
+        };
+
+        lt_nav: lt_nav {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+            tapping-term-ms = <HOLD_TAP_TIMEOUT>;
+            hold-on-other-key-press;
+        };
+
+        sticky_numlock: sticky_numlock {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&sl NUM>, <&tog NUM>;
+        };
+
         sticky_navlock: sticky_navlock {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -219,13 +241,13 @@
         backdance: backdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&lt DESK BSPC>, <&kp BSPC>;
+            bindings = <&lt_desk DESK BSPC>, <&kp BSPC>;
         };
 
         spacedance: spacedance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&lt NAV SPC>, <&kp SPC>;
+            bindings = <&lt_nav NAV SPC>, <&kp SPC>;
         };
 
         tabdance: tabdance {
