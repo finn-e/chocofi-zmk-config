@@ -172,7 +172,7 @@ RTCOMBO(TP, &kp RIGHT, &as N8, &as F8, TRP)
 TCOMBO(E, &kp DOWN, &as N6, &as F6, TLR, TRR)
 TCOMBO(A, &kp UP, &as N4, &as F4, TLM, TRM)
 LTCOMBO(T, &kp RIGHT, &as N2, &as F2, TLI)
-RTCOMBO(T, &kp LEFT, &as N2, &as F2, TRI)
+RTCOMBO(T, &kp LEFT, &as N2, &as F2, TRI)&qwereset
 LTCOMBO(TAB, &kp END, &as N9, &as F9, BLP)
 RTCOMBO(TAB, &kp HOME, &as N9, &as F9, BRP)
 TCOMBO(I, &kp PG_DN, &as N7, &as F7, BLR, BRR)
@@ -429,7 +429,7 @@ FCOMBO(MISC,       &sl MISC,           &none,                 &none,            
                   &trans  &as N1  &as N0    &as N0  &as N1  &trans
             >;
         };
-    };
+    
 
         nav {
             bindings = <
@@ -500,6 +500,7 @@ FCOMBO(MISC,       &sl MISC,           &none,                 &none,            
             if-layers = <NAV DESK>;
             then-layer = <WIN>;
         };
+    };
 
 
     };
