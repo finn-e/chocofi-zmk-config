@@ -11,6 +11,10 @@ combo_li_##NAME { \
 	key-positions = <LEFT_KEYPOS LIT>; \
 	layers = <COMBO_LAYERS>; \
 }; \
+K8KBright.step
+Main
+Onshape app support
+
 combo_lo_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <OUTER_BINDINGS>; \
@@ -47,37 +51,7 @@ combo_rb_##NAME { \
 	key-positions = <RIGHT_KEYPOS RIT ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
-
-// Non-Bougie Combos
-
-combo_lbt_clr { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&bt BT_CLR>; \
-	key-positions = <LB0 LB1>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-combo_lbt_clrall { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&bt BT_CLR_ALL>; \
-	key-positions = <LB0 LB1 LB2 LB3>; \
-	layers = <COMBO_LAYERS>; \
-};
-combo_lc_undo { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp LC(Z)>; \
-	key-positions = <LCX LCC>; \
-	layers = <COMBO_LAYERS>; \
-};
-combo_lbt_redo { \
-	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <&kp LS(LC(Z))>; \
-	key-positions = <LCC LCV>; \
-	layers = <COMBO_LAYERS>; \
-};
-
-// Thumb Only Combos
-
+// thumb combos
 combo_l_space { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&lt NAV SPACE>; \
@@ -243,21 +217,21 @@ combo_r_TP { \
 combo_ro_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp END>; \
-	key-positions = <TRP LOT>; \
+	key-positions = <TRP ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_ri_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as N1>; \
-	key-positions = <TRP LIT>; \
+	key-positions = <TRP RIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_rb_TP { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as F1>; \
-	key-positions = <TRP LIT LOT>; \
+	key-positions = <TRP RIT ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
@@ -271,21 +245,21 @@ combo_r_T { \
 combo_ro_T { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp HOME>; \
-	key-positions = <TRI LOT>; \
+	key-positions = <TRI ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_ri_T { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as N7>; \
-	key-positions = <TRI LIT>; \
+	key-positions = <TRI RIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_rb_T { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as F7>; \
-	key-positions = <TRI LIT LOT>; \
+	key-positions = <TRI RIT ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
@@ -299,21 +273,21 @@ combo_r_TAB { \
 combo_ro_TAB { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp RIGHT>; \
-	key-positions = <BRP LOT>; \
+	key-positions = <BRP ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_ri_TAB { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as N2>; \
-	key-positions = <BRP LIT>; \
+	key-positions = <BRP RIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_rb_TAB { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as F2>; \
-	key-positions = <BRP LIT LOT>; \
+	key-positions = <BRP RIT ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
@@ -327,21 +301,21 @@ combo_r_N { \
 combo_ro_N { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&kp LEFT>; \
-	key-positions = <BRI LOT>; \
+	key-positions = <BRI ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_ri_N { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as N8>; \
-	key-positions = <BRI LIT>; \
+	key-positions = <BRI RIT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
 combo_rb_N { \
 	timeout-ms = <COMBO_TIMEOUT>; \
 	bindings = <&as F8>; \
-	key-positions = <BRI LIT LOT>; \
+	key-positions = <BRI RIT ROT>; \
 	layers = <COMBO_LAYERS>; \
 };
 
@@ -384,8 +358,8 @@ TCOMBO(Z,          &as Z,              &kp C_BRI_UP,          &kp C_BRI_DN,     
 TCOMBO(X,          &as X,              &kp C_VOL_UP,          &kp C_VOL_DN,          &kp C_MUTE,             TLM BLM BLI,                       TRM BRM TRI)
 TCOMBO(Q,          &as Q,              &none,                 &none,                 &none,                  TLI BLI TLR,                       TRI BRI TRR)
 TCOMBO(J,          &as J,              &kp C_NEXT,            &kp C_PREV,            &kp C_PP,               TLI BLI BLR,                       TRI BRI BRR)
-TCOMBO(V,          &as K,              &kp LA(SPACE),         &kp LGUI,              &as F23,                TLI BLI TLM,                       TRI BRI TRM)
-TCOMBO(K,          &as V,              &kp LC(LA(T)),         &none,                 &as F24,                TLI BLI BLM,                       TRI BRI BRM)
+TCOMBO(K,          &as K,              &kp LA(SPACE),         &kp LGUI,              &as F23,                TLI BLI TLM,                       TRI BRI TRM)
+TCOMBO(V,          &as V,              &kp LC(LA(T)),         &none,                 &as F24,                TLI BLI BLM,                       TRI BRI BRM)
 TCOMBO(BT,         &sl BT,             &bt BT_CLR,            &bt BT_CLR,            &bt BT_CLR_ALL,         TLR BLR TLM BLM,                   TRR BRR TRM BRM)
 TCOMBO(NAVLOCK,    &sticky_navlock,    &none,                 &none,                 &none,                  TLR BLR TLI BLI,                   TRR BRR TRI BRI)
 TCOMBO(NUMLOCK,    &sticky_numlock,    &sk_lshift_lock,       &none,                 &none,                  TLM BLM TLI BLI,                   TRM BRM TRI BRI)
