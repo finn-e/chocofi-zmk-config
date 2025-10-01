@@ -90,7 +90,8 @@
     #binding-cells = <2>;
     bindings = <&mo>, <&kp>;
     tapping-term-ms = <HOLD_TAP_TIMEOUT>;
-    hold-on-other-key-press;
+    quick-tap-ms: <HOLD_TAP_TIMEOUT>;
+    hold-while-undecided: 
 };
 // MAIN NODE
 
@@ -228,18 +229,6 @@
             tapping-term-ms = <HOLD_TAP_TIMEOUT>;
         };
 
-        backdance: backdance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&lt DESK BSPC>, <&kp BSPC>;
-        };
-
-        spacedance: spacedance {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            bindings = <&lt NAV SPC>, <&kp SPC>;
-        };
-
         tabdance: tabdance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -297,7 +286,7 @@
   &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp LC(X)      &kp LC(X)    &bt BT_SEL 3   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
   &none          &none         &none         &none          &kp LC(C)      &kp LC(C)    &none          &none         &none         &none
   &none          &none         &none         &none          &kp LC(V)      &kp LC(V)    &none          &none         &none         &none
-                               &qwereset     &backdance     &spacedance    &spacedance  &backdance     &qwereset
+                               &qwereset     &lt DESK BSPC  &lt WIN SPC    &lt WIN SPC  &lt DESK BSPC  &qwereset
             >;
         };
 
@@ -312,10 +301,10 @@
 
         qwenum {
             bindings = <
-  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
-  &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp N0
-  &kp N9  &kp N7  &kp N5  &kp N3  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp N0
-                  &trans  &kp N1  &kp N0    &kp N0  &kp N1  &trans
+  &as N1  &as N2  &as N3  &as N4  &as N5    &as N6  &as N7  &as N8  &as N9  &as N0
+  &as N8  &as N6  &as N4  &as N2  &trans    &trans  &as N4  &as N5  &as N6  &as N0
+  &as N9  &as N7  &as N5  &as N3  &trans    &trans  &as N1  &as N2  &as N3  &as N0
+                  &trans  &as N1  &as N0    &as N0  &as N1  &trans
             >;
         };
     };
@@ -350,9 +339,9 @@
         numbers {
             bindings = <
   &none   &none   &none   &none   &trans    &trans  &none   &none   &none   &none
-  &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N2  &kp N4  &kp N6  &kp N8
-  &kp N9  &kp N7  &kp N5  &kp N3  &trans    &trans  &kp N3  &kp N5  &kp N7  &kp N9
-                  &none   &kp N1  &kp N0    &kp N0  &kp N1  &none
+  &as N8  &as N6  &as N4  &as N2  &trans    &trans  &as N2  &as N4  &as N6  &as N8
+  &as N9  &as N7  &as N5  &as N3  &trans    &trans  &as N3  &as N5  &as N7  &as N9
+                  &none   &as N1  &as N0    &as N0  &as N1  &none
             >;
         };
 
