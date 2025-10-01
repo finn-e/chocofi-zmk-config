@@ -285,7 +285,7 @@
   &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp LC(X)      &kp LC(X)    &bt BT_SEL 3   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
   &none          &none         &none         &none          &kp LC(C)      &kp LC(C)    &none          &none         &none         &none
   &none          &none         &none         &none          &kp LC(V)      &kp LC(V)    &none          &none         &none         &none
-                               &qwereset     &lt DESK BSPC  &lt NAV SPC    &lt NAV SPC  &lt DESK BSPC  &qwereset
+                               &qwereset     &backdance     &spacedance    &spacedance  &backdance     &qwereset
             >;
         };
 
