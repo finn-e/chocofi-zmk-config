@@ -142,7 +142,7 @@ combo_l_N { \
 
 combo_lo_N { \
 	timeout-ms = <COMBO_TIMEOUT>; \
-	bindings = <END>; \
+	bindings = <&kp END>; \
 	key-positions = <BLI LOT>; \
 	layers = <COMBO_LAYERS>; \
 };
