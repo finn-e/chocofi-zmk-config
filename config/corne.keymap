@@ -90,8 +90,8 @@
     #binding-cells = <2>;
     bindings = <&mo>, <&kp>;
     tapping-term-ms = <HOLD_TAP_TIMEOUT>;
-    quick-tap-ms: <HOLD_TAP_TIMEOUT>;
-    hold-while-undecided: 
+    quick-tap-ms = <HOLD_TAP_TIMEOUT>;
+    hold-while-undecided;
 };
 // MAIN NODE
 
