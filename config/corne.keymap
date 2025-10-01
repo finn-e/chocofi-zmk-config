@@ -454,7 +454,7 @@ TCOMBO(MISC,       &sl MISC,           &none,                 &none,            
             hold-while-undecided;
         };
 
-        lt_win: lt_nav {
+        lt_nav: lt_nav {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <0>;
             bindings = <&mo NAV>, <&kp SPC>;
