@@ -436,47 +436,13 @@ TCOMBO(MISC,       &sl MISC,           &none,                 &none,            
         sticky_numlock: sticky_numlock {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&sl_num>, <&tog NUM>;
+            bindings = <&sl NUM>, <&tog NUM>;
         };
 
         sticky_navlock: sticky_navlock {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&sl_nav>, <&tog NAV>;
-        };
-
-        // Custom hold-taps to ensure layer is activated before combo is checked
-        lt_desk: lt_desk {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            bindings = <&mo DESK>, <&kp BSPC>;
-            tapping-term-ms = <HOLD_TAP_TIMEOUT>;
-            hold-while-undecided;
-        };
-
-        lt_nav: lt_nav {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            bindings = <&mo NAV>, <&kp SPC>;
-            tapping-term-ms = <HOLD_TAP_TIMEOUT>;
-            hold-while-undecided;
-        };
-
-        // Custom sticky-layers to ensure they inherit global properties
-        sl_nav: sl_nav {
-            compatible = "zmk,behavior-sticky-layer";
-            #binding-cells = <0>;
-            bindings = <&mo NAV>;
-            release-after-ms = <STICKY_TIMEOUT>;
-            quick-release;
-        };
-
-        sl_num: sl_num {
-            compatible = "zmk,behavior-sticky-layer";
-            #binding-cells = <0>;
-            bindings = <&mo NUM>;
-            release-after-ms = <STICKY_TIMEOUT>;
-            quick-release;
+            bindings = <&sl NAV>, <&tog NAV>;
         };
 
         sticky_lshift: sticky_lshift {
@@ -649,7 +615,7 @@ TCOMBO(MISC,       &sl MISC,           &none,                 &none,            
   &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp LC(X)      &kp LC(X)    &bt BT_SEL 3   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
   &none          &none         &none         &none          &kp LC(C)      &kp LC(C)    &none          &none         &none         &none
   &none          &none         &none         &none          &kp LC(V)      &kp LC(V)    &none          &none         &none         &none
-                               &qwereset     &lt_desk       &lt_nav        &lt_nav      &lt_desk       &qwereset
+                               &qwereset     &lt DESK BSPC  &lt NAV SPC    &lt NAV SPC  &lt DESK BSPC  &qwereset
             >;
         };
 
