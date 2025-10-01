@@ -68,7 +68,7 @@
 
 // CONFIG
 #define COMBO_TIMEOUT 70
-#define COMBO_LAYERS DEF NAV NUM
+#define COMBO_LAYERS DEF
 #define STICKY_TIMEOUT 1000
 #define HOLD_TAP_TIMEOUT 190
 
@@ -214,6 +214,18 @@
         
             #binding-cells = <2>;
             tapping-term-ms = <HOLD_TAP_TIMEOUT>;
+        };
+
+        backdance: backdance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&lt DESK BSPC>, <&kp BSPC>;
+        };
+
+        spacedance: spacedance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&lt NAV SPC>, <&kp SPC>;
         };
 
         tabdance: tabdance {
