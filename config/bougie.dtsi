@@ -11,9 +11,6 @@ combo_li_##NAME { \
 	key-positions = <LEFT_KEYPOS LIT>; \
 	layers = <COMBO_LAYERS>; \
 }; \
-K8KBright.step
-Main
-Onshape app support
 
 combo_lo_##NAME { \
 	timeout-ms = <COMBO_TIMEOUT>; \
