@@ -406,8 +406,8 @@ FCOMBO(MISC,       &sl MISC,           &none,                 &none,            
         bougie {
             bindings = <
   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp LC(X)      &kp LC(X)    &bt BT_SEL 3   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
-  &sk_lshift_lock &kp E         &kp A         &kp T          &kp LC(C)      &kp LC(C)    &none          &none         &none         &none
-  &kp TAB         &kp I         &kp O         &kp N          &kp LC(V)      &kp LC(V)    &none          &none         &none         &none
+  &sk_lshift_lock &as E         &as A         &as T          &kp LC(C)      &kp LC(C)    &as T          &as A         &as E         &sk_lshift_lock
+  &kp TAB         &as I         &as O         &as N          &kp LC(V)      &kp LC(V)    &as N          &as O         &as I         &kp TAB
                                 &mo NAV       &lt DESK BSPC  &lt NAV SPC    &lt NAV SPC  &lt DESK BSPC  &mo NUM
             >;
         };
