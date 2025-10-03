@@ -3,19 +3,97 @@
     Copyright (c) 2020 The ZMK Contributors
 
     SPDX-License-Identifier: MIT
+    TODO: soft_off wake behavior
     */
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
-#define DEFAULT_L 0
+// NOT BOUGIE KEYS
+// LEFT SIDE
+#define LB0 0
+#define LB1 1
+#define LB2 2
+#define LB3 3
+#define LCX 4
+#define LCC 14
+#define LCV 24
+// RIGHT SIDE
+#define RB0 9
+#define RB1 8
+#define RB2 7
+#define RB3 6
+#define RCX 5
+#define RCC 15
+#define RCV 25
+
+// BOUGIE KEYS
+// LEFT SIDE
+#define TLP 10
+#define TLR 11
+#define TLM 12
+#define TLI 13
+#define BLP 20
+#define BLR 21
+#define BLM 22
+#define BLI 23
+#define LOT 32
+#define LIT 31
+
+// RIGHT SIDE
+#define TRP 19
+#define TRR 18
+#define TRM 17
+#define TRI 16
+#define BRP 29
+#define BRR 28
+#define BRM 27
+#define BRI 26
+#define ROT 33
+#define RIT 34
+
+// LAYERS
+#define DEF  0
+#define QWE  1
+#define QNUM 2
+#define NAV  3
+#define DESK 4
+#define WIN  5
+#define NUM  6
+#define SYM  7
+#define BT   8
+#define MISC 9
+
+// CONFIG
+#define COMBO_TIMEOUT 70
+#define COMBO_LAYERS DEF NAV NUM DESK WIN SYM BT MISC
+#define STICKY_TIMEOUT 1000
+#define HOLD_TAP_TIMEOUT 190
+
+// BEHAVIOR REDEFINITIONS
 
 &sk {
+    release-after-ms = <STICKY_TIMEOUT>;
     quick-release;
-
     /delete-property/ ignore-modifiers;
 };
+
+&sl {
+    release-after-ms = <STICKY_TIMEOUT>;
+    quick-release;
+    /delete-property/ ignore-modifiers;
+};
+
+&lt {
+    #binding-cells = <2>;
+    bindings = <&mo>, <&kp>;
+    tapping-term-ms = <HOLD_TAP_TIMEOUT>;
+    quick-tap-ms = <HOLD_TAP_TIMEOUT>;
+    hold-while-undecided;
+};
+// MAIN NODE
 
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
@@ -23,1517 +101,141 @@
     combos {
         compatible = "zmk,combos";
 
-        br-skralt {
-            bindings = <&sk_ralt_lock>;
-            key-positions = <10 20>;
-        };
+#define LOCOMBO(NAME, BINDINGS, KEYPOS) \
+combo_l_##NAME { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <BINDINGS>; \
+	key-positions = <KEYPOS>; \
+	layers = <COMBO_LAYERS>; \
+}; \
+
+#define LTCOMBO(NAME, OUTER_BINDINGS, INNER_BINDINGS, BOTH_BINDINGS, KEYPOS) \
+combo_li_##NAME { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <INNER_BINDINGS>; \
+	key-positions = <KEYPOS LIT>; \
+	layers = <COMBO_LAYERS>; \
+}; \
+combo_lo_##NAME { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <OUTER_BINDINGS>; \
+	key-positions = <KEYPOS LOT>; \
+	layers = <COMBO_LAYERS>; \
+}; \
+combo_lb_##NAME { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <BOTH_BINDINGS>; \
+	key-positions = <KEYPOS LIT LOT>; \
+	layers = <COMBO_LAYERS>; \
+};
+
+#define ROCOMBO(NAME, BINDINGS, KEYPOS) \
+combo_r_##NAME { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <BINDINGS>; \
+	key-positions = <KEYPOS>; \
+	layers = <COMBO_LAYERS>; \
+}; \
+
+#define RTCOMBO(NAME, OUTER_BINDINGS, INNER_BINDINGS, BOTH_BINDINGS, KEYPOS) \
+combo_ri_##NAME { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <INNER_BINDINGS>; \
+	key-positions = <KEYPOS RIT>; \
+	layers = <COMBO_LAYERS>; \
+}; \
+combo_ro_##NAME { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <OUTER_BINDINGS>; \
+	key-positions = <KEYPOS ROT>; \
+	layers = <COMBO_LAYERS>; \
+}; \
+combo_rb_##NAME { \
+	timeout-ms = <COMBO_TIMEOUT>; \
+	bindings = <BOTH_BINDINGS>; \
+	key-positions = <KEYPOS RIT ROT>; \
+	layers = <COMBO_LAYERS>; \
+};
+
+#define TCOMBO(NAME, OUTER_BINDINGS, INNER_BINDINGS, BOTH_BINDINGS, LEFT_KEYPOS, RIGHT_KEYPOS) \
+LTCOMBO(##NAME, ##OUTER_BINDINGS, ##INNER_BINDINGS, ##BOTH_BINDINGS, ##LEFT_KEYPOS) \
+RTCOMBO(##NAME, ##OUTER_BINDINGS, ##INNER_BINDINGS, ##BOTH_BINDINGS, ##RIGHT_KEYPOS)
+
+#define FCOMBO(NAME, BINDINGS, OUTER_BINDINGS, INNER_BINDINGS, BOTH_BINDINGS, LEFT_KEYPOS, RIGHT_KEYPOS) \
+LOCOMBO(##NAME, ##BINDINGS, ##LEFT_KEYPOS) \
+ROCOMBO(##NAME, ##BINDINGS, ##RIGHT_KEYPOS) \
+TCOMBO(##NAME, ##OUTER_BINDINGS, ##INNER_BINDINGS, ##BOTH_BINDINGS, ##LEFT_KEYPOS, ##RIGHT_KEYPOS)
+
+//** COMBOS **//
+LTCOMBO(TP, &kp LEFT, &as N8, &as F8, TLP)
+RTCOMBO(TP, &kp RIGHT, &as N8, &as F8, TRP)
+TCOMBO(E, &kp DOWN, &as N6, &as F6, TLR, TRR)
+TCOMBO(A, &kp UP, &as N4, &as F4, TLM, TRM)
+LTCOMBO(T, &kp RIGHT, &as N2, &as F2, TLI)
+RTCOMBO(T, &kp LEFT, &as N2, &as F2, TRI)
+LTCOMBO(TAB, &kp END, &as N9, &as F9, BLP)
+RTCOMBO(TAB, &kp HOME, &as N9, &as F9, BRP)
+TCOMBO(I, &kp PG_DN, &as N7, &as F7, BLR, BRR)
+TCOMBO(O, &kp PG_UP, &as N5, &as F5, BLM, BRM)
+LTCOMBO(N, &kp HOME, &as N3, &as F3, BLI)
+RTCOMBO(N, &kp END, &as N3, &as F3, BRI)
+FCOMBO(RALT,       &sk_ralt_lock,      &kp GT,                &kp LT,                &bt BT_SEL 0,           TLP BLP,                           TRP BRP)
+FCOMBO(LALT,       &sk_lalt_lock,      &kp RBRC,              &kp LBRC,              &bt BT_SEL 1,           TLR BLR,                           TRR BRR)
+FCOMBO(LCTRL,      &sk_lctrl_lock,     &kp RBKT,              &kp LBKT,              &bt BT_SEL 2,           TLM BLM,                           TRM BRM)
+FCOMBO(LMETA,      &sk_lmeta_lock,     &kp RPAR,              &kp LPAR,              &bt BT_SEL 3,           TLI BLI,                           TRI BRI)
+FCOMBO(MOUSEL,     &mkp LCLK,          &none, 				  &none,                 &none,                  TLP TLI,                           TRP TRI)
+FCOMBO(MOUSEM,     &mkp MCLK,          &none, 				  &none,                 &none,                  TLP TLM,                           TRP BRM)
+FCOMBO(MOUSER,     &mkp RCLK,          &none, 				  &none,                 &none,                  TLP TLR,                           TRP TRM)
+FCOMBO(H,          &as H,              &kp AMPS,              &kp PIPE,              &as F11,                TLR TLM,                           TRR TRM)
+FCOMBO(S,          &as S,              &kp EQUAL,             &kp PLUS,              &as F9,                 TLR TLI,                           TRR TRI)
+FCOMBO(R,          &as R,              &kp ASTERISK,          &as N0,                &as F10,                TLM TLI,                           TRM TRI)
+FCOMBO(U,          &as U,              &kp AT,                &kp AT,                &as F15,                BLR BLM,                           BRR BRM)
+FCOMBO(C,          &as C,              &caps_word,            &kp CAPS,              &as F14,                BLR BLI,                           BRR BRI)
+FCOMBO(L,          &as L,              &kp CARET,             &kp N1,                &as F12,                BLM BLI,                           BRM BRI)
+FCOMBO(Y,          &as Y,              &kp HASH,              &kp LS(RA(SEMI)),      &as F21,                TLR BLM,                           TRR BRM)
+FCOMBO(G,          &as G,              &kp DOLLAR,            &kp RA(N5),            &as F18,                BLR TLM,                           BRR TRM)
+FCOMBO(W,          &as W,              &kp PERCENT,           &kp RA(SEMI),          &as F20,                TLR BLI,                           TRR BRI)
+FCOMBO(M,          &as M,              &kp SLASH,             &kp BSLH,              &as F16,                BLR TLI,                           BRR TRI)
+FCOMBO(D,          &as D,              &kp PRINTSCREEN,       &kp LS(PRINTSCREEN),   &as F13,                TLM BLI,                           TRM BRI)
+FCOMBO(F,          &as F,              &sk_lshift_lock,       &sk_lshift_lock,       &as F17,                BLM TLI,                           BRM TRI)
+FCOMBO(APOS,       &kp APOS,           &kp DQT,               &kp GRAVE,             &tqt,                   TLR BLR TLM,                       TRR BRR TRM)
+FCOMBO(COMMA,      &kp COMMA,          &kp QMARK,             &kp SEMI,              &kp RA(SLASH),          TLR BLR TLI,                       TRR BRM TRI)
+FCOMBO(DASH,       &kp MINUS,          &kp UNDER,             &kp TILDE,             &kp LS(RA(SLASH)),      TLR BLR BLM,                       TRR BRR BRM)
+FCOMBO(DOT,        &kp DOT,            &kp EXCL,              &kp COLON,             &kp RA(N8),             TLR BLR BLI,                       TRR BRM BRI)
+FCOMBO(P,          &as P,              &kp PRINTSCREEN,       &kp LS(PRINTSCREEN),   &as F19,                TLM BLM TLR,                       TRM BRM TRR)
+FCOMBO(B,          &as B,              &kp LG(W),             &kp LG(G),             &as F22,                TLM BLM BLR,                       TRM BRM BRR)
+FCOMBO(Z,          &as Z,              &kp C_BRI_UP,          &kp C_BRI_DN,          &kp C_BKLT_TOG,         TLM BLM TLI,                       TRM BRM BRI)
+FCOMBO(X,          &as X,              &kp C_VOL_UP,          &kp C_VOL_DN,          &kp C_MUTE,             TLM BLM BLI,                       TRM BRM TRI)
+FCOMBO(Q,          &as Q,              &none,                 &none,                 &none,                  TLI BLI TLR,                       TRI BRI TRR)
+FCOMBO(J,          &as J,              &kp C_NEXT,            &kp C_PREV,            &kp C_PP,               TLI BLI BLR,                       TRI BRI BRR)
+FCOMBO(K,          &as K,              &kp LA(SPACE),         &kp LGUI,              &as F23,                TLI BLI TLM,                       TRI BRI TRM)
+FCOMBO(V,          &as V,              &kp LC(LA(T)),         &none,                 &as F24,                TLI BLI BLM,                       TRI BRI BRM)
+FCOMBO(BT,         &sl BT,             &bt BT_CLR,            &bt BT_CLR,            &bt BT_CLR_ALL,         TLR BLR TLM BLM,                   TRR BRR TRM BRM)
+FCOMBO(NAVLOCK,    &sticky_navlock,           &none,                 &none,                 &none,                  TLR BLR TLI BLI,                   TRR BRR TRI BRI)
+FCOMBO(NUMLOCK,    &sticky_numlock,           &sk_lshift_lock,       &none,                 &none,                  TLM BLM TLI BLI,                   TRM BRM TRI BRI)
+FCOMBO(RET,        &kp RET,            &kp LS(RET),           &kp LS(RET),           &kp LS(RET),            TLR TLM TLI,                       TRR TRM TRI)
+FCOMBO(PASTE,      &kp LC(V),          &kp LS(LC(V)),         &none,                 &none,                  TLR TLM BLI,                       TRR TRM BRI)
+FCOMBO(COPY,       &kp LC(C),          &kp LS(LC(C)),         &none,                 &none,                  TLR BLM TLI,                       TRR BRM TRI)
+FCOMBO(CUT,        &kp LC(X),          &kp LS(LC(X)),         &none,                 &none,                  BLR TLM TLI,                       BRR TRM TRI)
+FCOMBO(UNDO,       &kp LC(Z),          &kp LS(LC(Z)),         &none,                 &none,                  TLR BLM BLI,                       TRR BRM BRI)
+FCOMBO(SAVE,       &kp LC(S),          &kp LG(G),             &kp LG(W),             &kp LS(LC(S)),          BLR TLM BLI,                       BRR TRM BRI)
+FCOMBO(REDO,       &kp LS(LC(Z)),      &kp LC(Z),             &none,                 &none,                  BLR BLM TLI,                       BRR BRM TLI)
+FCOMBO(ESC,        &kp ESC,            &none,                 &none,                 &kp LG(L),              BLR BLM BLI,                       BRR BRM BRI)
+FCOMBO(MISC,       &sl MISC,           &none,                 &none,                 &none,                  TLR BLR TLM BLM TLI BLI,           TRR BRR TRM BRM TRI BRI)
 
-        ea-h {
-            bindings = <&as H>;
-            key-positions = <11 12>;
-        };
-
-        et-s {
-            bindings = <&as S>;
-            key-positions = <11 13>;
-        };
-
-        ei-sklalt {
-            bindings = <&sk_lalt_lock>;
-            key-positions = <11 21>;
-        };
-
-        eo-y {
-            bindings = <&as Y>;
-            key-positions = <11 22>;
-        };
-
-        en-w {
-            bindings = <&as W>;
-            key-positions = <11 23>;
-        };
-
-        at-r {
-            bindings = <&as R>;
-            key-positions = <12 13>;
-        };
-
-        ai-g {
-            bindings = <&as G>;
-            key-positions = <21 12>;
-        };
-
-        ao-sklctrl {
-            bindings = <&sk_lctrl_lock>;
-            key-positions = <12 22>;
-        };
-
-        an-d {
-            bindings = <&as D>;
-            key-positions = <12 23>;
-        };
-
-        ti-m {
-            bindings = <&as M>;
-            key-positions = <13 21>;
-        };
-
-        to-f {
-            bindings = <&as F>;
-            key-positions = <13 22>;
-        };
-
-        tn-skmeta {
-            bindings = <&sk_lmeta_lock>;
-            key-positions = <23 13>;
-        };
-
-        io-u {
-            bindings = <&as U>;
-            key-positions = <21 22>;
-        };
-
-        in-c {
-            bindings = <&as C>;
-            key-positions = <21 23>;
-        };
-
-        on-l {
-            bindings = <&as L>;
-            key-positions = <22 23>;
-        };
-
-        eia-apos {
-            bindings = <&kp APOS>;
-            key-positions = <21 11 12>;
-        };
-
-        eit-minus {
-            bindings = <&kp MINUS>;
-            key-positions = <21 11 13>;
-        };
-
-        eio-comma {
-            bindings = <&kp COMMA>;
-            key-positions = <11 21 22>;
-        };
-
-        ein-dot {
-            bindings = <&kp DOT>;
-            key-positions = <21 11 23>;
-        };
-
-        aoe-p {
-            bindings = <&as P>;
-            key-positions = <12 22 11>;
-        };
-
-        aot-z {
-            bindings = <&as Z>;
-            key-positions = <12 22 13>;
-        };
-
-        aoi-b {
-            bindings = <&as B>;
-            key-positions = <22 12 21>;
-        };
-
-        aon-x {
-            bindings = <&as X>;
-            key-positions = <22 12 23>;
-        };
-
-        tne-q {
-            bindings = <&as Q>;
-            key-positions = <23 13 11>;
-        };
-
-        tna-v {
-            bindings = <&as V>;
-            key-positions = <23 13 12>;
-        };
-
-        tni-j {
-            bindings = <&as J>;
-            key-positions = <21 13 23>;
-        };
-
-        tno-k {
-            bindings = <&as K>;
-            key-positions = <23 13 22>;
-        };
-
-        eiao-del {
-            bindings = <&kp DELETE>;
-            key-positions = <21 11 12 22>;
-        };
-
-        eitn-slnav {
-            bindings = <&sticky_navlock>;
-            key-positions = <21 11 23 13>;
-            layers = <0>;
-        };
-
-        eint-nav-tog {
-            bindings = <&tog 2>;
-            key-positions = <21 11 23 13>;
-            layers = <2>;
-        };
-
-        aotn-slnum {
-            bindings = <&sticky_numlock>;
-            key-positions = <22 12 13 23>;
-            layers = <0>;
-        };
-
-        aotn-num-tog {
-            bindings = <&tog 3>;
-            key-positions = <22 12 13 23>;
-            layers = <3>;
-        };
-
-        eat-ret {
-            bindings = <&kp RET>;
-            key-positions = <11 12 13>;
-        };
-
-        ean-paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <11 12 23>;
-        };
-
-        eot-copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <11 13 22>;
-        };
-
-        iat-cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <21 12 13>;
-        };
-
-        iot-redo {
-            bindings = <&kp LC(LS(Z))>;
-            key-positions = <21 22 13>;
-        };
-
-        eon-undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <23 22 11>;
-        };
-
-        ian-pscrn {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <12 23 21>;
-        };
-
-        ion-esc {
-            bindings = <&gresc>;
-            key-positions = <21 22 23>;
-        };
-
-        eatn-caps_word {
-            bindings = <&caps_word>;
-            key-positions = <11 12 13 23>;
-        };
-
-        tnio-caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <13 23 22 12 21>;
-        };
-
-        tnio-insert {
-            bindings = <&kp INSERT>;
-            key-positions = <21 22 23 13>;
-        };
-
-        SPr-home {
-            bindings = <&kp HOME>;
-            key-positions = <32 10>;
-        };
-
-        SPb-left {
-            bindings = <&kp LEFT>;
-            key-positions = <32 10>;
-        };
-
-        SPi-pgdn {
-            bindings = <&kp PG_DN>;
-            key-positions = <32 10>;
-        };
-
-        SPo-pgup {
-            bindings = <&kp PG_UP>;
-            key-positions = <32 10>;
-        };
-
-        SPn-end {
-            bindings = <&kp END>;
-            key-positions = <32 10>;
-        };
-
-        SPe-down {
-            bindings = <&kp DOWN>;
-            key-positions = <32 10>;
-        };
-
-        SPa-up {
-            bindings = <&kp UP>;
-            key-positions = <32 10>;
-        };
-
-        SPt-right {
-            bindings = <&kp RIGHT>;
-            key-positions = <32 10>;
-        };
-
-        SPea-h {
-            bindings = <&as H>;
-            key-positions = <32 11 12>;
-        };
-
-        SPet-s {
-            bindings = <&as S>;
-            key-positions = <32 11 13>;
-        };
-
-        SPei-sklalt {
-            bindings = <&sk_lmeta_lock>;
-            key-positions = <32 11 21>;
-        };
-
-        SPeo-y {
-            bindings = <&as Y>;
-            key-positions = <32 11 22>;
-        };
-
-        SPen-w {
-            bindings = <&as W>;
-            key-positions = <32 11 23>;
-        };
-
-        SPat-r {
-            bindings = <&as R>;
-            key-positions = <32 12 13>;
-        };
-
-        SPai-g {
-            bindings = <&as G>;
-            key-positions = <32 21 12>;
-        };
-
-        SPao-sklctrl {
-            bindings = <&sk_lctrl_lock>;
-            key-positions = <32 12 22>;
-        };
-
-        SPan-d {
-            bindings = <&as D>;
-            key-positions = <32 12 23>;
-        };
-
-        SPti-m {
-            bindings = <&as M>;
-            key-positions = <32 13 21>;
-        };
-
-        SPto-f {
-            bindings = <&as F>;
-            key-positions = <32 13 22>;
-        };
-
-        SPtn-skshift {
-            bindings = <&sk_lshift_lock>;
-            key-positions = <32 23 13>;
-        };
-
-        SPio-u {
-            bindings = <&as U>;
-            key-positions = <32 21 22>;
-        };
-
-        SPin-c {
-            bindings = <&as C>;
-            key-positions = <32 21 23>;
-        };
-
-        SPon-tab {
-            bindings = <&kp TAB>;
-            key-positions = <32 22 23>;
-        };
-
-        SPeia-apos {
-            bindings = <&kp APOS>;
-            key-positions = <32 21 11 12>;
-        };
-
-        SPeit-minus {
-            bindings = <&kp MINUS>;
-            key-positions = <32 21 11 13>;
-        };
-
-        SPeio-comma {
-            bindings = <&kp COMMA>;
-            key-positions = <32 11 21 22>;
-        };
-
-        SPein-dot {
-            bindings = <&kp DOT>;
-            key-positions = <32 21 11 23>;
-        };
-
-        SPaoe-p {
-            bindings = <&as P>;
-            key-positions = <32 12 22 11>;
-        };
-
-        SPaot-z {
-            bindings = <&as Z>;
-            key-positions = <32 12 22 13>;
-        };
-
-        SPaoi-b {
-            bindings = <&as B>;
-            key-positions = <32 22 12 21>;
-        };
-
-        SPaon-x {
-            bindings = <&as X>;
-            key-positions = <32 22 12 23>;
-        };
-
-        SPtne-q {
-            bindings = <&as Q>;
-            key-positions = <32 23 13 11>;
-        };
-
-        SPtna-v {
-            bindings = <&as V>;
-            key-positions = <32 23 13 12>;
-        };
-
-        SPtni-j {
-            bindings = <&as J>;
-            key-positions = <32 21 13 23>;
-        };
-
-        SPtno-stab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <32 23 13 22>;
-        };
-
-        SPeiao-del {
-            bindings = <&kp DELETE>;
-            key-positions = <32 21 11 12 22>;
-        };
-
-        SPeitn-slnav {
-            bindings = <&sticky_navlock>;
-            key-positions = <32 21 11 23 13>;
-            layers = <32 0>;
-        };
-
-        SPeint-nav-tog {
-            bindings = <&tog 2>;
-            key-positions = <32 21 11 23 13>;
-            layers = <32 2>;
-        };
-
-        SPaotn-bt {
-            bindings = <&sl 5>;
-            key-positions = <32 22 12 13 23>;
-        };
-
-        SPaotn-num-tog {
-            bindings = <&tog 3>;
-            key-positions = <32 22 12 13 23>;
-            layers = <32 3>;
-        };
-
-        SPeat-ret {
-            bindings = <&kp RET>;
-            key-positions = <32 11 12 13>;
-        };
-
-        SPean-paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <32 11 12 23>;
-        };
-
-        SPeot-copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <32 11 13 22>;
-        };
-
-        SPiat-cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <32 21 12 13>;
-        };
-
-        SPiot-redo {
-            bindings = <&kp LC(LS(Z))>;
-            key-positions = <32 21 22 13>;
-        };
-
-        SPeon-undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <32 23 22 11>;
-        };
-
-        SPian-pscrn {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <32 12 23 21>;
-        };
-
-        SPion-esc {
-            bindings = <&gresc>;
-            key-positions = <32 21 22 23>;
-        };
-
-        SPeatn-caps_word {
-            bindings = <&caps_word>;
-            key-positions = <32 11 12 13 23>;
-        };
-
-        SPtnio-caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <32 13 23 22 12 21>;
-        };
-
-        SPtnio-insert {
-            bindings = <&kp INSERT>;
-            key-positions = <32 21 22 23 13>;
-        };
-
-        KRr-tab {
-            bindings = <&kp TAB>;
-            key-positions = <31 10>;
-        };
-
-        KRb-del {
-            bindings = <&kp DELETE>;
-            key-positions = <31 20>;
-        };
-
-        KRi-7 {
-            bindings = <&kp N7>;
-            key-positions = <31 11>;
-        };
-
-        KRo-8 {
-            bindings = <&kp N8>;
-            key-positions = <31 12>;
-        };
-
-        KRn-9 {
-            bindings = <&kp N9>;
-            key-positions = <31 13>;
-        };
-
-        KRe-4 {
-            bindings = <&kp N4>;
-            key-positions = <31 21>;
-        };
-
-        KRa-5 {
-            bindings = <&kp N5>;
-            key-positions = <31 22>;
-        };
-
-        KRt-6 {
-            bindings = <&kp N6>;
-            key-positions = <31 23>;
-        };
-
-        KRrb-sklalt {
-            bindings = <&sk_lalt_lock>;
-            key-positions = <31 10 20>;
-        };
-
-        KRea-h {
-            bindings = <&as H>;
-            key-positions = <31 11 12>;
-        };
-
-        KRet-s {
-            bindings = <&as S>;
-            key-positions = <31 11 13>;
-        };
-
-        KRei-sklalt {
-            bindings = <&sk_lmeta_lock>;
-            key-positions = <31 11 21>;
-        };
-
-        KReo-y {
-            bindings = <&as Y>;
-            key-positions = <31 11 22>;
-        };
-
-        KRen-w {
-            bindings = <&as W>;
-            key-positions = <31 11 23>;
-        };
-
-        KRat-r {
-            bindings = <&as R>;
-            key-positions = <31 12 13>;
-        };
-
-        KRai-g {
-            bindings = <&as G>;
-            key-positions = <31 21 12>;
-        };
-
-        KRao-sklctrl {
-            bindings = <&sk_lctrl_lock>;
-            key-positions = <31 12 22>;
-        };
-
-        KRan-d {
-            bindings = <&as D>;
-            key-positions = <31 12 23>;
-        };
-
-        KRti-m {
-            bindings = <&as M>;
-            key-positions = <31 13 21>;
-        };
-
-        KRto-f {
-            bindings = <&as F>;
-            key-positions = <31 13 22>;
-        };
-
-        KRtn-skshift {
-            bindings = <&sk_lshift_lock>;
-            key-positions = <31 23 13>;
-        };
-
-        KReia-apos {
-            bindings = <&kp APOS>;
-            key-positions = <31 21 11 12>;
-        };
-
-        KReit-minus {
-            bindings = <&kp MINUS>;
-            key-positions = <31 21 11 13>;
-        };
-
-        KReio-comma {
-            bindings = <&kp COMMA>;
-            key-positions = <31 11 21 22>;
-        };
-
-        KRein-dot {
-            bindings = <&kp DOT>;
-            key-positions = <31 21 11 23>;
-        };
-
-        KRaoe-p {
-            bindings = <&as P>;
-            key-positions = <31 12 22 11>;
-        };
-
-        KRaot-z {
-            bindings = <&as Z>;
-            key-positions = <31 12 22 13>;
-        };
-
-        KRaoi-b {
-            bindings = <&as B>;
-            key-positions = <31 22 12 21>;
-        };
-
-        KRaon-x {
-            bindings = <&as X>;
-            key-positions = <31 22 12 23>;
-        };
-
-        KRtne-q {
-            bindings = <&as Q>;
-            key-positions = <31 23 13 11>;
-        };
-
-        KRtna-v {
-            bindings = <&as V>;
-            key-positions = <31 23 13 12>;
-        };
-
-        KRtni-j {
-            bindings = <&as J>;
-            key-positions = <31 21 13 23>;
-        };
-
-        KRtno-k {
-            bindings = <&as K>;
-            key-positions = <31 23 13 22>;
-        };
-
-        KReiao-del {
-            bindings = <&kp DELETE>;
-            key-positions = <31 21 11 12 22>;
-        };
-
-        KReitn-slnav {
-            bindings = <&sticky_navlock>;
-            key-positions = <31 21 11 23 13>;
-            layers = <31 0>;
-        };
-
-        KReint-nav-tog {
-            bindings = <&tog 2>;
-            key-positions = <31 21 11 23 13>;
-            layers = <31 2>;
-        };
-
-        KRaotn-slnum {
-            bindings = <&sticky_numlock>;
-            key-positions = <31 22 12 13 23>;
-            layers = <31 0>;
-        };
-
-        KRaotn-num-tog {
-            bindings = <&tog 3>;
-            key-positions = <31 22 12 13 23>;
-            layers = <31 3>;
-        };
-
-        KReat-ret {
-            bindings = <&kp RET>;
-            key-positions = <31 11 12 13>;
-        };
-
-        KRean-paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <31 11 12 23>;
-        };
-
-        KReot-copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <31 11 13 22>;
-        };
-
-        KRiat-cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <31 21 12 13>;
-        };
-
-        KRiot-redo {
-            bindings = <&kp LC(LS(Z))>;
-            key-positions = <31 21 22 13>;
-        };
-
-        KReon-undo {
-            bindings = <&kp LC(Z)>;
-            key-positions = <31 23 22 11>;
-        };
-
-        KRian-pscrn {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <31 12 23 21>;
-        };
-
-        KRion-esc {
-            bindings = <&gresc>;
-            key-positions = <31 21 22 23>;
-        };
-
-        KReatn-caps_word {
-            bindings = <&caps_word>;
-            key-positions = <31 11 12 13 23>;
-        };
-
-        KRtnio-caps {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <31 13 23 22 12 21>;
-        };
-
-        KRtnio-insert {
-            bindings = <&kp INSERT>;
-            key-positions = <31 21 22 23 13>;
-        };
-
-        // --- Right Hand Combos (Mirrored) ---
-
-        rb-skralt_R {
-            bindings = <&sk_ralt_lock>;
-            key-positions = <19 29>;
-        };
-
-        ea-h_R {
-            bindings = <&as H>;
-            key-positions = <18 17>;
-        };
-
-        et-s_R {
-            bindings = <&as S>;
-            key-positions = <18 16>;
-        };
-
-        ei-sklalt_R {
-            bindings = <&sk_lalt_lock>;
-            key-positions = <18 28>;
-        };
-
-        eo-y_R {
-            bindings = <&as Y>;
-            key-positions = <18 27>;
-        };
-
-        en-w_R {
-            bindings = <&as W>;
-            key-positions = <18 26>;
-        };
-
-        at-r_R {
-            bindings = <&as R>;
-            key-positions = <17 16>;
-        };
-
-        ai-g_R {
-            bindings = <&as G>;
-            key-positions = <28 17>;
-        };
-
-        ao-sklctrl_R {
-            bindings = <&sk_lctrl_lock>;
-            key-positions = <17 27>;
-        };
-
-        an-d_R {
-            bindings = <&as D>;
-            key-positions = <17 26>;
-        };
-
-        ti-m_R {
-            bindings = <&as M>;
-            key-positions = <16 28>;
-        };
-
-        to-f_R {
-            bindings = <&as F>;
-            key-positions = <16 27>;
-        };
-
-        tn-skmeta_R {
-            bindings = <&sk_lmeta_lock>;
-            key-positions = <26 16>;
-        };
-
-        io-u_R {
-            bindings = <&as U>;
-            key-positions = <28 27>;
-        };
-
-        in-c_R {
-            bindings = <&as C>;
-            key-positions = <28 26>;
-        };
-
-        on-l_R {
-            bindings = <&as L>;
-            key-positions = <27 26>;
-        };
-
-        eia-apos_R {
-            bindings = <&kp APOS>;
-            key-positions = <28 18 17>;
-        };
-
-        eit-minus_R {
-            bindings = <&kp MINUS>;
-            key-positions = <28 18 16>;
-        };
-
-        eio-comma_R {
-            bindings = <&kp COMMA>;
-            key-positions = <18 28 27>;
-        };
-
-        ein-dot_R {
-            bindings = <&kp DOT>;
-            key-positions = <28 18 26>;
-        };
-
-        aoe-p_R {
-            bindings = <&as P>;
-            key-positions = <17 27 18>;
-        };
-
-        aot-z_R {
-            bindings = <&as Z>;
-            key-positions = <17 27 16>;
-        };
-
-        aoi-b_R {
-            bindings = <&as B>;
-            key-positions = <27 17 28>;
-        };
-
-        aon-x_R {
-            bindings = <&as X>;
-            key-positions = <27 17 26>;
-        };
-
-        tne-q_R {
-            bindings = <&as Q>;
-            key-positions = <26 16 18>;
-        };
-
-        tna-v_R {
-            bindings = <&as V>;
-            key-positions = <26 16 17>;
-        };
-
-        tni-j_R {
-            bindings = <&as J>;
-            key-positions = <28 16 26>;
-        };
-
-        tno-k_R {
-            bindings = <&as K>;
-            key-positions = <26 16 27>;
-        };
-
-        eiao-del_R {
-            bindings = <&kp DELETE>;
-            key-positions = <28 18 17 27>;
-        };
-
-        eitn-slnav_R {
-            bindings = <&sticky_navlock>;
-            key-positions = <28 18 26 16>;
-            layers = <0>;
-        };
-
-        eint-nav-tog_R {
-            bindings = <&tog 2>;
-            key-positions = <28 18 26 16>;
-            layers = <2>;
-        };
-
-        aotn-slnum_R {
-            bindings = <&sticky_numlock>;
-            key-positions = <27 17 16 26>;
-            layers = <0>;
-        };
-
-        aotn-num-tog_R {
-            bindings = <&tog 3>;
-            key-positions = <27 17 16 26>;
-            layers = <3>;
-        };
-
-        eat-ret_R {
-            bindings = <&kp RET>;
-            key-positions = <18 17 16>;
-        };
-
-        ean-paste_R {
-            bindings = <&kp LC(V)>;
-            key-positions = <18 17 26>;
-        };
-
-        eot-copy_R {
-            bindings = <&kp LC(C)>;
-            key-positions = <18 16 27>;
-        };
-
-        iat-cut_R {
-            bindings = <&kp LC(X)>;
-            key-positions = <28 17 16>;
-        };
-
-        iot-redo_R {
-            bindings = <&kp LC(LS(Z))>;
-            key-positions = <28 27 16>;
-        };
-
-        eon-undo_R {
-            bindings = <&kp LC(Z)>;
-            key-positions = <26 27 18>;
-        };
-
-        ian-pscrn_R {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <17 26 28>;
-        };
-
-        ion-esc_R {
-            bindings = <&gresc>;
-            key-positions = <28 27 26>;
-        };
-
-        eatn-caps_word_R {
-            bindings = <&caps_word>;
-            key-positions = <18 17 16 26>;
-        };
-
-        tnio-caps_R {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <16 26 27 17 28>;
-        };
-
-        tnio-insert_R {
-            bindings = <&kp INSERT>;
-            key-positions = <28 27 26 16>;
-        };
-
-        SPr-home_R {
-            bindings = <&kp HOME>;
-            key-positions = <33 19>;
-        };
-
-        SPb-left_R {
-            bindings = <&kp LEFT>;
-            key-positions = <33 19>;
-        };
-
-        SPi-pgdn_R {
-            bindings = <&kp PG_DN>;
-            key-positions = <33 19>;
-        };
-
-        SPo-pgup_R {
-            bindings = <&kp PG_UP>;
-            key-positions = <33 19>;
-        };
-
-        SPn-end_R {
-            bindings = <&kp END>;
-            key-positions = <33 19>;
-        };
-
-        SPe-down_R {
-            bindings = <&kp DOWN>;
-            key-positions = <33 19>;
-        };
-
-        SPa-up_R {
-            bindings = <&kp UP>;
-            key-positions = <33 19>;
-        };
-
-        SPt-right_R {
-            bindings = <&kp RIGHT>;
-            key-positions = <33 19>;
-        };
-
-        SPx-left_R {
-            bindings = <&kp LEFT>;
-            key-positions = <33 19>;
-        };
-
-        SPc-down_R {
-            bindings = <&kp DOWN>;
-            key-positions = <33 19>;
-        };
-
-        SPv-right_R {
-            bindings = <&kp RIGHT>;
-            key-positions = <33 19>;
-        };
-
-        SPrb-sklalt_R {
-            bindings = <&sk_lalt_lock>;
-            key-positions = <33 19 29>;
-        };
-
-        SPea-h_R {
-            bindings = <&as H>;
-            key-positions = <33 18 17>;
-        };
-
-        SPet-s_R {
-            bindings = <&as S>;
-            key-positions = <33 18 16>;
-        };
-
-        SPei-sklalt_R {
-            bindings = <&sk_lmeta_lock>;
-            key-positions = <33 18 28>;
-        };
-
-        SPeo-y_R {
-            bindings = <&as Y>;
-            key-positions = <33 18 27>;
-        };
-
-        SPen-w_R {
-            bindings = <&as W>;
-            key-positions = <33 18 26>;
-        };
-
-        SPat-r_R {
-            bindings = <&as R>;
-            key-positions = <33 17 16>;
-        };
-
-        SPai-g_R {
-            bindings = <&as G>;
-            key-positions = <33 28 17>;
-        };
-
-        SPao-sklctrl_R {
-            bindings = <&sk_lctrl_lock>;
-            key-positions = <33 17 27>;
-        };
-
-        SPan-d_R {
-            bindings = <&as D>;
-            key-positions = <33 17 26>;
-        };
-
-        SPti-m_R {
-            bindings = <&as M>;
-            key-positions = <33 16 28>;
-        };
-
-        SPto-f_R {
-            bindings = <&as F>;
-            key-positions = <33 16 27>;
-        };
-
-        SPtn-skshift_R {
-            bindings = <&sk_lshift_lock>;
-            key-positions = <33 26 16>;
-        };
-
-        SPio-u_R {
-            bindings = <&as U>;
-            key-positions = <33 28 27>;
-        };
-
-        SPin-c_R {
-            bindings = <&as C>;
-            key-positions = <33 28 26>;
-        };
-
-        SPon-l_R {
-            bindings = <&as L>;
-            key-positions = <33 27 26>;
-        };
-
-        SPeia-apos_R {
-            bindings = <&kp APOS>;
-            key-positions = <33 28 18 17>;
-        };
-
-        SPeit-minus_R {
-            bindings = <&kp MINUS>;
-            key-positions = <33 28 18 16>;
-        };
-
-        SPeio-comma_R {
-            bindings = <&kp COMMA>;
-            key-positions = <33 18 28 27>;
-        };
-
-        SPein-dot_R {
-            bindings = <&kp DOT>;
-            key-positions = <33 28 18 26>;
-        };
-
-        SPaoe-p_R {
-            bindings = <&as P>;
-            key-positions = <33 17 27 18>;
-        };
-
-        SPaot-z_R {
-            bindings = <&as Z>;
-            key-positions = <33 17 27 16>;
-        };
-
-        SPaoi-b_R {
-            bindings = <&as B>;
-            key-positions = <33 27 17 28>;
-        };
-
-        SPaon-x_R {
-            bindings = <&as X>;
-            key-positions = <33 27 17 26>;
-        };
-
-        SPtne-q_R {
-            bindings = <&as Q>;
-            key-positions = <33 26 16 18>;
-        };
-
-        SPtna-v_R {
-            bindings = <&as V>;
-            key-positions = <33 26 16 17>;
-        };
-
-        SPtni-j_R {
-            bindings = <&as J>;
-            key-positions = <33 28 16 26>;
-        };
-
-        SPtno-k_R {
-            bindings = <&as K>;
-            key-positions = <33 26 16 27>;
-        };
-
-        SPeiao-del_R {
-            bindings = <&kp DELETE>;
-            key-positions = <33 28 18 17 27>;
-        };
-
-        SPeitn-slnav_R {
-            bindings = <&sticky_navlock>;
-            key-positions = <33 28 18 26 16>;
-            layers = <33 0>;
-        };
-
-        SPeint-nav-tog_R {
-            bindings = <&tog 2>;
-            key-positions = <33 28 18 26 16>;
-            layers = <33 2>;
-        };
-
-        SPaotn-bt_R {
-            bindings = <&sl 5>;
-            key-positions = <33 27 17 16 26>;
-        };
-
-        SPaotn-num-tog_R {
-            bindings = <&tog 3>;
-            key-positions = <33 27 17 16 26>;
-            layers = <33 3>;
-        };
-
-        SPeat-ret_R {
-            bindings = <&kp RET>;
-            key-positions = <33 18 17 16>;
-        };
-
-        SPean-paste_R {
-            bindings = <&kp LC(V)>;
-            key-positions = <33 18 17 26>;
-        };
-
-        SPeot-copy_R {
-            bindings = <&kp LC(C)>;
-            key-positions = <33 18 16 27>;
-        };
-
-        SPiat-cut_R {
-            bindings = <&kp LC(X)>;
-            key-positions = <33 28 17 16>;
-        };
-
-        SPiot-redo_R {
-            bindings = <&kp LC(LS(Z))>;
-            key-positions = <33 28 27 16>;
-        };
-
-        SPeon-undo_R {
-            bindings = <&kp LC(Z)>;
-            key-positions = <33 26 27 18>;
-        };
-
-        SPian-pscrn_R {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <33 17 26 28>;
-        };
-
-        SPion-esc_R {
-            bindings = <&gresc>;
-            key-positions = <33 28 27 26>;
-        };
-
-        SPeatn-caps_word_R {
-            bindings = <&caps_word>;
-            key-positions = <33 18 17 16 26>;
-        };
-
-        SPtnio-caps_R {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <33 16 26 27 17 28>;
-        };
-
-        SPtnio-insert_R {
-            bindings = <&kp INSERT>;
-            key-positions = <33 28 27 26 16>;
-        };
-
-        KRr-tab_R {
-            bindings = <&kp TAB>;
-            key-positions = <34 19>;
-        };
-
-        KRb-del_R {
-            bindings = <&kp DELETE>;
-            key-positions = <34 29>;
-        };
-
-        KRi-7_R {
-            bindings = <&kp N7>;
-            key-positions = <34 18>;
-        };
-
-        KRo-8_R {
-            bindings = <&kp N8>;
-            key-positions = <34 17>;
-        };
-
-        KRn-9_R {
-            bindings = <&kp N9>;
-            key-positions = <34 16>;
-        };
-
-        KRe-4_R {
-            bindings = <&kp N4>;
-            key-positions = <34 28>;
-        };
-
-        KRa-5_R {
-            bindings = <&kp N5>;
-            key-positions = <34 27>;
-        };
-
-        KRt-6_R {
-            bindings = <&kp N6>;
-            key-positions = <34 26>;
-        };
-
-        KRrb-sklalt_R {
-            bindings = <&sk_lalt_lock>;
-            key-positions = <34 19 29>;
-        };
-
-        KRea-h_R {
-            bindings = <&as H>;
-            key-positions = <34 18 17>;
-        };
-
-        KRet-s_R {
-            bindings = <&as S>;
-            key-positions = <34 18 16>;
-        };
-
-        KRei-sklalt_R {
-            bindings = <&sk_lmeta_lock>;
-            key-positions = <34 18 28>;
-        };
-
-        KReo-y_R {
-            bindings = <&as Y>;
-            key-positions = <34 18 27>;
-        };
-
-        KRen-w_R {
-            bindings = <&as W>;
-            key-positions = <34 18 26>;
-        };
-
-        KRat-r_R {
-            bindings = <&as R>;
-            key-positions = <34 17 16>;
-        };
-
-        KRai-g_R {
-            bindings = <&as G>;
-            key-positions = <34 28 17>;
-        };
-
-        KRao-sklctrl_R {
-            bindings = <&sk_lctrl_lock>;
-            key-positions = <34 17 27>;
-        };
-
-        KRan-d_R {
-            bindings = <&as D>;
-            key-positions = <34 17 26>;
-        };
-
-        KRti-m_R {
-            bindings = <&as M>;
-            key-positions = <34 16 28>;
-        };
-
-        KRto-f_R {
-            bindings = <&as F>;
-            key-positions = <34 16 27>;
-        };
-
-        KRtn-skshift_R {
-            bindings = <&sk_lshift_lock>;
-            key-positions = <34 26 16>;
-        };
-
-        KReia-apos_R {
-            bindings = <&kp APOS>;
-            key-positions = <34 28 18 17>;
-        };
-
-        KReit-minus_R {
-            bindings = <&kp MINUS>;
-            key-positions = <34 28 18 16>;
-        };
-
-        KReio-comma_R {
-            bindings = <&kp COMMA>;
-            key-positions = <34 18 28 27>;
-        };
-
-        KRein-dot_R {
-            bindings = <&kp DOT>;
-            key-positions = <34 28 18 26>;
-        };
-
-        KRaoe-p_R {
-            bindings = <&as P>;
-            key-positions = <34 17 27 18>;
-        };
-
-        KRaot-z_R {
-            bindings = <&as Z>;
-            key-positions = <34 17 27 16>;
-        };
-
-        KRaoi-b_R {
-            bindings = <&as B>;
-            key-positions = <34 27 17 28>;
-        };
-
-        KRaon-x_R {
-            bindings = <&as X>;
-            key-positions = <34 27 17 26>;
-        };
-
-        KRtne-q_R {
-            bindings = <&as Q>;
-            key-positions = <34 26 16 18>;
-        };
-
-        KRtna-v_R {
-            bindings = <&as V>;
-            key-positions = <34 26 16 17>;
-        };
-
-        KRtni-j_R {
-            bindings = <&as J>;
-            key-positions = <34 28 16 26>;
-        };
-
-        KRtno-k_R {
-            bindings = <&as K>;
-            key-positions = <34 26 16 27>;
-        };
-
-        KReiao-del_R {
-            bindings = <&kp DELETE>;
-            key-positions = <34 28 18 17 27>;
-        };
-
-        KReitn-slnav_R {
-            bindings = <&sticky_navlock>;
-            key-positions = <34 28 18 26 16>;
-            layers = <34 0>;
-        };
-
-        KReint-nav-tog_R {
-            bindings = <&tog 2>;
-            key-positions = <34 28 18 26 16>;
-            layers = <34 2>;
-        };
-
-        KRaotn-slnum_R {
-            bindings = <&sticky_numlock>;
-            key-positions = <34 27 17 16 26>;
-            layers = <34 0>;
-        };
-
-        KRaotn-num-tog_R {
-            bindings = <&tog 3>;
-            key-positions = <34 27 17 16 26>;
-            layers = <34 3>;
-        };
-
-        KReat-ret_R {
-            bindings = <&kp RET>;
-            key-positions = <34 18 17 16>;
-        };
-
-        KRean-paste_R {
-            bindings = <&kp LC(V)>;
-            key-positions = <34 18 17 26>;
-        };
-
-        KReot-copy_R {
-            bindings = <&kp LC(C)>;
-            key-positions = <34 18 16 27>;
-        };
-
-        KRiat-cut_R {
-            bindings = <&kp LC(X)>;
-            key-positions = <34 28 17 16>;
-        };
-
-        KRiot-redo_R {
-            bindings = <&kp LC(LS(Z))>;
-            key-positions = <34 28 27 16>;
-        };
-
-        KReon-undo_R {
-            bindings = <&kp LC(Z)>;
-            key-positions = <34 26 27 18>;
-        };
-
-        KRian-pscrn_R {
-            bindings = <&kp PRINTSCREEN>;
-            key-positions = <34 17 26 28>;
-        };
-
-        KRion-esc_R {
-            bindings = <&gresc>;
-            key-positions = <34 28 27 26>;
-        };
-
-        KReatn-caps_word_R {
-            bindings = <&caps_word>;
-            key-positions = <34 18 17 16 26>;
-        };
-
-        KRtnio-caps_R {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <34 16 26 27 17 28>;
-        };
-
-        KRtnio-insert_R {
-            bindings = <&kp INSERT>;
-            key-positions = <34 28 27 26 16>;
-        };
-
-        be-cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <10 21>;
-        };
-
-        ba-copy {
-            bindings = <&kp LC(C)>;
-            key-positions = <10 22>;
-        };
-
-        bt-paste {
-            bindings = <&kp LC(V)>;
-            key-positions = <10 23>;
-        };
     };
 
     behaviors {
         sticky_numlock: sticky_numlock {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&sl 3>, <&tog 3>;
+            bindings = <&sl NUM>, <&tog NUM>;
         };
 
         sticky_navlock: sticky_navlock {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&sl 2>, <&tog 2>;
+            bindings = <&sl NAV>, <&tog NAV>;
         };
 
         sticky_lshift: sticky_lshift {
@@ -1611,7 +313,7 @@
             bindings = <&shift>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <190>;
+            tapping-term-ms = <HOLD_TAP_TIMEOUT>;
         };
 
         ralt_i_cut: ralt_i_cut {
@@ -1640,9 +342,40 @@
             mods = <(MOD_RALT)>;
             keep-mods = <(MOD_LCTL)>;
         };
+        
+        ltshift: ltshift {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&mo>, <&sk_lshift_lock>;
+        
+            #binding-cells = <2>;
+            tapping-term-ms = <HOLD_TAP_TIMEOUT>;
+        };
+
+        tabdance: tabdance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp TAB>, <&kp TAB>, <&sys_reset>, <&kp TAB>, <&bootloader>;
+        };
+
+        qwereset: qwereset {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&tog QWE>, <&none>, <&none>, <&sys_reset>, <&none>, <&bootloader>;
+        };
+
     };
 
     macros {
+        tqt: tqt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_tap>,
+                <&kp APOS>,
+                <&kp APOS>,
+                <&kp APOS>;
+        };
+
         shift: shift {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
@@ -1672,46 +405,73 @@
 
         bougie {
             bindings = <
-  &bt BT_CLR     &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &tog 1         &tog 1       &bt BT_SEL 3   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_CLR
-  &kp BACKSPACE  &as E         &as A         &as T          &sys_reset     &sys_reset   &as T          &as A         &as E         &kp BACKSPACE
-  &kp TAB        &ralt_i_cut   &ralt_o_copy  &ralt_n_paste  &bootloader    &bootloader  &ralt_n_paste  &ralt_o_copy  &ralt_i_cut   &kp TAB
-                               &key_repeat   &kp BSPC       &kp SPACE      &kp SPACE    &kp BSPC       &key_repeat
+  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &kp LC(X)      &kp LC(X)    &bt BT_SEL 3   &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
+  &sk_lshift_lock &as E         &as A         &as T          &kp LC(C)      &kp LC(C)    &as T          &as A         &as E         &sk_lshift_lock
+  &kp TAB         &as I         &as O         &as N          &kp LC(V)      &kp LC(V)    &as N          &as O         &as I         &kp TAB
+                                &mo NAV       &lt DESK BSPC  &lt NAV SPC    &lt NAV SPC  &lt DESK BSPC  &mo NUM
             >;
         };
 
         qwerty {
             bindings = <
-  &kp Q         &kp W  &kp E   &kp R     &kp T        &kp Y    &kp U       &kp I      &kp O    &kp P
-  &kp A         &kp S  &kp D   &kp F     &kp G        &kp H    &kp J       &kp K      &kp L    &kp SEMI
-  &mt Z LSHIFT  &kp X  &kp C   &kp V     &kp B        &kp N    &kp M       &kp COMMA  &kp DOT  &mt FSLH RSHIFT
-                       &tog 1  &kp BSPC  &kp SPACE    &kp RET  &kp DELETE  &mo 7
+  &kp Q         &kp W  &kp E     &kp R     &kp T            &kp Y    &kp U       &kp I      &kp O    &kp P
+  &kp A         &kp S  &kp D     &kp F     &kp G            &kp H    &kp J       &kp K      &kp L    &kp SEMI
+  &mt Z LSHIFT  &kp X  &kp C     &kp V     &kp B            &kp N    &kp M       &kp COMMA  &kp DOT  &mt FSLH RSHIFT
+                       &qwereset &kp BSPC  &kp SPACE        &kp RET  &kp DELETE  &sl QNUM
             >;
         };
+
+        qwenum {
+            bindings = <
+  &as N1  &as N2  &as N3  &as N4  &as N5    &as N6  &as N7  &as N8  &as N9  &as N0
+  &as N8  &as N6  &as N4  &as N2  &trans    &trans  &as N4  &as N5  &as N6  &as N0
+  &as N9  &as N7  &as N5  &as N3  &trans    &trans  &as N1  &as N2  &as N3  &as N0
+                  &trans  &as N1  &as N0    &as N0  &as N1  &trans
+            >;
+        };
+    
 
         nav {
             bindings = <
-  &kp HOME  &kp PG_DN          &kp PG_UP  &kp END    &trans    &trans  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END
-  &kp LEFT  &kp DOWN           &kp UP     &kp RIGHT  &trans    &trans  &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT
-  &kp HOME  &kp RS(PAGE_DOWN)  &kp PG_UP  &kp END    &trans    &trans  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END
-                               &to 0      &trans     &trans    &trans  &trans    &to 0
+  &none     &none     &none      &none      &trans    &trans  &none     &none      &none      &none
+  &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT  &trans    &trans  &kp LEFT  &kp UP     &kp DOWN   &kp RIGHT
+  &kp HOME  &kp PG_DN &kp PG_UP  &kp END    &trans    &trans  &kp HOME  &kp PG_UP  &kp PG_DN  &kp END
+                      &none      &trans     &trans    &trans  &trans    &none
             >;
         };
 
-        num {
+        desktops {
+            bindings = <
+  &none                &none                 &none                &none                  &trans    &trans  &none                  &none                &none                 &none
+  &kp LC(LG(LEFT))     &kp LC(LG(DOWN))      &kp LC(LG(UP))       &kp LC(LG(RIGHT))      &trans    &trans  &kp LC(LG(LEFT))       &kp LC(LG(UP))       &kp LC(LG(DOWN))      &kp LC(LG(RIGHT))
+  &kp LS(LC(LG(LEFT))) &kp LS(LC(LG(DOWN)))  &kp LS(LC(LG(UP)))   &kp LS(LC(LG(RIGHT)))  &trans    &trans  &kp LS(LC(LG(LEFT)))   &kp LS(LC(LG(UP)))   &kp LS(LC(LG(DOWN)))  &kp LS(LC(LG(RIGHT)))
+                                             &none                &trans                 &trans    &trans  &trans                 &none
+            >;
+        };
+
+        windows {
+            bindings = <
+  &none             &none             &none           &none              &trans    &trans  &none             &none           &none             &none
+  &kp LG(LEFT)      &kp LG(DOWN)      &kp LG(UP)      &kp LG(RIGHT)      &trans    &trans  &kp LG(LEFT)      &kp LG(UP)      &kp LG(DOWN)      &kp LG(RIGHT)
+  &kp LS(LG(LEFT))  &kp LS(LG(DOWN))  &kp LS(LG(UP))  &kp LS(LG(RIGHT))  &trans    &trans  &kp LS(LG(LEFT))  &kp LS(LG(UP))  &kp LS(LG(DOWN))  &kp LS(LG(RIGHT))
+                                      &none           &trans             &trans    &trans  &trans            &none
+            >;
+        };
+        numbers {
             bindings = <
   &none   &none   &none   &none   &trans    &trans  &none   &none   &none   &none
-  &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N2  &kp N4  &kp N6  &kp N8
-  &kp N9  &kp N7  &kp N5  &kp N3  &trans    &trans  &kp N3  &kp N5  &kp N7  &kp N9
-                  &to 0   &kp N1  &kp N0    &kp N0  &kp N1  &to 0
+  &as N8  &as N6  &as N4  &as N2  &trans    &trans  &as N2  &as N4  &as N6  &as N8
+  &as N9  &as N7  &as N5  &as N3  &trans    &trans  &as N3  &as N5  &as N7  &as N9
+                  &none   &as N1  &as N0    &as N0  &as N1  &none
             >;
         };
 
-        sym {
+        symbols {
             bindings = <
   &none       &none       &none       &none       &trans        &trans      &none       &none       &none       &none
   &kp LS(N8)  &kp LS(N6)  &kp LS(N4)  &kp LS(N2)  &trans        &trans      &kp RS(N2)  &kp RS(N4)  &kp RS(N6)  &kp RS(N8)
   &kp LS(N9)  &kp LS(N7)  &kp LS(N5)  &kp LS(N3)  &trans        &trans      &kp RS(N3)  &kp RS(N5)  &kp LS(N7)  &kp RS(N9)
-                          &to 0       &kp LS(N1)  &kp LS(N0)    &kp RS(N0)  &kp RS(N1)  &to 0
+                          &none       &kp LS(N1)  &kp LS(N0)    &kp RS(N0)  &kp RS(N1)  &none
             >;
         };
 
@@ -1720,26 +480,27 @@
   &none           &none         &none         &none         &trans    &trans  &none         &none         &none         &none
   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans    &trans  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1  &bt BT_SEL 0
   &bt BT_CLR_ALL  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR    &trans    &trans  &bt BT_CLR    &bt BT_NXT    &bt BT_PRV    &bt BT_CLR_ALL
-                                &to 0         &trans        &trans    &trans  &trans        &to 0
+                                &none         &trans        &trans    &trans  &trans        &none
             >;
         };
 
         misc {
             bindings = <
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                  &to 0   &trans  &trans    &trans  &trans  &to 0
+  &none           &none          &none         &none         &trans    &trans  &none         &none         &none          &none
+  &kp C_VOL_DN    &kp C_MUTE     &kp C_VOL_UP  &sys_reset    &trans    &trans  &sys_reset    &kp C_VOL_UP  &kp C_MUTE     &kp C_VOL_DN
+  &kp C_BRI_DN    &kp C_BKLT_TOG &kp C_BRI_UP  &bootloader   &trans    &trans  &bootloader   &kp C_BRI_UP  &kp C_BKLT_TOG &kp C_BRI_DN
+                                 &none         &trans        &trans    &trans  &trans        &none
             >;
         };
 
-        qwenum {
-            bindings = <
-  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
-  &kp N8  &kp N6  &kp N4  &kp N2  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp N0
-  &kp N9  &kp N7  &kp N5  &kp N3  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp N0
-                  &to 0   &kp N1  &kp N0    &kp N0  &kp N1  &to 0
-            >;
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        WIN {
+            if-layers = <NAV DESK>;
+            then-layer = <WIN>;
         };
+    };
+
+
     };
 };
